@@ -181,11 +181,11 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 /* ── 8. المسطرة ── */
 .ruler-s .inner{display:grid;gap:clamp(28px,6vh,64px)}
 .ruler-s h2{font-size:clamp(1.8rem,3.4vw,3.4rem)}
-.ruler{position:relative;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:6px;
+.ruler{position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:6px;
   box-shadow:0 18px 40px -24px rgba(6,45,68,.35)}
 .ruler::before{content:"";position:absolute;inset:0 0 auto;height:22px;
-  background:repeating-linear-gradient(to left,var(--deep) 0 1px,transparent 1px 100%) 0 0/calc(100%/40) 10px no-repeat,
-             repeating-linear-gradient(to left,var(--deep) 0 1px,transparent 1px 100%) 0 0/calc(100%/80) 6px repeat-x;
+  background:repeating-linear-gradient(to left,var(--deep) 0 1px,transparent 1px 100%) 0 0/calc(100%/35) 10px no-repeat,
+             repeating-linear-gradient(to left,var(--deep) 0 1px,transparent 1px 100%) 0 0/calc(100%/70) 6px repeat-x;
   background-repeat:repeat-x;opacity:.55}
 .mark{position:relative;padding:44px 14px 22px;border-inline-start:1px solid var(--line)}
 .mark:first-child{border-inline-start:0}
@@ -195,7 +195,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 .mark span{font-size:clamp(.85rem,1vw,1rem);font-weight:600;line-height:1.8;display:block}
 
 /* ── 9–12. الركائز ── */
-.mini{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-bottom:clamp(24px,5vh,52px);max-width:520px}
+.mini{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:clamp(24px,5vh,52px);max-width:520px}
 .mini i{height:6px;border-radius:3px;background:var(--line)}
 .mini i.done{background:#9CC6CB}
 .mini i.act{background:var(--navy)}
@@ -342,7 +342,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
       <p class="lead r" style="--i:1" >يتكوّن العرض من خمسة أجزاء: المعايير، ثم تقييم الموقع الحالي وفقها، ثم الموقع الجديد.</p>
     </div>
     <ol>
-      <li class="r" style="--i:1"><span class="k">1</span><div><h3>معايير الموقع المؤسسي</h3><p>ثماني ركائز لموقع مؤسسة ذات حضور ميداني.</p></div></li>
+      <li class="r" style="--i:1"><span class="k">1</span><div><h3>معايير الموقع المؤسسي</h3><p>سبع ركائز لموقع مؤسسة ذات حضور ميداني.</p></div></li>
       <li class="r" style="--i:2"><span class="k">2</span><div><h3>تقييم الموقع الحالي</h3><p>صفحة بصفحة: المشكلة، والحل المقترح.</p></div></li>
       <li class="r" style="--i:3"><span class="k">3</span><div><h3>الموقع الجديد</h3><p>تطبيق الركائز في الموقع الجديد.</p></div></li>
       <li class="r" style="--i:4"><span class="k">4</span><div><h3>الجانب التقني</h3><p>البنية التقنية للموقع وإدارة المحتوى.</p></div></li>
@@ -429,7 +429,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 <section class="slide ruler-s" data-chap="الفصل الأول · الركائز" aria-label="المسطرة">
   <div class="inner">
     <div>
-      <h2 class="r" style="--i:0"><span class="tl">ثماني ركائز</span> لتقييم موقع المؤسسة</h2>
+      <h2 class="r" style="--i:0"><span class="tl">سبع ركائز</span> لتقييم موقع المؤسسة</h2>
     </div>
     <div class="ruler r" style="--i:1">
       <div class="mark"><b>1</b><span>هوية واحدة ورسالة واضحة</span></div>
@@ -439,7 +439,6 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
       <div class="mark"><b>5</b><span>السرعة والوصول على الهاتف</span></div>
       <div class="mark"><b>6</b><span>طريق واضح للمشاركة</span></div>
       <div class="mark"><b>7</b><span>إدارة سهلة ومستدامة</span></div>
-      <div class="mark"><b>8</b><span>العربية أولاً</span></div>
     </div>
     <p class="lead r" style="--i:2">لكل ركيزة سؤال اختبار، يُستخدم في الفصل الثاني لتقييم الموقع الحالي.</p>
   </div>
@@ -505,7 +504,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide pair" data-chap="الفصل الأول · الركائز" data-on="7,8" aria-label="الركيزتان 7 و8">
+<section class="slide pair" data-chap="الفصل الأول · الركائز" data-on="7" aria-label="الركيزة 7">
   <div class="inner">
     <div class="mini r" style="--i:0"></div>
     <div class="two">
@@ -515,19 +514,13 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
         <p>استمرار الموقع يتطلب تحديثاً منتظماً. لوحة إدارة بسيطة تجعل إضافة خبر أو نشاط مهمة دقائق، دون الحاجة إلى مبرمج.</p>
         <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يستطيع فريق المنتدى إضافة خبر دون مساعدة تقنية؟</span></div></div>
       </div>
-      <div class="pil r" style="--i:2" data-step="1">
-        <div class="pn">8</div>
-        <h3>العربية أولاً</h3>
-        <p>لغة سليمة، وخط عربي ملائم للمؤسسة، واتجاه من اليمين إلى اليسار مبني من الأساس، لا محوَّل عن قالب أجنبي.</p>
-        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يبدو الموقع مكتوباً بالعربية أصلاً، لا مترجماً إليها؟</span></div></div>
-      </div>
     </div>
   </div>
 </section>
 
 <section class="slide bridge dark" data-chap="الفصل الأول · الركائز" aria-label="إلى الفصل الثاني">
   <div class="inner">
-    <h2 class="r" style="--i:0">الخطوة التالية: تقييم الموقع الحالي وفق الركائز الثماني</h2>
+    <h2 class="r" style="--i:0">الخطوة التالية: تقييم الموقع الحالي وفق الركائز السبع</h2>
     <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>الفصل الثاني: تقييم الموقع الحالي، صفحة بصفحة.</p>
   </div>
 </section>
@@ -567,8 +560,8 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   // المسطرة الصغيرة فوق كل زوج من الركائز
   [].forEach.call(document.querySelectorAll('.pair'),function(s){
     var on=s.dataset.on.split(',').map(Number), m=s.querySelector('.mini');
-    for(var i=1;i<=8;i++){var e=document.createElement('i');if(on.indexOf(i)>-1)e.className='act';else if(i<on[0])e.className='done';m.appendChild(e)}
-    m.setAttribute('aria-label','الركيزتان '+on.join(' و')+' من ثماني');m.setAttribute('role','img');});
+    for(var i=1;i<=7;i++){var e=document.createElement('i');if(on.indexOf(i)>-1)e.className='act';else if(i<on[0])e.className='done';m.appendChild(e)}
+    m.setAttribute('aria-label','الركيزتان '+on.join(' و')+' من سبع');m.setAttribute('role','img');});
 
   // شريط التقدم مقسوم على الفصول
   var chaps=[];slides.forEach(function(s,i){var c=s.dataset.chap.split(' · ')[0];
@@ -582,7 +575,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     [].forEach.call(steps(s),function(e){e.classList.toggle('shown',+e.dataset.step<=n)});
     var m=s.querySelector('.mini');if(m){var on=s.dataset.on.split(',').map(Number),vis=on.slice(0,n+1);
       [].forEach.call(m.children,function(e,k){var i=k+1;e.className=vis.indexOf(i)>-1?'act':(i<on[0]?'done':'')});
-      m.setAttribute('aria-label','الركيزة '+vis.join(' و')+' من ثماني')}
+      m.setAttribute('aria-label','الركيزة '+vis.join(' و')+' من سبع')}
     next.disabled=cur===N-1&&step>=steps(s).length;}
   function fwd(){if(step<steps(slides[cur]).length)setStep(step+1);else go(cur+1)}
   function back(){if(step>0)setStep(step-1);else if(cur>0){go(cur-1);setStep(steps(slides[cur]).length)}}
