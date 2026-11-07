@@ -38,8 +38,8 @@ body{
 ::selection{background:var(--teal);color:#fff}
 :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
 h1,h2,h3,p{margin:0}
-h1,h2,h3{text-wrap:balance;font-weight:800;letter-spacing:-.01em;line-height:1.15}
-p{text-wrap:pretty;line-height:1.85}
+h1,h2,h3{text-wrap:balance;font-weight:800;letter-spacing:0;line-height:1.45}
+p{text-wrap:pretty;line-height:2}
 img{max-width:100%}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
@@ -49,7 +49,8 @@ img{max-width:100%}
 .chrome > *{pointer-events:auto}
 .top{top:0;padding-top:max(18px,env(safe-area-inset-top,0px));height:76px;box-sizing:content-box}
 .bottom{bottom:0;padding-bottom:max(18px,env(safe-area-inset-bottom,0px))}
-.brand img{height:40px;display:block;transition:filter .5s}
+.brand img{height:40px;display:block;transition:filter .5s,opacity .5s}
+body.first .brand img{opacity:0}
 .where{font-size:.82rem;color:var(--muted);letter-spacing:.02em;transition:color .5s}
 .where b{font-weight:600;color:var(--navy);transition:color .5s}
 
@@ -94,8 +95,8 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 
 .lead{font-size:clamp(1rem,1.25vw,1.2rem);color:var(--muted);max-width:56ch}
 .dark .lead{color:#B8D3DB}
-.big{font-size:clamp(2.1rem,5vw,5.2rem)}
-.mid{font-size:clamp(1.7rem,3.4vw,3.4rem)}
+.big{font-size:clamp(2rem,4.4vw,4.4rem)}
+.mid{font-size:clamp(1.6rem,2.9vw,2.9rem)}
 .navy{color:var(--navy)} .tl{color:var(--teal-ink)} .dark .tl{color:var(--teal-hi)}
 
 /* الرمز: الشخص */
@@ -106,10 +107,10 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 /* ── 1. الغلاف ── */
 .cover .inner{display:grid;grid-template-columns:1.25fr 1fr;align-items:center;gap:40px}
 .cover .logo-full{height:clamp(84px,19vh,180px);width:auto;max-width:70%;margin-bottom:clamp(20px,4vh,48px)}
-.cover h1{font-size:clamp(2.2rem,min(5.4vw,8.6vh),5.6rem);line-height:1.12}
+.cover h1{font-size:clamp(2rem,min(4.6vw,7.4vh),4.6rem);line-height:1.4}
 .cover h1 span{display:block;color:var(--teal-ink)}
-.cover .sub{margin-top:clamp(14px,3vh,28px);font-size:clamp(1.2rem,2vw,1.9rem);font-weight:300}
-.cover .meta{margin-top:clamp(20px,5vh,56px);display:flex;gap:28px;font-size:.88rem;color:var(--muted)}
+.cover .sub{margin-top:clamp(14px,3vh,24px);font-size:clamp(1.05rem,1.5vw,1.45rem);font-weight:300;line-height:1.9;color:var(--muted);max-width:34ch}
+.cover .meta{margin-top:clamp(20px,5vh,48px);display:flex;gap:36px;font-size:.88rem;line-height:1.9;color:var(--muted)}
 .cover .meta b{font-weight:600;color:var(--deep);display:block;margin-bottom:2px}
 .wheel{width:min(46vw,620px);aspect-ratio:1;justify-self:end;margin-inline-end:-6vw}
 .wheel svg{width:100%;height:100%;overflow:visible}
@@ -117,19 +118,20 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 @keyframes spin{to{transform:rotate(-360deg)}}
 
 /* ── 2. على الأرض ── */
-.ground .inner{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:clamp(32px,6vw,96px);align-items:center}
+.ground .inner{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:clamp(32px,6vw,96px);align-items:center}
 .ledger{display:grid;gap:0;border-top:1px solid var(--line)}
 .ledger .row{display:grid;grid-template-columns:5.2ch minmax(0,1fr);gap:20px;align-items:center;padding-block:clamp(10px,1.6vh,18px);border-bottom:1px solid var(--line)}
 .ledger .n{font-size:clamp(2rem,3.6vw,3.6rem);font-weight:800;color:var(--navy);line-height:1;font-variant-numeric:tabular-nums}
-.ledger .t{font-size:clamp(.95rem,1.15vw,1.1rem);font-weight:600}
-.ledger .t small{display:block;font-weight:300;color:var(--muted);font-size:.86em;margin-top:2px}
+.ledger .t{font-size:clamp(.95rem,1.15vw,1.1rem);font-weight:600;line-height:1.7}
+.ledger .t small{display:block;font-weight:300;color:var(--muted);font-size:.86em;margin-top:2px;line-height:1.7}
 .tally{display:flex;flex-wrap:wrap;gap:3px;margin-top:8px}
 .tally svg{width:13px;height:15px}
 .src{margin-top:18px;font-size:.8rem;color:var(--muted)}
 
 /* ── 3. السؤال ── */
 .ask .inner{text-align:center;display:grid;justify-items:center;gap:36px}
-.ask h2{font-size:clamp(2.2rem,5.6vw,5.8rem);max-width:16ch;font-weight:800}
+.ask h2{font-size:clamp(2rem,4.4vw,4.4rem);max-width:18ch;font-weight:800;line-height:1.5}
+.ask .lead{text-align:center;margin-inline:auto}
 .ask h2 em{font-style:normal;color:var(--teal-hi)}
 .who{display:flex;gap:clamp(20px,4vw,56px);flex-wrap:wrap;justify-content:center}
 .who div{display:grid;justify-items:center;gap:10px;font-size:clamp(.9rem,1.1vw,1.05rem);color:#CFE3E8}
@@ -138,46 +140,45 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 /* ── 4. خريطة العرض ── */
 .toc .inner{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(32px,6vw,96px);align-items:start}
 .toc ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.toc li{display:grid;grid-template-columns:3.2ch minmax(0,1fr) auto;gap:18px;align-items:baseline;padding-block:clamp(12px,2vh,22px);border-bottom:1px solid var(--line)}
+.toc li{display:grid;grid-template-columns:3.2ch minmax(0,1fr);gap:18px;align-items:baseline;padding-block:clamp(12px,2vh,22px);border-bottom:1px solid var(--line)}
 .toc .k{font-size:clamp(1.6rem,2.4vw,2.4rem);font-weight:300;color:var(--teal-ink);line-height:1}
 .toc h3{font-size:clamp(1.15rem,1.7vw,1.6rem);font-weight:600}
-.toc p{font-size:.92rem;color:var(--muted);line-height:1.6;margin-top:4px}
-.toc .here{font-size:.75rem;font-weight:600;color:#fff;background:var(--navy);padding:7px 14px;border-radius:20px;white-space:nowrap}
+.toc p{font-size:.95rem;color:var(--muted);line-height:1.8;margin-top:6px}
 
 /* ── فاتحة الفصل ── */
 .chap .inner{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
 .chap .num{font-size:clamp(9rem,24vw,22rem);font-weight:800;line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(143,208,213,.55)}
 .chap .label{font-size:1rem;color:var(--teal-hi);font-weight:600;margin-bottom:18px;letter-spacing:.02em}
-.chap h2{font-size:clamp(2rem,4.4vw,4.4rem);max-width:18ch}
+.chap h2{font-size:clamp(1.9rem,3.8vw,3.8rem);max-width:18ch;line-height:1.5}
 .chap .wheel-bg{position:absolute;inset-inline-start:-18vw;bottom:-30vh;width:70vw;opacity:.08;pointer-events:none}
 
 /* ── 6. المقر الرقمي ── */
 .hq .inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
-.hq h2{font-size:clamp(2rem,3.8vw,3.8rem);margin-bottom:clamp(20px,4vh,40px)}
-.aud{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.6vh,28px) 32px}
-.aud h3{font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:4px}
-.aud p{font-size:.95rem;color:var(--muted);line-height:1.7}
-.close{margin-top:clamp(24px,4vh,44px);padding-top:20px;border-top:1px solid var(--line);font-size:clamp(1.1rem,1.6vw,1.45rem);font-weight:600}
+.hq h2{font-size:clamp(1.8rem,3.2vw,3.2rem);margin-bottom:clamp(24px,4.5vh,44px)}
+.aud{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3.4vh,34px) 40px}
+.aud h3{font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:6px;line-height:1.5}
+.aud p{font-size:.98rem;color:var(--muted);line-height:1.9}
+.close{margin-top:clamp(28px,4.5vh,48px);padding-top:24px;border-top:1px solid var(--line);font-size:clamp(1.05rem,1.45vw,1.35rem);font-weight:600;line-height:1.8}
 .close span{color:var(--teal-ink)}
 .screen-art svg{width:100%;max-height:62vh;overflow:visible}
 
 /* ── 7. قاعدة التوازي ── */
-.par .inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,5vw,80px);align-items:center}
-.par h2{font-size:clamp(2.2rem,4.4vw,4.4rem);margin-bottom:24px}
+.par .inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(40px,6vw,104px);align-items:center}
+.par h2{font-size:clamp(2rem,3.6vw,3.6rem);margin-bottom:28px}
 .par .lead{color:var(--deep);font-size:clamp(1.05rem,1.35vw,1.3rem)}
 .par .close{border-top:0;padding-top:0;margin-top:28px;color:var(--teal-ink)}
 .lanes{display:grid;gap:clamp(18px,3vh,30px)}
-.lane .lt{display:flex;gap:12px;align-items:baseline;font-size:.9rem;font-weight:600;margin-bottom:10px}
+.lane .lt{display:flex;gap:12px;align-items:baseline;font-size:.92rem;font-weight:600;margin-bottom:14px;line-height:1.6}
 .lane .lt small{font-weight:300;color:var(--muted)}
 .lane .people{display:flex;gap:clamp(4px,.6vw,8px);flex-wrap:nowrap}
 .lane .people svg{width:clamp(22px,3vw,44px);height:clamp(28px,3.8vw,56px);flex:none}
 .gap{display:grid;grid-template-columns:var(--have) 1fr;align-items:center;margin-top:-6px}
 .gap .bar{grid-column:2;height:14px;border:1.5px solid var(--teal-ink);border-top:0;border-radius:0 0 8px 8px}
-.gap .gl{grid-column:2;text-align:center;font-size:.9rem;font-weight:600;color:var(--teal-ink);margin-top:8px}
+.gap .gl{grid-column:2;text-align:center;font-size:.9rem;font-weight:600;color:var(--teal-ink);margin-top:10px;line-height:1.6}
 
 /* ── 8. المسطرة ── */
 .ruler-s .inner{display:grid;gap:clamp(28px,6vh,64px)}
-.ruler-s h2{font-size:clamp(2rem,4vw,4rem)}
+.ruler-s h2{font-size:clamp(1.8rem,3.4vw,3.4rem)}
 .ruler{position:relative;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:6px;
   box-shadow:0 18px 40px -24px rgba(6,45,68,.35)}
 .ruler::before{content:"";position:absolute;inset:0 0 auto;height:22px;
@@ -189,29 +190,28 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 .mark::before{content:"";position:absolute;top:0;inset-inline-end:-1px;width:2px;height:30px;background:var(--navy)}
 .mark:last-child::before{display:none}
 .mark b{display:block;font-size:clamp(1.6rem,2.6vw,2.6rem);font-weight:300;color:var(--teal-ink);line-height:1;margin-bottom:12px}
-.mark span{font-size:clamp(.85rem,1vw,1rem);font-weight:600;line-height:1.5;display:block}
+.mark span{font-size:clamp(.85rem,1vw,1rem);font-weight:600;line-height:1.8;display:block}
 
 /* ── 9–12. الركائز ── */
 .mini{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-bottom:clamp(24px,5vh,52px);max-width:520px}
 .mini i{height:6px;border-radius:3px;background:var(--line)}
 .mini i.done{background:#9CC6CB}
 .mini i.act{background:var(--navy)}
-.mini-l{font-size:.8rem;color:var(--muted);margin-top:-36px;margin-bottom:clamp(24px,5vh,48px)}
 .pair .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,88px)}
-.pil{display:grid;align-content:start;gap:16px}
+.pil{display:grid;grid-template-rows:auto auto 1fr auto;gap:18px}
 .pil .pn{font-size:clamp(3.4rem,6vw,6rem);font-weight:800;line-height:.85;color:var(--teal)}
-.pil h3{font-size:clamp(1.5rem,2.4vw,2.4rem)}
-.pil p{font-size:clamp(.98rem,1.15vw,1.12rem);color:var(--muted);max-width:44ch}
+.pil h3{font-size:clamp(1.4rem,2.1vw,2.1rem);line-height:1.5}
+.pil p{font-size:clamp(.98rem,1.15vw,1.12rem);color:var(--muted);max-width:46ch;line-height:2}
 .test{margin-top:8px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);
-  border-radius:10px;padding:16px 18px;box-shadow:0 10px 30px -22px rgba(6,45,68,.4)}
+  border-radius:10px;padding:18px 20px;box-shadow:0 10px 30px -22px rgba(6,45,68,.4)}
 .test svg{width:24px;height:24px;margin-top:2px;color:var(--navy)}
-.test small{display:block;font-size:.75rem;font-weight:600;color:var(--teal-ink);letter-spacing:.03em;margin-bottom:3px}
-.test span{font-size:clamp(.95rem,1.1vw,1.08rem);font-weight:600;line-height:1.65}
+.test small{display:block;font-size:.78rem;font-weight:600;color:var(--teal-ink);margin-bottom:6px;line-height:1.5}
+.test span{font-size:clamp(.95rem,1.1vw,1.08rem);font-weight:600;line-height:1.85}
 
 /* ── 13. الجسر ── */
 .bridge .inner{display:grid;gap:30px;justify-items:start}
-.bridge h2{font-size:clamp(2.4rem,6vw,6rem);max-width:14ch}
-.bridge .to{display:flex;align-items:center;gap:14px;font-size:clamp(1rem,1.3vw,1.2rem);color:#CFE3E8}
+.bridge h2{font-size:clamp(2rem,4.2vw,4.2rem);max-width:20ch;line-height:1.5}
+.bridge .to{display:flex;align-items:center;gap:14px;font-size:clamp(1rem,1.3vw,1.2rem);line-height:1.8;color:#CFE3E8}
 .bridge .to svg{width:40px;color:var(--teal-hi)}
 
 /* ── الهاتف ── */
@@ -291,7 +291,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     <div>
       <img class="logo-full r" style="--i:0" src="assets/logo-full.png" alt="منتدى حوار الشباب — Youth Dialogue Forum" width="500" height="270">
       <h1 class="r" style="--i:1">من الحضور على الأرض <span>إلى الحضور الرقمي</span></h1>
-      <p class="sub r" style="--i:2">هذا وقتنا.</p>
+      <p class="sub r" style="--i:2">مراجعة الموقع الحالي، وعرض الموقع الجديد المبني على معايير الموقع المؤسسي.</p>
       <div class="meta r" style="--i:3">
         <div><b>عرض الموقع الإلكتروني الجديد</b>منتدى حوار الشباب</div>
         <div><b>طرابلس، ليبيا</b>نوفمبر 2026</div>
@@ -306,8 +306,8 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 <section class="slide ground" data-chap="افتتاح" aria-label="على الأرض">
   <div class="inner">
     <div>
-      <h2 class="mid r" style="--i:0">المنتدى حاضر على الأرض، <span class="tl">وحضوره كبير.</span></h2>
-      <p class="lead r" style="--i:1;margin-top:20px">من طرابلس إلى مرزق ودرنة، ومن قاعات الحوار إلى طاولات السفارات. هذا ما وثّقه المنتدى بنفسه.</p>
+      <h2 class="mid r" style="--i:0">حضور المنتدى <span class="tl">على الأرض</span></h2>
+      <p class="lead r" style="--i:1;margin-top:20px">أنشطة ولقاءات وبيانات ومقالات في مدن ليبية مختلفة، وثّقها المنتدى في منشوراته.</p>
       <p class="src r" style="--i:2">من محتوى المنتدى المنشور منذ 2021.</p>
     </div>
     <div class="ledger">
@@ -322,7 +322,8 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 
 <section class="slide ask dark" data-chap="افتتاح" aria-label="السؤال">
   <div class="inner">
-    <h2 class="r" style="--i:0">لكن… هل يرى من يزور موقعكم <em>هذا المنتدى؟</em></h2>
+    <h2 class="r" style="--i:0">هل يعكس الموقع الإلكتروني الحالي <em>هذا الحضور؟</em></h2>
+    <p class="lead r" style="--i:1">الجمهور الأساسي للموقع:</p>
     <div class="who r" style="--i:2">
       <div><svg><use href="#fig" style="fill:#fff;stroke:#fff"/></svg>الدبلوماسي</div>
       <div><svg><use href="#fig" style="fill:var(--teal-hi);stroke:var(--teal-hi)"/></svg>المموّل</div>
@@ -336,14 +337,14 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   <div class="inner">
     <div>
       <h2 class="mid r" style="--i:0">خريطة العرض</h2>
-      <p class="lead r" style="--i:1" >خمس محطات، كل واحدة تبني على التي قبلها: نبدأ بما يجب أن يكون، ثم ما هو كائن، ثم ما بنيناه.</p>
+      <p class="lead r" style="--i:1" >يتكوّن العرض من خمسة أجزاء: المعايير، ثم تقييم الموقع الحالي وفقها، ثم الموقع الجديد.</p>
     </div>
     <ol>
-      <li class="r" style="--i:1"><span class="k">1</span><div><h3>كيف يجب أن يكون الموقع</h3><p>ركائز موقع مؤسسة لها حضور قوي على الأرض.</p></div><span class="here">نبدأ هنا</span></li>
-      <li class="r" style="--i:2"><span class="k">2</span><div><h3>تقرير الموقع الحالي</h3><p>صفحةً صفحة: المشكلة، والحل المقترح.</p></div><span></span></li>
-      <li class="r" style="--i:3"><span class="k">3</span><div><h3>التطبيق العملي</h3><p>الموقع الجديد كما بُني على هذه الركائز.</p></div><span></span></li>
-      <li class="r" style="--i:4"><span class="k">4</span><div><h3>الجانب التقني</h3><p>ما وراء الواجهة.</p></div><span></span></li>
-      <li class="r" style="--i:5"><span class="k">5</span><div><h3>ما بعد العرض</h3><p>التوصيات والخطوات القادمة.</p></div><span></span></li>
+      <li class="r" style="--i:1"><span class="k">1</span><div><h3>معايير الموقع المؤسسي</h3><p>ثماني ركائز لموقع مؤسسة ذات حضور ميداني.</p></div></li>
+      <li class="r" style="--i:2"><span class="k">2</span><div><h3>تقييم الموقع الحالي</h3><p>صفحة بصفحة: المشكلة، والحل المقترح.</p></div></li>
+      <li class="r" style="--i:3"><span class="k">3</span><div><h3>الموقع الجديد</h3><p>تطبيق الركائز في الموقع الجديد.</p></div></li>
+      <li class="r" style="--i:4"><span class="k">4</span><div><h3>الجانب التقني</h3><p>البنية التقنية للموقع وإدارة المحتوى.</p></div></li>
+      <li class="r" style="--i:5"><span class="k">5</span><div><h3>التوصيات</h3><p>الخطوات المقترحة بعد إطلاق الموقع.</p></div></li>
     </ol>
   </div>
 </section>
@@ -356,7 +357,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     <div class="num r" style="--i:0" aria-hidden="true">1</div>
     <div>
       <p class="label r" style="--i:1">الفصل الأول</p>
-      <h2 class="r" style="--i:2">كيف يجب أن يكون موقع مؤسسة لها حضور قوي على الأرض؟</h2>
+      <h2 class="r" style="--i:2">معايير الموقع الإلكتروني لمؤسسة ذات حضور ميداني</h2>
     </div>
   </div>
 </section>
@@ -366,12 +367,12 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     <div>
       <h2 class="r" style="--i:0">الموقع هو <span class="tl">المقر الرقمي</span> للمنتدى.</h2>
       <div class="aud">
-        <div class="r" style="--i:1"><h3>الدبلوماسي</h3><p>يقرأ عنكم قبل أن يحدد موعد اللقاء.</p></div>
-        <div class="r" style="--i:2"><h3>المموّل والشريك</h3><p>يبحث عن دليل على العمل قبل أي شراكة.</p></div>
-        <div class="r" style="--i:3"><h3>الصحفي</h3><p>يبحث عن الموقف الرسمي بتاريخه قبل أن يكتب.</p></div>
-        <div class="r" style="--i:4"><h3>الشاب</h3><p>يقرر من الصفحة الأولى: هل ينضم أم يغادر.</p></div>
+        <div class="r" style="--i:1"><h3>الدبلوماسي</h3><p>يطّلع على المنتدى قبل تحديد موعد اللقاء.</p></div>
+        <div class="r" style="--i:2"><h3>المموّل والشريك</h3><p>يبحث عن أدلة على العمل قبل الشراكة.</p></div>
+        <div class="r" style="--i:3"><h3>الصحفي</h3><p>يبحث عن المواقف الرسمية مؤرّخة وموثّقة.</p></div>
+        <div class="r" style="--i:4"><h3>الشاب</h3><p>يتعرّف على المنتدى وطرق الانضمام إليه.</p></div>
       </div>
-      <p class="close r" style="--i:5">أول لقاء مع المنتدى يحدث <span>على الشاشة، قبل القاعة.</span></p>
+      <p class="close r" style="--i:5">غالباً ما يكون الموقع <span>أول تعرّف على المنتدى</span>، قبل أي لقاء مباشر.</p>
     </div>
     <div class="screen-art r" style="--i:2" aria-hidden="true">
       <!-- أربعة أشخاص حول شاشة واحدة: تكوين الشعار نفسه، والمركز هو الموقع -->
@@ -406,8 +407,8 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   <div class="inner">
     <div>
       <h2 class="r" style="--i:0">قاعدة <span class="tl">التوازي</span></h2>
-      <p class="lead r" style="--i:1">مستوى الحضور الرقمي يجب أن يساوي الحضور على الأرض. وكل فجوة بينهما يقرؤها الزائر ضعفاً أو غياباً، مهما كان العمل الحقيقي كبيراً.</p>
-      <p class="close mid r" style="--i:2;font-size:clamp(1.15rem,1.7vw,1.6rem)">الموقع لا يصنع الحضور، لكنه يثبته أو يُضعفه.</p>
+      <p class="lead r" style="--i:1">يجب أن يكون الحضور الرقمي موازياً للحضور على الأرض. الفجوة بينهما تُضعف صورة المؤسسة لدى الزائر، مهما كان حجم العمل الفعلي.</p>
+      <p class="close mid r" style="--i:2;font-size:clamp(1.15rem,1.7vw,1.6rem)">دور الموقع توثيق الحضور القائم وإبرازه.</p>
     </div>
     <div class="lanes r" style="--i:2" aria-label="رسم: صف كامل من الحضور على الأرض، وصف ناقص من الحضور الرقمي، والفرق بينهما فجوة الحضور">
       <div class="lane">
@@ -426,7 +427,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 <section class="slide ruler-s" data-chap="الفصل الأول · الركائز" aria-label="المسطرة">
   <div class="inner">
     <div>
-      <h2 class="r" style="--i:0">المسطرة: <span class="tl">ثماني ركائز</span> يُقاس بها موقع مؤسسة حاضرة.</h2>
+      <h2 class="r" style="--i:0"><span class="tl">ثماني ركائز</span> لتقييم موقع المؤسسة</h2>
     </div>
     <div class="ruler r" style="--i:1">
       <div class="mark"><b>1</b><span>هوية واحدة ورسالة واضحة</span></div>
@@ -438,7 +439,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
       <div class="mark"><b>7</b><span>إدارة سهلة ومستدامة</span></div>
       <div class="mark"><b>8</b><span>العربية أولاً</span></div>
     </div>
-    <p class="lead r" style="--i:2">نمرّ عليها اثنتين اثنتين، ومع كل ركيزة سؤال اختبار بسيط، نعود إليه في الفصل الثاني.</p>
+    <p class="lead r" style="--i:2">لكل ركيزة سؤال اختبار، يُستخدم في الفصل الثاني لتقييم الموقع الحالي.</p>
   </div>
 </section>
 
@@ -449,14 +450,14 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
       <div class="pil r" style="--i:1">
         <div class="pn">1</div>
         <h3>هوية واحدة ورسالة واضحة</h3>
-        <p>صوت بصري واحد في كل الصفحات: ألوان، وخطوط، وأسلوب صور، ورسالة تُقال في جملة. التشتت البصري يوحي بتشتت المؤسسة نفسها.</p>
-        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يفهم الزائر من أنتم وماذا تفعلون خلال خمس ثوانٍ؟</span></div></div>
+        <p>هوية بصرية واحدة في كل الصفحات: الألوان والخطوط وأسلوب الصور، ورسالة تُختصر في جملة واحدة. التشتت البصري ينعكس على صورة المؤسسة.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل تتضح هوية المنتدى ومجال عمله خلال خمس ثوانٍ؟</span></div></div>
       </div>
       <div class="pil r" style="--i:2">
         <div class="pn">2</div>
         <h3>قصة متصلة تقود الزائر</h3>
-        <p>الموقع ليس أرشيف صفحات، بل رحلة: من أنتم، ثم ماذا تفعلون، ثم ماذا تقولون، ثم كيف يشارك الزائر. كل صفحة تسلّمه للتي بعدها.</p>
-        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يعرف الزائر في كل لحظة أين هو، وإلى أين يذهب بعدها؟</span></div></div>
+        <p>الموقع مسار متصل، لا مجموعة صفحات منفصلة: التعريف، ثم الأنشطة، ثم المواقف، ثم المشاركة. كل صفحة تقود إلى التي تليها.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يعرف الزائر موضعه في الموقع والخطوة التالية؟</span></div></div>
       </div>
     </div>
   </div>
@@ -469,14 +470,14 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
       <div class="pil r" style="--i:1">
         <div class="pn">3</div>
         <h3>محتوى حيّ يثبت العمل</h3>
-        <p>الأنشطة والصور والمشاريع هي الدليل الأقوى على الحضور. يجب أن تكون حديثة، وظاهرة من الواجهة، ومرتبة بالتاريخ والمكان.</p>
-        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>متى نُشر آخر نشاط؟ وهل يراه الزائر دون أن يبحث عنه؟</span></div></div>
+        <p>الأنشطة والصور والمشاريع أوضح دليل على الحضور، ويجب أن تكون حديثة وظاهرة في الواجهة ومرتبة بالتاريخ والمكان.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>متى نُشر آخر نشاط، وهل يظهر دون بحث؟</span></div></div>
       </div>
       <div class="pil r" style="--i:2">
         <div class="pn">4</div>
         <h3>المصداقية والتوثيق</h3>
-        <p>المواقف الرسمية واللقاءات تُعرض بتواريخها ونصوصها الكاملة، ومعها ما يثبتها. التوثيق هو ما يحوّل الحضور إلى ثقة.</p>
-        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يجد الصحفي موقف المنتدى من حدث ما، بتاريخه، في أقل من دقيقة؟</span></div></div>
+        <p>تُعرض المواقف الرسمية واللقاءات بتواريخها ونصوصها الكاملة، مع ما يوثّقها. التوثيق أساس الثقة بالمؤسسة.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يمكن الوصول إلى موقف المنتدى من حدث ما، بتاريخه، في أقل من دقيقة؟</span></div></div>
       </div>
     </div>
   </div>
@@ -489,14 +490,14 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
       <div class="pil r" style="--i:1">
         <div class="pn">5</div>
         <h3>السرعة والوصول على الهاتف</h3>
-        <p>أغلب جمهور المنتدى يزوره من الهاتف، وكثيراً على شبكات ضعيفة. موقع بطيء أو صعب على الشاشة الصغيرة يخسر زواره قبل أن يقرؤوا.</p>
-        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يفتح الموقع ويُتصفح بسهولة على هاتف متوسط وشبكة ضعيفة؟</span></div></div>
+        <p>يصل أغلب جمهور المنتدى إلى الموقع من الهاتف، وغالباً عبر شبكات ضعيفة. الموقع البطيء أو غير الملائم للشاشات الصغيرة يفقد جزءاً كبيراً من زواره.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يعمل الموقع بسهولة على هاتف متوسط وشبكة ضعيفة؟</span></div></div>
       </div>
       <div class="pil r" style="--i:2">
         <div class="pn">6</div>
         <h3>طريق واضح للمشاركة</h3>
-        <p>كل صفحة تنتهي بخطوة: انضم، أو اكتب، أو تواصل. والطريق يجب أن يعمل فعلاً حتى نهايته.</p>
-        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يستطيع شاب متحمّس أن ينضم أو يرسل مقاله في دقيقة واحدة؟</span></div></div>
+        <p>تنتهي كل صفحة بخطوة واضحة: الانضمام، أو الكتابة، أو التواصل، ويعمل المسار حتى نهايته.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يمكن إتمام طلب الانضمام أو إرسال مقال في دقيقة واحدة؟</span></div></div>
       </div>
     </div>
   </div>
@@ -509,14 +510,14 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
       <div class="pil r" style="--i:1">
         <div class="pn">7</div>
         <h3>إدارة سهلة ومستدامة</h3>
-        <p>الموقع الحيّ يحتاج من يحدّثه. لوحة إدارة بسيطة تجعل إضافة خبر أو نشاط عمل دقائق، لا مهمة تنتظر مبرمجاً.</p>
-        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يستطيع فريقكم إضافة خبر اليوم، دون مساعدة تقنية؟</span></div></div>
+        <p>استمرار الموقع يتطلب تحديثاً منتظماً. لوحة إدارة بسيطة تجعل إضافة خبر أو نشاط مهمة دقائق، دون الحاجة إلى مبرمج.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يستطيع فريق المنتدى إضافة خبر دون مساعدة تقنية؟</span></div></div>
       </div>
       <div class="pil r" style="--i:2">
         <div class="pn">8</div>
         <h3>العربية أولاً</h3>
-        <p>لغة سليمة، وخط عربي يليق بالمؤسسة، واتجاه من اليمين إلى اليسار مبني من الأساس، لا مقلوب عن قالب أجنبي.</p>
-        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يبدو الموقع مصنوعاً بالعربية، لا مترجماً إليها؟</span></div></div>
+        <p>لغة سليمة، وخط عربي ملائم للمؤسسة، واتجاه من اليمين إلى اليسار مبني من الأساس، لا محوَّل عن قالب أجنبي.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يبدو الموقع مكتوباً بالعربية أصلاً، لا مترجماً إليها؟</span></div></div>
       </div>
     </div>
   </div>
@@ -524,8 +525,8 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 
 <section class="slide bridge dark" data-chap="الفصل الأول · الركائز" aria-label="إلى الفصل الثاني">
   <div class="inner">
-    <h2 class="r" style="--i:0">هذه هي المسطرة. فأين يقف موقع المنتدى اليوم؟</h2>
-    <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>إلى الفصل الثاني: تقرير الموقع الحالي، صفحةً صفحة.</p>
+    <h2 class="r" style="--i:0">الخطوة التالية: تقييم الموقع الحالي وفق الركائز الثماني.</h2>
+    <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>الفصل الثاني: تقييم الموقع الحالي، صفحة بصفحة.</p>
   </div>
 </section>
 
@@ -577,7 +578,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     i=Math.max(0,Math.min(N-1,i)); if(i===cur)return;
     if(cur>-1)slides[cur].classList.remove('on');
     cur=i; var s=slides[i]; s.classList.add('on'); s.scrollTop=0;
-    document.body.classList.toggle('dark',s.classList.contains('dark'));
+    document.body.classList.toggle('dark',s.classList.contains('dark'));document.body.classList.toggle('first',i===0);
     prev.disabled=i===0; next.disabled=i===N-1;
     count.textContent=(i+1)+' / '+N;
     chapName.textContent=s.dataset.chap;
