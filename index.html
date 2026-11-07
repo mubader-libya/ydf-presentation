@@ -92,6 +92,8 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 /* حركة واحدة: السطور تصعد بهدوء عند دخول الشريحة */
 .r{opacity:0;transform:translateY(18px);filter:blur(6px);transition:opacity .9s var(--ease),transform 1s var(--ease),filter .9s var(--ease);transition-delay:calc(var(--i,0) * 90ms + 120ms)}
 .slide.on .r{opacity:1;transform:none;filter:none}
+.slide.on [data-step]:not(.shown){opacity:0;transform:translateY(18px);filter:blur(6px);pointer-events:none;transition-delay:0s}
+.slide.on [data-step].shown{transition-delay:0s}
 
 .lead{font-size:clamp(1rem,1.25vw,1.2rem);color:var(--muted);max-width:56ch}
 .dark .lead{color:#B8D3DB}
@@ -365,7 +367,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 <section class="slide hq" data-chap="الفصل الأول · الركائز" aria-label="المقر الرقمي">
   <div class="inner">
     <div>
-      <h2 class="r" style="--i:0">الموقع هو <span class="tl">المقر الرقمي</span> للمنتدى.</h2>
+      <h2 class="r" style="--i:0">الموقع هو <span class="tl">المقر الرقمي</span> للمنتدى</h2>
       <div class="aud">
         <div class="r" style="--i:1"><h3>الدبلوماسي</h3><p>يطّلع على المنتدى قبل تحديد موعد اللقاء.</p></div>
         <div class="r" style="--i:2"><h3>المموّل والشريك</h3><p>يبحث عن أدلة على العمل قبل الشراكة.</p></div>
@@ -453,7 +455,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
         <p>هوية بصرية واحدة في كل الصفحات: الألوان والخطوط وأسلوب الصور، ورسالة تُختصر في جملة واحدة. التشتت البصري ينعكس على صورة المؤسسة.</p>
         <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل تتضح هوية المنتدى ومجال عمله خلال خمس ثوانٍ؟</span></div></div>
       </div>
-      <div class="pil r" style="--i:2">
+      <div class="pil r" style="--i:2" data-step="1">
         <div class="pn">2</div>
         <h3>قصة متصلة تقود الزائر</h3>
         <p>الموقع مسار متصل، لا مجموعة صفحات منفصلة: التعريف، ثم الأنشطة، ثم المواقف، ثم المشاركة. كل صفحة تقود إلى التي تليها.</p>
@@ -473,7 +475,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
         <p>الأنشطة والصور والمشاريع أوضح دليل على الحضور، ويجب أن تكون حديثة وظاهرة في الواجهة ومرتبة بالتاريخ والمكان.</p>
         <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>متى نُشر آخر نشاط، وهل يظهر دون بحث؟</span></div></div>
       </div>
-      <div class="pil r" style="--i:2">
+      <div class="pil r" style="--i:2" data-step="1">
         <div class="pn">4</div>
         <h3>المصداقية والتوثيق</h3>
         <p>تُعرض المواقف الرسمية واللقاءات بتواريخها ونصوصها الكاملة، مع ما يوثّقها. التوثيق أساس الثقة بالمؤسسة.</p>
@@ -493,7 +495,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
         <p>يصل أغلب جمهور المنتدى إلى الموقع من الهاتف، وغالباً عبر شبكات ضعيفة. الموقع البطيء أو غير الملائم للشاشات الصغيرة يفقد جزءاً كبيراً من زواره.</p>
         <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يعمل الموقع بسهولة على هاتف متوسط وشبكة ضعيفة؟</span></div></div>
       </div>
-      <div class="pil r" style="--i:2">
+      <div class="pil r" style="--i:2" data-step="1">
         <div class="pn">6</div>
         <h3>طريق واضح للمشاركة</h3>
         <p>تنتهي كل صفحة بخطوة واضحة: الانضمام، أو الكتابة، أو التواصل، ويعمل المسار حتى نهايته.</p>
@@ -513,7 +515,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
         <p>استمرار الموقع يتطلب تحديثاً منتظماً. لوحة إدارة بسيطة تجعل إضافة خبر أو نشاط مهمة دقائق، دون الحاجة إلى مبرمج.</p>
         <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يستطيع فريق المنتدى إضافة خبر دون مساعدة تقنية؟</span></div></div>
       </div>
-      <div class="pil r" style="--i:2">
+      <div class="pil r" style="--i:2" data-step="1">
         <div class="pn">8</div>
         <h3>العربية أولاً</h3>
         <p>لغة سليمة، وخط عربي ملائم للمؤسسة، واتجاه من اليمين إلى اليسار مبني من الأساس، لا محوَّل عن قالب أجنبي.</p>
@@ -525,7 +527,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 
 <section class="slide bridge dark" data-chap="الفصل الأول · الركائز" aria-label="إلى الفصل الثاني">
   <div class="inner">
-    <h2 class="r" style="--i:0">الخطوة التالية: تقييم الموقع الحالي وفق الركائز الثماني.</h2>
+    <h2 class="r" style="--i:0">الخطوة التالية: تقييم الموقع الحالي وفق الركائز الثماني</h2>
     <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>الفصل الثاني: تقييم الموقع الحالي، صفحة بصفحة.</p>
   </div>
 </section>
@@ -574,6 +576,16 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   var prog=document.getElementById('prog');
   chaps.forEach(function(c){var sp=document.createElement('span');sp.style.setProperty('--n',c.n);sp.appendChild(document.createElement('i'));prog.appendChild(sp);c.el=sp;});
 
+  var step=0;
+  function steps(s){return s.querySelectorAll('[data-step]')}
+  function setStep(n){var s=slides[cur];step=n;
+    [].forEach.call(steps(s),function(e){e.classList.toggle('shown',+e.dataset.step<=n)});
+    var m=s.querySelector('.mini');if(m){var on=s.dataset.on.split(',').map(Number),vis=on.slice(0,n+1);
+      [].forEach.call(m.children,function(e,k){var i=k+1;e.className=vis.indexOf(i)>-1?'act':(i<on[0]?'done':'')});
+      m.setAttribute('aria-label','الركيزة '+vis.join(' و')+' من ثماني')}
+    next.disabled=cur===N-1&&step>=steps(s).length;}
+  function fwd(){if(step<steps(slides[cur]).length)setStep(step+1);else go(cur+1)}
+  function back(){if(step>0)setStep(step-1);else if(cur>0){go(cur-1);setStep(steps(slides[cur]).length)}}
   function go(i,fromHash){
     i=Math.max(0,Math.min(N-1,i)); if(i===cur)return;
     if(cur>-1)slides[cur].classList.remove('on');
@@ -584,22 +596,23 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     chapName.textContent=s.dataset.chap;
     chaps.forEach(function(c){var p=Math.max(0,Math.min(1,(i-c.start+1)/c.n));c.el.firstChild.style.setProperty('--p',p)});
     if(!fromHash)history.replaceState(null,'','#'+(i+1));
+    setStep(0);
   }
   function fromHash(){var n=parseInt((location.hash||'').slice(1),10);go(isNaN(n)?0:n-1,true)}
-  next.addEventListener('click',function(){go(cur+1)});
-  prev.addEventListener('click',function(){go(cur-1)});
+  next.addEventListener('click',fwd);
+  prev.addEventListener('click',back);
   document.addEventListener('keydown',function(e){
     if(e.altKey||e.ctrlKey||e.metaKey)return;
     var k=e.key;
-    if(k==='ArrowLeft'||k==='PageDown'||k===' '||k==='Enter'&&e.target===document.body){e.preventDefault();go(cur+1)}
-    else if(k==='ArrowRight'||k==='PageUp'){e.preventDefault();go(cur-1)}
+    if(k==='ArrowLeft'||k==='PageDown'||k===' '||k==='Enter'&&e.target===document.body){e.preventDefault();fwd()}
+    else if(k==='ArrowRight'||k==='PageUp'){e.preventDefault();back()}
     else if(k==='Home'){go(0)}else if(k==='End'){go(N-1)}
   });
   // السحب: في العربية تُقلب الصفحة من اليسار إلى اليمين
   var x0=null,y0=null;
   document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
   document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;
-    if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.4)go(cur+(dx>0?1:-1));x0=null},{passive:true});
+    if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.4)(dx>0?fwd:back)();x0=null},{passive:true});
   window.addEventListener('hashchange',fromHash);
   fromHash();
 })();
