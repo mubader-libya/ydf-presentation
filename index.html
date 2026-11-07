@@ -421,6 +421,66 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 .visit svg{width:22px;height:22px}
 .visit:hover{background:var(--teal-hi);transform:translateY(-2px)}
 .visit:active{transform:scale(.97)}
+
+/* ══ الفصل الرابع: الجانب التقني ══ */
+.tech .inner{width:min(1400px,100%);display:grid;gap:clamp(18px,3.4vh,34px)}
+.tech h2{font-size:clamp(1.6rem,2.7vw,2.7rem)}
+.tech .lead{max-width:62ch}
+
+/* البنية */
+.arch .inner{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);align-items:center;column-gap:clamp(32px,5vw,80px)}
+.arch ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:14px}
+.arch li{display:grid;grid-template-columns:12px minmax(0,1fr);gap:12px;font-size:clamp(.95rem,1.1vw,1.08rem);line-height:1.9;color:var(--muted)}
+.arch li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal);margin-top:.75em}
+.arch li b{color:var(--deep);font-weight:600}
+.arch svg{width:100%;height:auto;max-height:calc(100vh - 240px)}
+
+/* ما بُني */
+.built{list-style:none;margin:0;padding:0;display:grid;gap:clamp(12px,2vh,18px)}
+.built li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:baseline}
+.built b{font-size:clamp(1.3rem,2vw,1.9rem);font-weight:800;color:var(--navy);line-height:1;min-width:2.4ch}
+.built span{font-size:clamp(.92rem,1.05vw,1.02rem);line-height:1.8;color:var(--muted)}
+.built span strong{color:var(--deep);font-weight:600}
+
+/* السرعة */
+.speed .inner{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:center;column-gap:clamp(32px,5vw,80px)}
+.cond{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.cond span{font-size:.82rem;font-weight:600;color:var(--navy);background:var(--mist);border-radius:20px;padding:5px 14px;line-height:1.6}
+.stbl{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 18px 40px -24px rgba(6,45,68,.35)}
+.stbl th,.stbl td{padding:clamp(10px,1.6vh,16px) 16px;text-align:start;border-bottom:1px solid var(--line);line-height:1.6}
+.stbl th{font-size:.8rem;font-weight:600;color:var(--muted);background:var(--snow)}
+.stbl td{font-size:clamp(.92rem,1.05vw,1.02rem)}
+.stbl td.v{font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums;white-space:nowrap}
+.stbl td.v small{font-weight:400;color:var(--muted);font-size:.8em;margin-inline-start:6px}
+.stbl tr:last-child td{border-bottom:0}
+.stbl .slow td.v{color:#B5651D}
+.note{font-size:.85rem;color:var(--muted);margin-top:14px;line-height:1.8}
+
+/* التوصيات */
+.recs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
+.recs.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.recs li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(16px,2.4vh,24px) 22px;display:grid;gap:8px;align-content:start;box-shadow:0 14px 34px -26px rgba(6,45,68,.4)}
+.recs li .k{display:flex;align-items:center;gap:10px}
+.recs li .k i{font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:.85rem;font-weight:600;flex:none}
+.recs li h3{font-size:clamp(1rem,1.25vw,1.18rem);font-weight:600;line-height:1.6}
+.recs li p{font-size:clamp(.86rem,.98vw,.95rem);color:var(--muted);line-height:1.85}
+.recs li .ref{font-size:.75rem;font-weight:600;color:var(--teal-ink);background:var(--mist);border-radius:20px;padding:3px 12px;justify-self:start;line-height:1.6}
+
+/* الاستضافة */
+.host{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px)}
+.host .opt{background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(18px,2.8vh,28px) 24px;display:grid;gap:12px;align-content:start}
+.host .opt h3{font-size:clamp(1.05rem,1.4vw,1.3rem);font-weight:600;line-height:1.6}
+.host .opt .tag{font-size:.78rem;font-weight:600;color:var(--teal-ink)}
+.host .opt ul{margin:0;padding-inline-start:1.1em;display:grid;gap:6px;font-size:clamp(.88rem,1vw,.98rem);color:var(--muted);line-height:1.8}
+.host .opt .pro{color:#1F6B45}.host .opt .con{color:#9A4A2A}
+.verdict-bar{background:var(--navy);color:#fff;border-radius:14px;padding:clamp(16px,2.4vh,22px) 26px;font-size:clamp(.98rem,1.2vw,1.12rem);line-height:1.9}
+.verdict-bar b{color:var(--teal-hi);font-weight:600}
+
+@media (max-width:820px){
+  .arch .inner,.speed .inner,.host,.recs,.recs.two{grid-template-columns:minmax(0,1fr)}
+  .arch svg{max-height:none}
+}
+
 @media (prefers-reduced-motion:reduce){
   .r{transition:none;opacity:1;transform:none;filter:none}
   .slide{transition:none}
@@ -984,6 +1044,200 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
       <span>افتح الموقع الجديد</span>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M10 7H6a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
+  </div>
+</section>
+
+<!-- ═══ الفصل الرابع ═══ -->
+
+<section class="slide chap dark" data-chap="الفصل الرابع · الجانب التقني" aria-label="الفصل الرابع">
+  <svg class="wheel-bg" viewBox="-220 -220 440 440" aria-hidden="true"><use href="#wheel4"/></svg>
+  <div class="inner">
+    <div class="num r" style="--i:0" aria-hidden="true">4</div>
+    <div>
+      <p class="label r" style="--i:1">الفصل الرابع</p>
+      <h2 class="r" style="--i:2">الجانب التقني: كيف يعمل الموقع، وما يلزمه بعد الإطلاق</h2>
+    </div>
+  </div>
+</section>
+
+<section class="slide tech arch" data-chap="الفصل الرابع · الجانب التقني" aria-label="بنية الموقع">
+  <div class="inner">
+    <div>
+      <h2 class="r" style="--i:0">مشروعان مترابطان: <span class="tl">واجهة ولوحة إدارة</span></h2>
+      <ul>
+        <li class="r" style="--i:1"><span><b>الواجهة على ydf.ly:</b> ملفات ثابتة سريعة، فيها التصميم والصفحات.</span></li>
+        <li class="r" style="--i:2"><span><b>لوحة الإدارة على cms.ydf.ly:</b> نظام Strapi، ومعه قاعدة البيانات والصور المرفوعة.</span></li>
+        <li class="r" style="--i:3"><span><b>متصفح الزائر يطلب طلبين:</b> الصفحة من ydf.ly، ثم المحتوى من cms.ydf.ly.</span></li>
+        <li class="r" style="--i:4"><span><b>الربط في سطر واحد:</b> عنوان لوحة الإدارة مكتوب في ملف إعدادات واحد في الواجهة.</span></li>
+      </ul>
+    </div>
+    <div class="r" style="--i:2">
+      <svg viewBox="0 0 640 400" role="img" aria-label="رسم البنية: الزائر يطلب الصفحة من ydf.ly والمحتوى من cms.ydf.ly، وفريق المحتوى يضيف وينشر من لوحة الإدارة">
+        <defs><marker id="t4a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--teal-ink)"/></marker></defs>
+        <g font-family="Alexandria, sans-serif" fill="var(--deep)">
+          <!-- ydf.ly -->
+          <rect x="230" y="30" width="250" height="130" rx="16" fill="#fff" stroke="var(--line)" stroke-width="1.5"/>
+          <rect x="230" y="30" width="250" height="34" rx="16" fill="var(--mist)"/><rect x="230" y="50" width="250" height="14" fill="var(--mist)"/>
+          <text x="355" y="53" text-anchor="middle" font-size="15" font-weight="600">ydf.ly</text>
+          <text x="355" y="92" text-anchor="middle" font-size="13" font-weight="600">الواجهة</text>
+          <text x="355" y="114" text-anchor="middle" font-size="11.5" fill="var(--muted)">الصفحات والتصميم</text>
+          <text x="355" y="140" text-anchor="middle" font-size="11" fill="var(--teal-ink)" font-family="Consolas, monospace">site-config.js → cms.ydf.ly</text>
+          <!-- cms.ydf.ly -->
+          <rect x="230" y="220" width="250" height="150" rx="16" fill="#fff" stroke="var(--line)" stroke-width="1.5"/>
+          <rect x="230" y="220" width="250" height="34" rx="16" fill="#F6E7DC"/><rect x="230" y="240" width="250" height="14" fill="#F6E7DC"/>
+          <text x="355" y="243" text-anchor="middle" font-size="15" font-weight="600" fill="#5A3A26">cms.ydf.ly</text>
+          <text x="355" y="282" text-anchor="middle" font-size="13" font-weight="600">لوحة الإدارة (Strapi)</text>
+          <g font-size="11.5" fill="var(--muted)">
+            <rect x="252" y="300" width="98" height="50" rx="10" fill="var(--snow)"/><text x="301" y="330" text-anchor="middle">قاعدة البيانات</text>
+            <rect x="360" y="300" width="98" height="50" rx="10" fill="var(--snow)"/><text x="409" y="330" text-anchor="middle">الصور المرفوعة</text>
+          </g>
+          <!-- الزائر -->
+          <use href="#fig" class="fig-n" x="556" y="150" width="60" height="76"/>
+          <text x="586" y="250" text-anchor="middle" font-size="13" font-weight="600">الزائر</text>
+          <path d="M552 178 C 520 150, 505 115, 484 105" fill="none" stroke="var(--teal-ink)" stroke-width="2" marker-end="url(#t4a)"/>
+          <path d="M552 205 C 520 240, 505 275, 484 285" fill="none" stroke="var(--teal-ink)" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#t4a)"/>
+          <text x="530" y="118" text-anchor="middle" font-size="11.5" fill="var(--teal-ink)" font-weight="600">1. الصفحة</text>
+          <text x="535" y="292" text-anchor="middle" font-size="11.5" fill="var(--teal-ink)" font-weight="600">2. المحتوى</text>
+          <!-- الفريق -->
+          <use href="#fig" class="fig-t" x="40" y="250" width="60" height="76"/>
+          <text x="70" y="350" text-anchor="middle" font-size="13" font-weight="600">فريق المحتوى</text>
+          <path d="M108 292 H 226" fill="none" stroke="var(--teal-ink)" stroke-width="2" marker-end="url(#t4a)"/>
+          <text x="166" y="282" text-anchor="middle" font-size="11.5" fill="var(--teal-ink)" font-weight="600">يضيف وينشر</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="slide audit" data-chap="الفصل الرابع · الجانب التقني" aria-label="إضافة خبر من لوحة الإدارة">
+  <div class="inner">
+    <div class="a-head r" style="--i:0"><h2>إضافة خبر: من لوحة الإدارة، دون أي كود</h2></div>
+    <div class="a-body">
+      <figure class="shot r" style="--i:1">
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>cms.ydf.ly/admin</span></div>
+          <div class="pic"><img src="assets/tech/strapi-news-form.jpg" alt="نموذج إضافة خبر في لوحة Strapi">
+            <span class="ring box" data-n="1" style="--x:4.6%;--y:17%;--w:15.6%;--h:4.6%"></span>
+            <span class="ring box" data-n="2" data-step="1" style="--x:25%;--y:27%;--w:52%;--h:46%"></span>
+            <span class="ring box" data-n="3" data-step="2" style="--x:79.4%;--y:29.6%;--w:16.4%;--h:7%"></span>
+          </div></div>
+      </figure>
+      <ol class="finds compact">
+        <li class="r" style="--i:2"><span class="n">1</span><div><h3>اختيار نوع المحتوى</h3><p>«خبر»، ثم «إنشاء إدخال جديد». وبالطريقة نفسها: نشاط، أو مقال، أو مدينة، أو مشروع.</p></div></li>
+        <li class="r" style="--i:3" data-step="1"><span class="n">2</span><div><h3>تعبئة الحقول</h3><p>العنوان والتاريخ والنوع والملخص والنص والصور. النوع يحدد القسم الذي يظهر فيه الخبر، والتاريخ يحدد ترتيبه.</p></div></li>
+        <li class="r" style="--i:4" data-step="2"><span class="n">3</span><div><h3>النشر</h3><p>«أصدر»: يظهر الخبر في الموقع في مكانه الصحيح وبالتصميم نفسه، في «آخر الأخبار» و«كل الأخبار» معاً.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="slide audit" data-chap="الفصل الرابع · الجانب التقني" aria-label="الربط جاهز ومجرب">
+  <div class="inner">
+    <div class="a-head r" style="--i:0"><h2>الربط بلوحة الإدارة: جاهز، ومُجرَّب</h2></div>
+    <div class="a-body">
+      <figure class="shot r" style="--i:1">
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span style="direction:rtl">تجربة: الموقع يعرض نشاطاً من Strapi</span></div>
+          <div class="pic"><img src="assets/tech/site-from-strapi.jpg" alt="صفحة الأنشطة تعرض نشاطاً قادماً من Strapi في تجربة على الجهاز"></div></div>
+      </figure>
+      <ul class="built">
+        <li class="r" style="--i:2"><b>7</b><span><strong>أنواع محتوى معرّفة:</strong> نشاط، وخبر، ومقال، ومدينة، ومشروع، وطلب عضوية، ومقال مُرسَل.</span></li>
+        <li class="r" style="--i:3"><b>31</b><span><strong>نشاطاً و39 خبراً ونحو 355 صورة</strong> ينقلها سكربت جاهز إلى لوحة الإدارة.</span></li>
+        <li class="r" style="--i:4"><b>1</b><span><strong>سطر واحد</strong> في ملف الإعدادات يربط الواجهة بلوحة الإدارة يوم الإطلاق.</span></li>
+        <li class="r" style="--i:5"><b>0</b><span><strong>صفحات فارغة:</strong> إن تعذّر الوصول إلى لوحة الإدارة، تعرض الصفحات نسخة محلية احتياطية.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide tech speed" data-chap="الفصل الرابع · الجانب التقني" aria-label="السرعة على الهاتف">
+  <div class="inner">
+    <div>
+      <h2 class="r" style="--i:0">السرعة على الهاتف: <span class="tl">مقيسة، لا مقدّرة</span></h2>
+      <p class="lead r" style="--i:1">الوقت حتى يظهر أكبر عنصر في الصفحة، على الموقع المنشور. والرقم وسيط ثلاثة قياسات لكل صفحة.</p>
+      <div class="cond r" style="--i:2"><span>شبكة 4G بطيئة</span><span>معالج أبطأ 4 مرات</span><span>وضع الهاتف</span></div>
+    </div>
+    <div class="r" style="--i:2">
+      <table class="stbl">
+        <tr><th>الصفحة</th><th>قبل التحسين</th><th>بعده</th></tr>
+        <tr><td>الأخبار</td><td class="v">2.21 <small>ث</small></td><td class="v">1.14 <small>ث</small></td></tr>
+        <tr><td>المشاركات والأنشطة</td><td class="v">2.46 <small>ث</small></td><td class="v">1.28 <small>ث</small></td></tr>
+        <tr class="slow"><td>الخبر الواحد</td><td class="v">5.50 <small>ث</small></td><td class="v">5.01 <small>ث</small></td></tr>
+        <tr class="slow"><td>النشاط الواحد</td><td class="v">5.70 <small>ث</small></td><td class="v">5.21 <small>ث</small></td></tr>
+        <tr class="slow"><td>الرئيسية</td><td class="v">6.01 <small>ث</small></td><td class="v">5.87 <small>ث</small></td></tr>
+      </table>
+      <p class="note">صفحات الصور الكبيرة والرئيسية ما زالت الأبطأ، وتخفيفها من التوصيات التالية. ولم يُجرَ قياس على هاتف حقيقي بعد.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide tech" data-chap="الفصل الرابع · الجانب التقني" aria-label="توصيات قبل الإطلاق">
+  <div class="inner">
+    <h2 class="r" style="--i:0">التوصيات التقنية: <span class="tl">قبل الإطلاق</span></h2>
+    <ol class="recs">
+      <li class="r" style="--i:1"><div class="k"><i>1</i><h3>نطاق فرعي للوحة الإدارة</h3></div><p>الواجهة على ydf.ly، ولوحة الإدارة على cms.ydf.ly، مع قاعدة بيانات PostgreSQL للموقع الحقيقي.</p></li>
+      <li class="r" data-step="1"><div class="k"><i>2</i><h3>تحويل روابط الموقع القديم</h3></div><p>كل رابط قديم من ووردبريس يحوّل تلقائياً إلى صفحته الجديدة، فلا تنكسر الروابط المنشورة على مواقع التواصل ومحركات البحث.</p></li>
+      <li class="r" data-step="2"><div class="k"><i>3</i><h3>اتصال آمن يتجدد وحده</h3></div><p>شهادة HTTPS لكلا النطاقين، مع ضبط تجديدها تلقائياً.</p></li>
+      <li class="r" data-step="3"><div class="k"><i>4</i><h3>إغلاق الأبواب غير اللازمة</h3></div><p>لوحة الإدارة تقبل الطلبات من ydf.ly وحده، وكلمات السر خارج الكود، ومفتاح نقل المحتوى يُحذف بعد النقل.</p></li>
+      <li class="r" data-step="4"><div class="k"><i>5</i><h3>حماية الاستمارات</h3></div><p>استمارتا العضوية والمقالات مفتوحتان لأي زائر، فتحتاجان حماية من الرسائل الآلية المزعجة، وحداً لعدد الإرسال.</p></li>
+      <li class="r" data-step="5"><div class="k"><i>6</i><h3>حساب لكل عضو في الفريق</h3></div><p>بصلاحية «محرر» فقط، لا حساب مدير مشترك. فيُعرف من نشر ماذا، ولا يُغيَّر بناء الموقع بالخطأ.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide tech" data-chap="الفصل الرابع · الجانب التقني" aria-label="الاستضافة">
+  <div class="inner">
+    <h2 class="r" style="--i:0">الاستضافة: <span class="tl">خياران</span></h2>
+    <div class="host r" style="--i:1">
+      <div class="opt">
+        <span class="tag">الخيار الأول</span>
+        <h3>خادم افتراضي واحد للمشروعين</h3>
+        <ul>
+          <li class="pro">كلفة شهرية أقل، وتحكم كامل.</li>
+          <li class="pro">الواجهة ولوحة الإدارة وقاعدة البيانات في مكان واحد.</li>
+          <li class="con">يحتاج مسؤولاً تقنياً: التحديثات، والنسخ الاحتياطي، والمراقبة.</li>
+        </ul>
+      </div>
+      <div class="opt">
+        <span class="tag">الخيار الثاني</span>
+        <h3>استضافة ملفات للواجهة، وStrapi Cloud للوحة الإدارة</h3>
+        <ul>
+          <li class="pro">لا خادم يُدار: التحديثات والنسخ الاحتياطي على مزوّد الخدمة.</li>
+          <li class="pro">أبسط للفريق غير التقني.</li>
+          <li class="con">كلفة شهرية أعلى، وتحكم أقل.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="verdict-bar r" style="--i:2"><b>التوصية:</b> الخيار الأول إن وُجد في المنتدى مسؤول تقني متابع. وإلا فالخيار الثاني، لأن خادماً بلا من يتابعه أخطر من كلفة أعلى.</p>
+  </div>
+</section>
+
+<section class="slide tech" data-chap="الفصل الرابع · الجانب التقني" aria-label="توصيات بعد الإطلاق">
+  <div class="inner">
+    <h2 class="r" style="--i:0">التوصيات التقنية: <span class="tl">بعد الإطلاق</span></h2>
+    <ol class="recs">
+      <li class="r" style="--i:1"><div class="k"><i>1</i><h3>نسخ احتياطي يومي</h3></div><p>لقاعدة البيانات وللصور المرفوعة معاً، مع نسخة خارج الخادم، وتجربة استعادة كل فترة.</p></li>
+      <li class="r" data-step="1"><div class="k"><i>2</i><h3>نسخة تجريبية من الموقع</h3></div><p>على staging.ydf.ly، يُجرَّب عليها أي تحديث قبل الموقع الحقيقي.</p></li>
+      <li class="r" data-step="2"><div class="k"><i>3</i><h3>تحديثات أمنية شهرية</h3></div><p>لنظام الخادم ولوحة الإدارة وما تعمل عليه، على النسخة التجريبية أولاً.</p></li>
+      <li class="r" data-step="3"><div class="k"><i>4</i><h3>مراقبة مستمرة</h3></div><p>تنبيه فوري إن توقف الموقع أو لوحة الإدارة، ومراجعة دورية لسجل الأخطاء.</p></li>
+      <li class="r" data-step="4"><div class="k"><i>5</i><h3>السرعة</h3></div><p>تفعيل التخزين المؤقت المعدّ مسبقاً، وتخفيف الرئيسية وصفحات الصور، وقياس على هاتف حقيقي.</p></li>
+      <li class="r" data-step="5"><div class="k"><i>6</i><h3>قياس دوري بالظروف نفسها</h3></div><p>إعادة قياس السرعة كل فترة بالشروط ذاتها، لاكتشاف أي تراجع مبكراً.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide tech" data-chap="الفصل الرابع · الجانب التقني" aria-label="توصيات لاحقة">
+  <div class="inner">
+    <h2 class="r" style="--i:0">التوصيات التقنية: <span class="tl">لاحقاً</span></h2>
+    <ol class="recs two">
+      <li class="r" style="--i:1"><div class="k"><i>1</i><h3>إحصاءات الزيارات</h3></div><p>بأداة تحترم خصوصية الزوار، لمعرفة ما يُقرأ فعلاً، وأي الصفحات تحتاج تطويراً.</p></li>
+      <li class="r" style="--i:2"><div class="k"><i>2</i><h3>نسخة إنجليزية</h3></div><p>لوحة الإدارة تدعم المحتوى بأكثر من لغة، فتُضاف الإنجليزية دون بناء موقع ثانٍ.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide bridge dark" data-chap="الفصل الرابع · الجانب التقني" aria-label="إلى الفصل الخامس">
+  <div class="inner">
+    <h2 class="r" style="--i:0">الخطوة التالية: التوصيات العامة، للمحتوى والفريق</h2>
+    <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>الفصل الخامس: ما بعد العرض.</p>
   </div>
 </section>
 
