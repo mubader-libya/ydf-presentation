@@ -343,6 +343,27 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   .sumrule > div:first-child{border-top:0}
 }
 
+
+/* شرائح التقييم: الصورة تأخذ المساحة الأكبر، والعنوان ينتقل إلى عمود الملاحظات */
+.slide.audit{padding-inline:max(32px,env(safe-area-inset-left,0px)) max(32px,env(safe-area-inset-right,0px));padding-top:calc(84px + env(safe-area-inset-top,0px));padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+.audit .inner{width:min(1560px,100%);grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);grid-template-areas:"shot head" "shot finds";grid-template-rows:auto 1fr;column-gap:clamp(28px,3.5vw,56px);row-gap:clamp(14px,2.4vh,24px);align-items:start}
+.audit .a-body{display:contents}
+.audit .a-head{grid-area:head}
+.audit .a-head h2{font-size:clamp(1.35rem,2vw,2rem)}
+.audit .a-body > :first-child{grid-area:shot;justify-self:stretch;align-self:center;min-width:0}
+.audit .finds{grid-area:finds}
+.audit .pic img{--mh:calc(100vh - 210px)}
+.audit .shot{align-items:center}
+.audit .strip-wrap{align-items:flex-start}
+.audit .a-body > .pairshots{justify-self:stretch;align-self:center;width:100%}
+.audit:has(.a-body.wide) .inner{grid-template-columns:minmax(0,2.3fr) minmax(0,1fr)}
+.audit .pairshots .shot{align-items:center}
+.audit .thumbs{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 22px}
+.audit .thumbs figure:last-child:nth-child(odd){grid-column:1 / -1;justify-self:center;width:calc(50% - 11px)}
+.audit .thumbs .pic img{--mh:calc(50vh - 175px)}
+@media (max-width:820px){
+  .audit .inner{grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "shot" "finds";grid-template-rows:auto}
+}
 @media (prefers-reduced-motion:reduce){
   .r{transition:none;opacity:1;transform:none;filter:none}
   .slide{transition:none}
@@ -661,7 +682,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     <div class="a-body">
       <figure class="shot r" style="--i:1">
         <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly</span></div>
-          <div class="pic"><img src="assets/old/home-top.jpg" alt="الشاشة الأولى من الصفحة الرئيسية للموقع الحالي" loading="lazy" style="--mh:calc(100vh - 360px)">
+          <div class="pic"><img src="assets/old/home-top.jpg" alt="الشاشة الأولى من الصفحة الرئيسية للموقع الحالي" loading="lazy" style="--mh:calc(100vh - 210px)">
             <span class="ring box" data-n="1" style="--x:0.5%;--y:1%;--w:99%;--h:13%"></span>
             <span class="ring" data-n="2" data-step="1" style="--x:21%;--y:19.5%;--w:53%;--h:12.5%"></span>
             <span class="ring" data-n="2" data-step="1" style="--x:8%;--y:76%;--w:84%;--h:15%"></span>
@@ -696,7 +717,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     <div class="a-body">
       <figure class="shot strip-wrap r" style="--i:1">
         <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
-          <div class="pic"><img src="assets/old/home-long.jpg" alt="الصفحة الرئيسية كاملة" loading="lazy" style="--mh:calc(100vh - 300px)">
+          <div class="pic"><img src="assets/old/home-long.jpg" alt="الصفحة الرئيسية كاملة" loading="lazy" style="--mh:calc(100vh - 210px)">
             <span class="slabel" style="--y:5%"><em>1</em>شعار: الشباب في قلب القرار السياسي</span>
             <span class="slabel" style="--y:22%"><em>2</em>رسالة: بناء الدولة والسلام</span>
             <span class="slabel" style="--y:38%"><em>3</em>فيديو: شاهد أثرنا</span>
@@ -724,11 +745,11 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
       <div class="pairshots r" style="--i:1">
         <figure class="shot"><p class="ph">في الصفحة الرئيسية</p>
           <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly</span></div>
-            <div class="pic"><img src="assets/old/home-stats.jpg" alt="قسم مسيرة حافلة في الصفحة الرئيسية" loading="lazy" style="--mh:30vh">
+            <div class="pic"><img src="assets/old/home-stats.jpg" alt="قسم مسيرة حافلة في الصفحة الرئيسية" loading="lazy" style="--mh:29vh">
               <span class="ring" data-n="5" style="--x:18%;--y:8%;--w:64%;--h:30%"></span></div></div></figure>
         <figure class="shot"><p class="ph">في صفحة «مسيرة المنتدى»</p>
           <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly/مسيرة-منتدى-حوار-الشباب</span></div>
-            <div class="pic"><img src="assets/old/about-stats.jpg" alt="القسم نفسه في صفحة مسيرة المنتدى" loading="lazy" style="--mh:22vh">
+            <div class="pic"><img src="assets/old/about-stats.jpg" alt="القسم نفسه في صفحة مسيرة المنتدى" loading="lazy" style="--mh:21vh">
               <span class="ring" data-n="5" style="--x:18%;--y:4%;--w:64%;--h:38%"></span></div></div></figure>
       </div>
       <ol class="finds">
@@ -858,16 +879,16 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
       <div class="pairshots cols r" style="--i:1">
         <figure class="shot"><p class="ph">صورة رئيس المنتدى واسمه</p>
           <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
-            <div class="pic"><img src="assets/old/crop-pres.jpg" alt="صورة رئيس المنتدى في صفحة الكلمة" loading="lazy" style="--mh:34vh">
+            <div class="pic"><img src="assets/old/crop-pres.jpg" alt="صورة رئيس المنتدى في صفحة الكلمة" loading="lazy" style="--mh:62vh">
               <span class="ring" data-n="11" style="--x:9%;--y:46%;--w:58%;--h:28%"></span></div></div></figure>
         <div class="pairshots">
           <figure class="shot" data-step="1"><p class="ph">بيان في قائمة الأخبار</p>
             <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
-              <div class="pic"><img src="assets/old/crop-statement.jpg" alt="صورة بيان مقصوصة" loading="lazy" style="--mh:16vh">
+              <div class="pic"><img src="assets/old/crop-statement.jpg" alt="صورة بيان مقصوصة" loading="lazy" style="--mh:27vh">
                 <span class="ring box" data-n="11" style="--x:3%;--y:2%;--w:94%;--h:24%"></span></div></div></figure>
           <figure class="shot" data-step="2"><p class="ph">خبر في قائمة الأخبار</p>
             <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
-              <div class="pic"><img src="assets/old/crop-exam.jpg" alt="صورة خبر مقصوصة" loading="lazy" style="--mh:16vh">
+              <div class="pic"><img src="assets/old/crop-exam.jpg" alt="صورة خبر مقصوصة" loading="lazy" style="--mh:27vh">
                 <span class="ring box" data-n="11" style="--x:8%;--y:66%;--w:84%;--h:32%"></span></div></div></figure>
         </div>
       </div>
