@@ -259,7 +259,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 .frame{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 24px 50px -30px rgba(6,45,68,.45);max-width:100%;width:min-content}
 .frame .bar{display:flex;align-items:center;gap:6px;height:30px;padding-inline:12px;background:var(--mist);border-bottom:1px solid var(--line)}
 .frame .bar i{width:9px;height:9px;border-radius:50%;background:#B9CDD2}
-.frame .bar span{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-inline-start:auto;font-size:.72rem;color:var(--muted);direction:ltr;background:#fff;border-radius:10px;padding:2px 12px;line-height:1.6}
+.frame .bar span{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-inline-start:auto;font-size:.72rem;color:var(--muted);direction:ltr;background:#fff;border-radius:10px;padding:3px 14px;line-height:1.6}
 .pic{position:relative;display:block;width:fit-content;line-height:0}
 .pic img{display:block;max-width:none;height:auto;max-height:var(--mh,calc(100vh - 330px));width:auto}
 .cap{font-size:.82rem;color:var(--muted);margin-top:10px;line-height:1.7}
@@ -305,7 +305,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 /* مقارنة صورتين */
 .pairshots{display:grid;gap:18px}
 .pairshots.cols{grid-template-columns:1fr 1fr}
-.pairshots h4{margin:0 0 8px;font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.6}
+.pairshots .ph{margin:0 0 8px;font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.6}
 
 /* الخلاصة */
 .sum .inner{display:grid;gap:clamp(20px,4vh,40px)}
@@ -320,13 +320,13 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 .sumrule span{font-size:.88rem;font-weight:600;line-height:1.7}
 .sumrule small{font-size:.78rem;color:var(--muted);line-height:1.6}
 .chips{display:flex;flex-wrap:wrap;gap:5px}
-.chips i{font-style:normal;min-width:24px;height:24px;padding-inline:6px;border-radius:12px;background:var(--red-soft);color:var(--red);font-size:.75rem;font-weight:700;display:grid;place-items:center}
+.chips i{font-style:normal;min-width:28px;height:26px;padding-inline:9px;border-radius:13px;background:var(--red-soft);color:var(--red);font-size:.75rem;font-weight:700;display:grid;place-items:center}
 .finds.compact{gap:clamp(10px,1.8vh,18px)}
 .finds.compact h3{font-size:clamp(1rem,1.2vw,1.15rem);margin-bottom:2px}
 .finds.compact p{font-size:clamp(.86rem,.95vw,.95rem);line-height:1.8}
 .finds.compact .fix{background:none;border:0;padding:0;margin-top:4px}
 .finds.compact .fix small{display:inline;margin-inline-end:8px}
-.finds.compact .tag{margin-top:4px;padding:2px 10px}
+.finds.compact .tag{margin-top:4px;padding:4px 12px}
 .legend{display:flex;gap:22px;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}
 .legend span{display:flex;align-items:center;gap:8px}
 .legend span::before{content:"";width:18px;height:6px;border-radius:3px;background:var(--c)}
@@ -722,11 +722,11 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     <div class="a-head r" style="--i:0"><h2>الرئيسية و«مسيرة المنتدى»: القسم نفسه مرتين</h2></div>
     <div class="a-body">
       <div class="pairshots r" style="--i:1">
-        <figure class="shot"><h4>في الصفحة الرئيسية</h4>
+        <figure class="shot"><p class="ph">في الصفحة الرئيسية</p>
           <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly</span></div>
             <div class="pic"><img src="assets/old/home-stats.jpg" alt="قسم مسيرة حافلة في الصفحة الرئيسية" loading="lazy" style="--mh:30vh">
               <span class="ring" data-n="5" style="--x:18%;--y:8%;--w:64%;--h:30%"></span></div></div></figure>
-        <figure class="shot"><h4>في صفحة «مسيرة المنتدى»</h4>
+        <figure class="shot"><p class="ph">في صفحة «مسيرة المنتدى»</p>
           <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly/مسيرة-منتدى-حوار-الشباب</span></div>
             <div class="pic"><img src="assets/old/about-stats.jpg" alt="القسم نفسه في صفحة مسيرة المنتدى" loading="lazy" style="--mh:22vh">
               <span class="ring" data-n="5" style="--x:18%;--y:4%;--w:64%;--h:38%"></span></div></div></figure>
@@ -747,10 +747,10 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     <div class="a-head r" style="--i:0"><h2>«حول المنتدى»: تعريف موزع على صفحتين</h2></div>
     <div class="a-body">
       <div class="pairshots cols r" style="--i:1">
-        <figure class="shot"><h4>مسيرة المنتدى</h4>
+        <figure class="shot"><p class="ph">مسيرة المنتدى</p>
           <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
             <div class="pic"><img src="assets/old/about.jpg" alt="صفحة مسيرة المنتدى" loading="lazy"></div></div></figure>
-        <figure class="shot"><h4>كلمة رئيس المنتدى</h4>
+        <figure class="shot"><p class="ph">كلمة رئيس المنتدى</p>
           <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
             <div class="pic"><img src="assets/old/pres.jpg" alt="صفحة كلمة رئيس المنتدى" loading="lazy"></div></div></figure>
       </div>
@@ -856,16 +856,16 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     <div class="a-head r" style="--i:0"><h2>صور مقصوصة</h2></div>
     <div class="a-body wide">
       <div class="pairshots cols r" style="--i:1">
-        <figure class="shot"><h4>صورة رئيس المنتدى واسمه</h4>
+        <figure class="shot"><p class="ph">صورة رئيس المنتدى واسمه</p>
           <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
             <div class="pic"><img src="assets/old/crop-pres.jpg" alt="صورة رئيس المنتدى في صفحة الكلمة" loading="lazy" style="--mh:34vh">
               <span class="ring" data-n="11" style="--x:9%;--y:46%;--w:58%;--h:28%"></span></div></div></figure>
         <div class="pairshots">
-          <figure class="shot" data-step="1"><h4>بيان في قائمة الأخبار</h4>
+          <figure class="shot" data-step="1"><p class="ph">بيان في قائمة الأخبار</p>
             <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
               <div class="pic"><img src="assets/old/crop-statement.jpg" alt="صورة بيان مقصوصة" loading="lazy" style="--mh:16vh">
                 <span class="ring box" data-n="11" style="--x:3%;--y:2%;--w:94%;--h:24%"></span></div></div></figure>
-          <figure class="shot" data-step="2"><h4>خبر في قائمة الأخبار</h4>
+          <figure class="shot" data-step="2"><p class="ph">خبر في قائمة الأخبار</p>
             <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
               <div class="pic"><img src="assets/old/crop-exam.jpg" alt="صورة خبر مقصوصة" loading="lazy" style="--mh:16vh">
                 <span class="ring box" data-n="11" style="--x:8%;--y:66%;--w:84%;--h:32%"></span></div></div></figure>
