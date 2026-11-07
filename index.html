@@ -481,6 +481,33 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   .arch svg{max-height:none}
 }
 
+
+/* ══ الفصل الخامس والشكر ══ */
+.road{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(10px,1.4vw,18px)}
+.road li{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(16px,2.4vh,22px) 16px;display:grid;gap:10px;align-content:start;box-shadow:0 14px 34px -26px rgba(6,45,68,.4)}
+.road li b{font-size:clamp(1.6rem,2.4vw,2.2rem);font-weight:300;color:var(--teal-ink);line-height:1}
+.road li h3{font-size:clamp(.95rem,1.15vw,1.08rem);font-weight:600;line-height:1.6}
+.road li p{font-size:clamp(.82rem,.92vw,.9rem);color:var(--muted);line-height:1.8}
+.road li:not(:last-child)::after{content:"";position:absolute;top:50%;inset-inline-end:calc(-1 * clamp(10px,1.4vw,18px));width:clamp(10px,1.4vw,18px);height:2px;background:var(--teal)}
+.after{display:flex;align-items:center;gap:14px;background:var(--mist);border-radius:14px;padding:clamp(14px,2vh,20px) 22px;font-size:clamp(.95rem,1.1vw,1.05rem);line-height:1.8}
+.after b{color:var(--navy);font-weight:600}
+.thanks .inner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center;gap:clamp(24px,5vw,72px)}
+.thanks .logo-w{height:clamp(70px,12vh,120px);width:auto;filter:brightness(0) invert(1);margin-bottom:clamp(18px,4vh,40px)}
+.thanks h2{font-size:clamp(3rem,8vw,7rem);line-height:1.2}
+.thanks .qa{font-size:clamp(1.1rem,1.8vw,1.6rem);color:var(--teal-hi);font-weight:600;margin-top:10px}
+.thanks .links{display:grid;gap:10px;margin-top:clamp(20px,4vh,40px)}
+.thanks .links span{font-size:.85rem;color:#9FBFCB}
+.thanks .links code{direction:ltr;display:inline-block;font:500 clamp(.85rem,1vw,1rem) Consolas,monospace;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:6px 14px;margin-inline-start:8px}
+.thanks .wheel{justify-self:center;width:min(36vw,440px);margin:0}
+.thanks .wheel{--navy:#FFFFFF;--teal:#8FD0D5}
+.slide.thanks.on .logo-w.r{filter:brightness(0) invert(1)}
+@media (max-width:820px){
+  .road{grid-template-columns:minmax(0,1fr)}
+  .road li:not(:last-child)::after{display:none}
+  .thanks .inner{grid-template-columns:minmax(0,1fr)}
+  .thanks .wheel{display:none}
+}
+
 @media (prefers-reduced-motion:reduce){
   .r{transition:none;opacity:1;transform:none;filter:none}
   .slide{transition:none}
@@ -1238,6 +1265,86 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   <div class="inner">
     <h2 class="r" style="--i:0">الخطوة التالية: التوصيات العامة، للمحتوى والفريق</h2>
     <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>الفصل الخامس: ما بعد العرض.</p>
+  </div>
+</section>
+
+<!-- ═══ الفصل الخامس ═══ -->
+
+<section class="slide chap dark" data-chap="الفصل الخامس · ما بعد العرض" aria-label="الفصل الخامس">
+  <svg class="wheel-bg" viewBox="-220 -220 440 440" aria-hidden="true"><use href="#wheel4"/></svg>
+  <div class="inner">
+    <div class="num r" style="--i:0" aria-hidden="true">5</div>
+    <div>
+      <p class="label r" style="--i:1">الفصل الخامس</p>
+      <h2 class="r" style="--i:2">ما بعد العرض: ما يحتاجه الموقع ليبقى حياً</h2>
+    </div>
+  </div>
+</section>
+
+<section class="slide tech" data-chap="الفصل الخامس · ما بعد العرض" aria-label="المحتوى قبل الإطلاق">
+  <div class="inner">
+    <h2 class="r" style="--i:0">المحتوى قبل الإطلاق: <span class="tl">نقاط تحتاج اعتماد المنتدى</span></h2>
+    <ol class="recs">
+      <li class="r" style="--i:1"><div class="k"><i>1</i><h3>ملخصات البيانات الرسمية</h3></div><p>ملخص قصير لكل بيان يظهر في صفحة الأخبار، يُراجَع ويُعتمد قبل النشر.</p></li>
+      <li class="r" data-step="1"><div class="k"><i>2</i><h3>حالات المشاريع</h3></div><p>المرحلة الحالية لكل مشروع في قسم «إلى أين»، كما يراها المنتدى.</p></li>
+      <li class="r" data-step="2"><div class="k"><i>3</i><h3>تصنيفات المقالات</h3></div><p>توزيع مقالات المدونة على التصنيفات الخمسة.</p></li>
+      <li class="r" data-step="3"><div class="k"><i>4</i><h3>المقولات المختارة</h3></div><p>المقولات الاثنتا عشرة التي تتحرك في المدونة، مأخوذة حرفياً من مقالات المنتدى.</p></li>
+      <li class="r" data-step="4"><div class="k"><i>5</i><h3>الانضمام والخصوصية</h3></div><p>خطوات طلب العضوية، وسطر الخصوصية الذي يوضح استعمال بيانات المتقدم.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide tech" data-chap="الفصل الخامس · ما بعد العرض" aria-label="مهام إدارة المحتوى">
+  <div class="inner">
+    <h2 class="r" style="--i:0">مهام إدارة المحتوى <span class="tl">بعد الإطلاق</span></h2>
+    <ol class="recs two">
+      <li class="r" style="--i:1"><div class="k"><i>1</i><h3>إضافة المحتوى من لوحة الإدارة</h3></div><p>الأنشطة والأخبار والمقالات، كلٌّ في نوعه، دون الحاجة إلى تعديل الموقع.</p></li>
+      <li class="r" data-step="1"><div class="k"><i>2</i><h3>مراجعة الحقول قبل النشر</h3></div><p>النوع يحدد القسم، والتاريخ يحدد الترتيب، والملخص يظهر في القوائم، والصورة تظهر في القصاصة. ثم «أصدر».</p></li>
+      <li class="r" data-step="2"><div class="k"><i>3</i><h3>متابعة ما يصل من الزوار</h3></div><p>طلبات العضوية والمقالات المرسلة تصل إلى لوحة الإدارة، ولكل منها حالة تُحدَّث عند مراجعته.</p></li>
+      <li class="r" data-step="3"><div class="k"><i>4</i><h3>تحديث المشاريع</h3></div><p>حالة كل مشروع وأنشطته الجديدة، حتى يبقى قسم «إلى أين» مطابقاً للواقع.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide tech" data-chap="الفصل الخامس · ما بعد العرض" aria-label="إيقاع النشر وجودته">
+  <div class="inner">
+    <h2 class="r" style="--i:0">إيقاع النشر وجودته: <span class="tl">ثلاث قواعد</span></h2>
+    <ol class="recs">
+      <li class="r" style="--i:1"><div class="k"><i>1</i><h3>كل نشاط بتاريخه ومكانه وصوره</h3></div><p>يُنشر بعد حدوثه بوقت قصير، فيبقى الأرشيف مرتباً زمنياً ويُرى العمل وهو يحدث.</p><span class="ref">علاج النقطة 9</span></li>
+      <li class="r" data-step="1"><div class="k"><i>2</i><h3>البيانات نصاً كاملاً</h3></div><p>البيان الرسمي يُنشر نصاً يمكن قراءته والبحث فيه والاقتباس منه، لا صورة لورقة.</p><span class="ref">الركيزة 4</span></li>
+      <li class="r" data-step="2"><div class="k"><i>3</i><h3>صور كاملة وواضحة</h3></div><p>بجودة جيدة، ودون قص للوجوه أو العناوين، ودون كتابة فوقها.</p><span class="ref">علاج النقطة 11</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide tech" data-chap="الفصل الخامس · ما بعد العرض" aria-label="خطة الإطلاق">
+  <div class="inner">
+    <h2 class="r" style="--i:0">خطة الإطلاق: <span class="tl">خمس خطوات</span></h2>
+    <ol class="road r" style="--i:1">
+      <li><b>1</b><h3>اعتماد المحتوى</h3><p>النقاط الخمس التي تحتاج اعتماد المنتدى.</p></li>
+      <li><b>2</b><h3>تجهيز الاستضافة</h3><p>الخادم، ولوحة الإدارة، والنطاق الفرعي، وشهادة HTTPS.</p></li>
+      <li><b>3</b><h3>نقل المحتوى</h3><p>الأنشطة والأخبار والصور إلى لوحة الإدارة.</p></li>
+      <li><b>4</b><h3>التجربة</h3><p>على نسخة تجريبية، صفحة بصفحة، على الحاسوب والهاتف.</p></li>
+      <li><b>5</b><h3>الإطلاق على ydf.ly</h3><p>مع تحويل روابط الموقع القديم إلى صفحاتها الجديدة.</p></li>
+    </ol>
+    <p class="after r" style="--i:2"><b>ثم مراجعة دورية</b> للموقع على الركائز السبع، فتبقى المسطرة التي بدأ بها العرض مرجعاً دائماً.</p>
+  </div>
+</section>
+
+<section class="slide thanks dark" data-chap="الختام" aria-label="شكراً">
+  <div class="inner">
+    <div>
+      <img class="logo-w r" style="--i:0" src="assets/logo-mark.png" alt="منتدى حوار الشباب" width="94" height="40">
+      <h2 class="r" style="--i:1">شكراً</h2>
+      <p class="qa r" style="--i:2">الأسئلة والنقاش</p>
+      <div class="links r" style="--i:3">
+        <span>الموقع الجديد<code>mubader-libya.github.io/ydf-homepage</code></span>
+        <span>هذا العرض<code>mubader-libya.github.io/ydf-presentation</code></span>
+      </div>
+    </div>
+    <div class="wheel" aria-hidden="true">
+      <svg viewBox="-220 -220 440 440"><g class="spin" style="opacity:.9"><use href="#wheel4"/></g></svg>
+    </div>
   </div>
 </section>
 
