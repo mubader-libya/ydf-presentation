@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>عرض موقع منتدى حوار الشباب</title>
+<meta name="description" content="عرض تقديمي: من الحضور على الأرض إلى الحضور الرقمي.">
+<link rel="icon" href="assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;600;800&display=swap">
+<style>
+/* ── الهوية: هوية الموقع القديم (ydf.ly) بصياغة حديثة ──
+   الأزرق والفيروزي من الشعار، والرمز: شخص = رأس + قوس، أربعة أشخاص حول مركز واحد = حوار */
+:root{
+  --snow:#F4F8F9;      /* أرضية باردة بميل فيروزي */
+  --mist:#E2EEF0;      /* سطوح ثانوية */
+  --line:#C9DCE0;
+  --navy:#085078;      /* أزرق الشعار */
+  --deep:#062D44;      /* نص وسطوح داكنة */
+  --abyss:#041E2E;
+  --teal:#4FA3AB;      /* فيروزي الشعار — للرسوم والمساحات الكبيرة فقط */
+  --teal-ink:#1B6F78;  /* فيروزي للنص على الفاتح */
+  --teal-hi:#8FD0D5;   /* فيروزي للنص على الداكن */
+  --muted:#4A6673;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --gut:max(20px, env(safe-area-inset-left,0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  background:var(--snow);color:var(--deep);
+  font-family:"Alexandria","Segoe UI","Tahoma",sans-serif;font-weight:400;
+  overflow:hidden;-webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--teal);color:#fff}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance;font-weight:800;letter-spacing:-.01em;line-height:1.15}
+p{text-wrap:pretty;line-height:1.85}
+img{max-width:100%}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ── الإطار الثابت ── */
+.chrome{position:fixed;inset-inline:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding-inline:max(24px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-left,0px));pointer-events:none}
+.chrome > *{pointer-events:auto}
+.top{top:0;padding-top:max(18px,env(safe-area-inset-top,0px));height:76px;box-sizing:content-box}
+.bottom{bottom:0;padding-bottom:max(18px,env(safe-area-inset-bottom,0px))}
+.brand img{height:40px;display:block;transition:filter .5s}
+.where{font-size:.82rem;color:var(--muted);letter-spacing:.02em;transition:color .5s}
+.where b{font-weight:600;color:var(--navy);transition:color .5s}
+
+.prog{display:flex;gap:6px;flex:1;max-width:420px;align-items:center}
+.prog span{height:3px;border-radius:2px;background:var(--line);flex:var(--n) 1 0;position:relative;overflow:hidden;transition:background .5s}
+.prog span i{position:absolute;inset:0;background:var(--navy);transform-origin:right;transform:scaleX(var(--p,0));transition:transform .7s var(--ease),background .5s}
+.count{font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums;min-width:4.2em;text-align:center;transition:color .5s}
+.nav{display:flex;align-items:center;gap:10px}
+.nav button{all:unset;cursor:pointer;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--line);color:var(--navy);background:color-mix(in srgb,var(--snow) 80%,transparent);
+  transition:background .3s,border-color .3s,color .3s,transform .3s var(--ease)}
+.nav button:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.nav button:active{transform:scale(.94)}
+.nav button[disabled]{opacity:.3;pointer-events:none}
+.nav button#next{width:auto;padding-inline:20px 16px;border-radius:24px;gap:10px;display:flex;background:var(--navy);color:#fff;border-color:var(--navy);font:600 .9rem "Alexandria",sans-serif}
+.nav button#next:hover{background:var(--deep)}
+.nav svg{width:18px;height:18px}
+
+/* الشرائح الداكنة تقلب الإطار */
+body.dark .brand img{filter:brightness(0) invert(1)}
+body.dark .where,body.dark .count{color:#9FBFCB}
+body.dark .where b{color:#fff}
+body.dark .prog span{background:rgba(255,255,255,.18)}
+body.dark .prog span i{background:var(--teal-hi)}
+body.dark .nav button{border-color:rgba(255,255,255,.25);color:#fff;background:transparent}
+body.dark .nav button:hover{background:#fff;color:var(--deep)}
+body.dark .nav button#next{background:#fff;color:var(--deep);border-color:#fff}
+body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--teal-hi)}
+
+/* ── الشرائح ── */
+.deck{position:fixed;inset:0}
+.slide{position:absolute;inset:0;display:grid;align-content:center;
+  padding:calc(96px + env(safe-area-inset-top,0px)) max(56px,env(safe-area-inset-left,0px)) calc(100px + env(safe-area-inset-bottom,0px)) max(56px,env(safe-area-inset-right,0px));
+  opacity:0;visibility:hidden;transition:opacity .6s var(--ease),visibility 0s .6s;overflow:hidden}
+.slide.on{opacity:1;visibility:visible;transition:opacity .6s var(--ease),visibility 0s}
+.slide.dark{background:radial-gradient(120% 90% at 85% 0%,#0B4766 0%,var(--deep) 48%,var(--abyss) 100%);color:#fff}
+.inner{width:min(1200px,100%);margin-inline:auto;position:relative;z-index:1}
+
+/* حركة واحدة: السطور تصعد بهدوء عند دخول الشريحة */
+.r{opacity:0;transform:translateY(18px);filter:blur(6px);transition:opacity .9s var(--ease),transform 1s var(--ease),filter .9s var(--ease);transition-delay:calc(var(--i,0) * 90ms + 120ms)}
+.slide.on .r{opacity:1;transform:none;filter:none}
+
+.lead{font-size:clamp(1rem,1.25vw,1.2rem);color:var(--muted);max-width:56ch}
+.dark .lead{color:#B8D3DB}
+.big{font-size:clamp(2.1rem,5vw,5.2rem)}
+.mid{font-size:clamp(1.7rem,3.4vw,3.4rem)}
+.navy{color:var(--navy)} .tl{color:var(--teal-ink)} .dark .tl{color:var(--teal-hi)}
+
+/* الرمز: الشخص */
+.fig-n{fill:var(--navy);stroke:var(--navy)}
+.fig-t{fill:var(--teal);stroke:var(--teal)}
+.fig-g{fill:none;stroke:var(--line)}
+
+/* ── 1. الغلاف ── */
+.cover .inner{display:grid;grid-template-columns:1.25fr 1fr;align-items:center;gap:40px}
+.cover .logo-full{height:clamp(84px,19vh,180px);width:auto;max-width:70%;margin-bottom:clamp(20px,4vh,48px)}
+.cover h1{font-size:clamp(2.2rem,min(5.4vw,8.6vh),5.6rem);line-height:1.12}
+.cover h1 span{display:block;color:var(--teal-ink)}
+.cover .sub{margin-top:clamp(14px,3vh,28px);font-size:clamp(1.2rem,2vw,1.9rem);font-weight:300}
+.cover .meta{margin-top:clamp(20px,5vh,56px);display:flex;gap:28px;font-size:.88rem;color:var(--muted)}
+.cover .meta b{font-weight:600;color:var(--deep);display:block;margin-bottom:2px}
+.wheel{width:min(46vw,620px);aspect-ratio:1;justify-self:end;margin-inline-end:-6vw}
+.wheel svg{width:100%;height:100%;overflow:visible}
+.spin{transform-origin:center;transform-box:fill-box;animation:spin 140s linear infinite}
+@keyframes spin{to{transform:rotate(-360deg)}}
+
+/* ── 2. على الأرض ── */
+.ground .inner{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:clamp(32px,6vw,96px);align-items:center}
+.ledger{display:grid;gap:0;border-top:1px solid var(--line)}
+.ledger .row{display:grid;grid-template-columns:5.2ch minmax(0,1fr);gap:20px;align-items:center;padding-block:clamp(10px,1.6vh,18px);border-bottom:1px solid var(--line)}
+.ledger .n{font-size:clamp(2rem,3.6vw,3.6rem);font-weight:800;color:var(--navy);line-height:1;font-variant-numeric:tabular-nums}
+.ledger .t{font-size:clamp(.95rem,1.15vw,1.1rem);font-weight:600}
+.ledger .t small{display:block;font-weight:300;color:var(--muted);font-size:.86em;margin-top:2px}
+.tally{display:flex;flex-wrap:wrap;gap:3px;margin-top:8px}
+.tally svg{width:13px;height:15px}
+.src{margin-top:18px;font-size:.8rem;color:var(--muted)}
+
+/* ── 3. السؤال ── */
+.ask .inner{text-align:center;display:grid;justify-items:center;gap:36px}
+.ask h2{font-size:clamp(2.2rem,5.6vw,5.8rem);max-width:16ch;font-weight:800}
+.ask h2 em{font-style:normal;color:var(--teal-hi)}
+.who{display:flex;gap:clamp(20px,4vw,56px);flex-wrap:wrap;justify-content:center}
+.who div{display:grid;justify-items:center;gap:10px;font-size:clamp(.9rem,1.1vw,1.05rem);color:#CFE3E8}
+.who svg{width:44px;height:50px}
+
+/* ── 4. خريطة العرض ── */
+.toc .inner{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(32px,6vw,96px);align-items:start}
+.toc ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.toc li{display:grid;grid-template-columns:3.2ch minmax(0,1fr) auto;gap:18px;align-items:baseline;padding-block:clamp(12px,2vh,22px);border-bottom:1px solid var(--line)}
+.toc .k{font-size:clamp(1.6rem,2.4vw,2.4rem);font-weight:300;color:var(--teal-ink);line-height:1}
+.toc h3{font-size:clamp(1.15rem,1.7vw,1.6rem);font-weight:600}
+.toc p{font-size:.92rem;color:var(--muted);line-height:1.6;margin-top:4px}
+.toc .here{font-size:.75rem;font-weight:600;color:#fff;background:var(--navy);padding:4px 12px;border-radius:20px;white-space:nowrap}
+
+/* ── فاتحة الفصل ── */
+.chap .inner{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
+.chap .num{font-size:clamp(9rem,24vw,22rem);font-weight:800;line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(143,208,213,.55)}
+.chap .label{font-size:1rem;color:var(--teal-hi);font-weight:600;margin-bottom:18px;letter-spacing:.02em}
+.chap h2{font-size:clamp(2rem,4.4vw,4.4rem);max-width:18ch}
+.chap .wheel-bg{position:absolute;inset-inline-start:-18vw;bottom:-30vh;width:70vw;opacity:.08;pointer-events:none}
+
+/* ── 6. المقر الرقمي ── */
+.hq .inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.hq h2{font-size:clamp(2rem,3.8vw,3.8rem);margin-bottom:clamp(20px,4vh,40px)}
+.aud{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.6vh,28px) 32px}
+.aud h3{font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:4px}
+.aud p{font-size:.95rem;color:var(--muted);line-height:1.7}
+.close{margin-top:clamp(24px,4vh,44px);padding-top:20px;border-top:1px solid var(--line);font-size:clamp(1.1rem,1.6vw,1.45rem);font-weight:600}
+.close span{color:var(--teal-ink)}
+.screen-art svg{width:100%;max-height:62vh;overflow:visible}
+
+/* ── 7. قاعدة التوازي ── */
+.par .inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(32px,5vw,80px);align-items:center}
+.par h2{font-size:clamp(2.2rem,4.4vw,4.4rem);margin-bottom:24px}
+.par .lead{color:var(--deep);font-size:clamp(1.05rem,1.35vw,1.3rem)}
+.par .close{border-top:0;padding-top:0;margin-top:28px;color:var(--teal-ink)}
+.lanes{display:grid;gap:clamp(18px,3vh,30px)}
+.lane .lt{display:flex;gap:12px;align-items:baseline;font-size:.9rem;font-weight:600;margin-bottom:10px}
+.lane .lt small{font-weight:300;color:var(--muted)}
+.lane .people{display:flex;gap:clamp(4px,.6vw,8px);flex-wrap:nowrap}
+.lane .people svg{width:clamp(22px,3vw,44px);height:clamp(28px,3.8vw,56px);flex:none}
+.gap{display:grid;grid-template-columns:var(--have) 1fr;align-items:center;margin-top:-6px}
+.gap .bar{grid-column:2;height:14px;border:1.5px solid var(--teal-ink);border-top:0;border-radius:0 0 8px 8px}
+.gap .gl{grid-column:2;text-align:center;font-size:.9rem;font-weight:600;color:var(--teal-ink);margin-top:8px}
+
+/* ── 8. المسطرة ── */
+.ruler-s .inner{display:grid;gap:clamp(28px,6vh,64px)}
+.ruler-s h2{font-size:clamp(2rem,4vw,4rem)}
+.ruler{position:relative;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:6px;
+  box-shadow:0 18px 40px -24px rgba(6,45,68,.35)}
+.ruler::before{content:"";position:absolute;inset:0 0 auto;height:22px;
+  background:repeating-linear-gradient(to left,var(--deep) 0 1px,transparent 1px 100%) 0 0/calc(100%/40) 10px no-repeat,
+             repeating-linear-gradient(to left,var(--deep) 0 1px,transparent 1px 100%) 0 0/calc(100%/80) 6px repeat-x;
+  background-repeat:repeat-x;opacity:.55}
+.mark{position:relative;padding:44px 14px 22px;border-inline-start:1px solid var(--line)}
+.mark:first-child{border-inline-start:0}
+.mark::before{content:"";position:absolute;top:0;inset-inline-end:-1px;width:2px;height:30px;background:var(--navy)}
+.mark:last-child::before{display:none}
+.mark b{display:block;font-size:clamp(1.6rem,2.6vw,2.6rem);font-weight:300;color:var(--teal-ink);line-height:1;margin-bottom:12px}
+.mark span{font-size:clamp(.85rem,1vw,1rem);font-weight:600;line-height:1.5;display:block}
+
+/* ── 9–12. الركائز ── */
+.mini{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-bottom:clamp(24px,5vh,52px);max-width:520px}
+.mini i{height:6px;border-radius:3px;background:var(--line)}
+.mini i.done{background:#9CC6CB}
+.mini i.act{background:var(--navy)}
+.mini-l{font-size:.8rem;color:var(--muted);margin-top:-36px;margin-bottom:clamp(24px,5vh,48px)}
+.pair .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,88px)}
+.pil{display:grid;align-content:start;gap:16px}
+.pil .pn{font-size:clamp(3.4rem,6vw,6rem);font-weight:800;line-height:.85;color:var(--teal)}
+.pil h3{font-size:clamp(1.5rem,2.4vw,2.4rem)}
+.pil p{font-size:clamp(.98rem,1.15vw,1.12rem);color:var(--muted);max-width:44ch}
+.test{margin-top:8px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);
+  border-radius:10px;padding:16px 18px;box-shadow:0 10px 30px -22px rgba(6,45,68,.4)}
+.test svg{width:24px;height:24px;margin-top:2px;color:var(--navy)}
+.test small{display:block;font-size:.75rem;font-weight:600;color:var(--teal-ink);letter-spacing:.03em;margin-bottom:3px}
+.test span{font-size:clamp(.95rem,1.1vw,1.08rem);font-weight:600;line-height:1.65}
+
+/* ── 13. الجسر ── */
+.bridge .inner{display:grid;gap:30px;justify-items:start}
+.bridge h2{font-size:clamp(2.4rem,6vw,6rem);max-width:14ch}
+.bridge .to{display:flex;align-items:center;gap:14px;font-size:clamp(1rem,1.3vw,1.2rem);color:#CFE3E8}
+.bridge .to svg{width:40px;color:var(--teal-hi)}
+
+/* ── الهاتف ── */
+@media (max-width:820px){
+  .top{height:56px}
+  .brand img{height:30px}
+  .where{display:none}
+  .prog{max-width:none}
+  .nav button#next span{display:none}
+  .nav button#next{width:48px;padding:0;justify-content:center;border-radius:50%}
+  .slide{align-content:start;overflow-y:auto;-webkit-overflow-scrolling:touch;
+    padding:calc(84px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-left,0px)) calc(96px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-right,0px))}
+  .cover .inner,.ground .inner,.toc .inner,.hq .inner,.par .inner,.pair .two,.chap .inner{grid-template-columns:minmax(0,1fr)}
+  .wheel{position:absolute;width:80vw;inset-inline-end:-30vw;top:-8vh;opacity:.14;margin:0}
+  .cover{align-content:center}
+  .aud{grid-template-columns:1fr}
+  .screen-art{order:-1}
+  .screen-art svg{max-height:34vh}
+  .ruler{grid-template-columns:minmax(0,1fr);border-radius:6px}
+  .ruler::before{display:none}
+  .mark{border-inline-start:0;border-top:1px solid var(--line);padding:14px 16px 14px 16px;display:flex;gap:16px;align-items:baseline}
+  .mark:first-child{border-top:0}
+  .mark::before{display:none}
+  .mark b{margin:0;min-width:1.4em}
+  .chap .num{font-size:9rem}
+  .chap .wheel-bg{display:none}
+  .ask,.bridge,.chap{align-content:center}
+  .lane .people{flex-wrap:wrap}
+}
+@media (prefers-reduced-motion:reduce){
+  .r{transition:none;opacity:1;transform:none;filter:none}
+  .slide{transition:none}
+  .spin{animation:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- الشخص، كما في شعار المنتدى: رأس وقوس -->
+    <symbol id="fig" viewBox="-30 -42 60 76">
+      <circle cx="0" cy="-19" r="10" stroke="none"/>
+      <path d="M-21,25 C-20,1 20,1 21,25" fill="none" stroke-width="9" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="fig-o" viewBox="-30 -42 60 76">
+      <circle cx="0" cy="-19" r="9" fill="none" stroke-width="2"/>
+      <path d="M-21,25 C-20,1 20,1 21,25" fill="none" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+    </symbol>
+    <!-- القوس الملتف من الشعار، للدولاب وحده -->
+    <symbol id="swirl" viewBox="-30 -42 60 76">
+      <circle cx="0" cy="-27" r="9" stroke="none"/>
+      <path d="M-22,-4 C-16,22 16,22 22,-4" fill="none" stroke-width="9" stroke-linecap="round"/>
+    </symbol>
+    <!-- الدولاب: أربعة أشخاص حول مركز واحد -->
+    <g id="wheel4">
+      <g transform="rotate(0)"><g transform="translate(0,-96) rotate(-32)"><use href="#swirl" class="fig-n" x="-60" y="-76" width="120" height="152"/></g></g>
+      <g transform="rotate(90)"><g transform="translate(0,-96) rotate(-32)"><use href="#swirl" class="fig-t" x="-60" y="-76" width="120" height="152"/></g></g>
+      <g transform="rotate(180)"><g transform="translate(0,-96) rotate(-32)"><use href="#swirl" class="fig-n" x="-60" y="-76" width="120" height="152"/></g></g>
+      <g transform="rotate(270)"><g transform="translate(0,-96) rotate(-32)"><use href="#swirl" class="fig-t" x="-60" y="-76" width="120" height="152"/></g></g>
+    </g>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="chrome top">
+  <a class="brand" href="#1" aria-label="منتدى حوار الشباب — بداية العرض"><img src="assets/logo-mark.png" alt="منتدى حوار الشباب" width="94" height="40"></a>
+  <div class="where" aria-live="polite"><b id="chapName">افتتاح</b></div>
+</header>
+
+<main class="deck" id="deck">
+
+<!-- ═══ الافتتاح ═══ -->
+
+<section class="slide cover" data-chap="افتتاح" aria-label="الغلاف">
+  <div class="inner">
+    <div>
+      <img class="logo-full r" style="--i:0" src="assets/logo-full.png" alt="منتدى حوار الشباب — Youth Dialogue Forum" width="500" height="270">
+      <h1 class="r" style="--i:1">من الحضور على الأرض <span>إلى الحضور الرقمي</span></h1>
+      <p class="sub r" style="--i:2">هذا وقتنا.</p>
+      <div class="meta r" style="--i:3">
+        <div><b>عرض الموقع الإلكتروني الجديد</b>منتدى حوار الشباب</div>
+        <div><b>طرابلس، ليبيا</b>نوفمبر 2026</div>
+      </div>
+    </div>
+    <div class="wheel" aria-hidden="true">
+      <svg viewBox="-220 -220 440 440"><g class="spin"><use href="#wheel4"/></g></svg>
+    </div>
+  </div>
+</section>
+
+<section class="slide ground" data-chap="افتتاح" aria-label="على الأرض">
+  <div class="inner">
+    <div>
+      <h2 class="mid r" style="--i:0">المنتدى حاضر على الأرض، <span class="tl">وحضوره كبير.</span></h2>
+      <p class="lead r" style="--i:1;margin-top:20px">من طرابلس إلى مرزق ودرنة، ومن قاعات الحوار إلى طاولات السفارات. هذا ما وثّقه المنتدى بنفسه.</p>
+      <p class="src r" style="--i:2">من محتوى المنتدى المنشور منذ 2021.</p>
+    </div>
+    <div class="ledger">
+      <div class="row r" style="--i:1"><div class="n">31</div><div class="t">نشاطاً ومشاركة<div class="tally" data-n="31"></div></div></div>
+      <div class="row r" style="--i:2"><div class="n">14</div><div class="t">مدينة<small>من طرابلس إلى مرزق ودرنة</small><div class="tally" data-n="14"></div></div></div>
+      <div class="row r" style="--i:3"><div class="n">13</div><div class="t">لقاءً<small>مع الأمم المتحدة والسفارات والمؤسسات الليبية</small><div class="tally" data-n="13"></div></div></div>
+      <div class="row r" style="--i:4"><div class="n">8</div><div class="t">بيانات رسمية<small>في المنعطفات الوطنية</small><div class="tally" data-n="8"></div></div></div>
+      <div class="row r" style="--i:5"><div class="n">25</div><div class="t">مقالاً<small>بأقلام شباب المنتدى</small><div class="tally" data-n="25"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ask dark" data-chap="افتتاح" aria-label="السؤال">
+  <div class="inner">
+    <h2 class="r" style="--i:0">لكن… هل يرى من يزور موقعكم <em>هذا المنتدى؟</em></h2>
+    <div class="who r" style="--i:2">
+      <div><svg><use href="#fig" style="fill:#fff;stroke:#fff"/></svg>الدبلوماسي</div>
+      <div><svg><use href="#fig" style="fill:var(--teal-hi);stroke:var(--teal-hi)"/></svg>المموّل</div>
+      <div><svg><use href="#fig" style="fill:#fff;stroke:#fff"/></svg>الصحفي</div>
+      <div><svg><use href="#fig" style="fill:var(--teal-hi);stroke:var(--teal-hi)"/></svg>الشاب</div>
+    </div>
+  </div>
+</section>
+
+<section class="slide toc" data-chap="افتتاح" aria-label="خريطة العرض">
+  <div class="inner">
+    <div>
+      <h2 class="mid r" style="--i:0">خريطة العرض</h2>
+      <p class="lead r" style="--i:1" >خمس محطات، كل واحدة تبني على التي قبلها: نبدأ بما يجب أن يكون، ثم ما هو كائن، ثم ما بنيناه.</p>
+    </div>
+    <ol>
+      <li class="r" style="--i:1"><span class="k">1</span><div><h3>كيف يجب أن يكون الموقع</h3><p>ركائز موقع مؤسسة لها حضور قوي على الأرض.</p></div><span class="here">نبدأ هنا</span></li>
+      <li class="r" style="--i:2"><span class="k">2</span><div><h3>تقرير الموقع الحالي</h3><p>صفحةً صفحة: المشكلة، والحل المقترح.</p></div><span></span></li>
+      <li class="r" style="--i:3"><span class="k">3</span><div><h3>التطبيق العملي</h3><p>الموقع الجديد كما بُني على هذه الركائز.</p></div><span></span></li>
+      <li class="r" style="--i:4"><span class="k">4</span><div><h3>الجانب التقني</h3><p>ما وراء الواجهة.</p></div><span></span></li>
+      <li class="r" style="--i:5"><span class="k">5</span><div><h3>ما بعد العرض</h3><p>التوصيات والخطوات القادمة.</p></div><span></span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ الفصل الأول ═══ -->
+
+<section class="slide chap dark" data-chap="الفصل الأول · الركائز" aria-label="الفصل الأول">
+  <svg class="wheel-bg" viewBox="-220 -220 440 440" aria-hidden="true"><use href="#wheel4"/></svg>
+  <div class="inner">
+    <div class="num r" style="--i:0" aria-hidden="true">1</div>
+    <div>
+      <p class="label r" style="--i:1">الفصل الأول</p>
+      <h2 class="r" style="--i:2">كيف يجب أن يكون موقع مؤسسة لها حضور قوي على الأرض؟</h2>
+    </div>
+  </div>
+</section>
+
+<section class="slide hq" data-chap="الفصل الأول · الركائز" aria-label="المقر الرقمي">
+  <div class="inner">
+    <div>
+      <h2 class="r" style="--i:0">الموقع هو <span class="tl">المقر الرقمي</span> للمنتدى.</h2>
+      <div class="aud">
+        <div class="r" style="--i:1"><h3>الدبلوماسي</h3><p>يقرأ عنكم قبل أن يحدد موعد اللقاء.</p></div>
+        <div class="r" style="--i:2"><h3>المموّل والشريك</h3><p>يبحث عن دليل على العمل قبل أي شراكة.</p></div>
+        <div class="r" style="--i:3"><h3>الصحفي</h3><p>يبحث عن الموقف الرسمي بتاريخه قبل أن يكتب.</p></div>
+        <div class="r" style="--i:4"><h3>الشاب</h3><p>يقرر من الصفحة الأولى: هل ينضم أم يغادر.</p></div>
+      </div>
+      <p class="close r" style="--i:5">أول لقاء مع المنتدى يحدث <span>على الشاشة، قبل القاعة.</span></p>
+    </div>
+    <div class="screen-art r" style="--i:2" aria-hidden="true">
+      <!-- أربعة أشخاص حول شاشة واحدة: تكوين الشعار نفسه، والمركز هو الموقع -->
+      <svg viewBox="-260 -230 520 460">
+        <rect x="-118" y="-78" width="236" height="156" rx="12" fill="#fff" stroke="var(--deep)" stroke-width="2.5"/>
+        <rect x="-118" y="-78" width="236" height="26" rx="12" fill="var(--deep)"/>
+        <rect x="-118" y="-62" width="236" height="10" fill="var(--deep)"/>
+        <circle cx="96" cy="-65" r="3.5" fill="var(--teal-hi)"/><circle cx="84" cy="-65" r="3.5" fill="#fff" opacity=".5"/>
+        <image href="assets/logo-mark.png" x="-12" y="-44" width="96" height="41"/>
+        <rect x="-96" y="10" width="150" height="9" rx="4.5" fill="var(--navy)"/>
+        <rect x="-96" y="28" width="190" height="6" rx="3" fill="var(--line)"/>
+        <rect x="-96" y="42" width="170" height="6" rx="3" fill="var(--line)"/>
+        <rect x="34" y="56" width="62" height="12" rx="6" fill="var(--teal)"/>
+        <g>
+          <use href="#fig" class="fig-n" x="-30" y="-210" width="60" height="76"/>
+          <use href="#fig" class="fig-t" x="-30" y="134" width="60" height="76" />
+          <use href="#fig" class="fig-t" x="160" y="-38" width="60" height="76"/>
+          <use href="#fig" class="fig-n" x="-220" y="-38" width="60" height="76"/>
+        </g>
+        <g font-family="Alexandria, sans-serif" font-size="15" font-weight="600" fill="var(--muted)" text-anchor="middle">
+                    <text x="80" y="-180">الدبلوماسي</text>
+          <text x="210" y="70">المموّل</text>
+          <text x="-80" y="200">الشاب</text>
+          <text x="-210" y="70">الصحفي</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="slide par" data-chap="الفصل الأول · الركائز" aria-label="قاعدة التوازي">
+  <div class="inner">
+    <div>
+      <h2 class="r" style="--i:0">قاعدة <span class="tl">التوازي</span></h2>
+      <p class="lead r" style="--i:1">مستوى الحضور الرقمي يجب أن يساوي الحضور على الأرض. وكل فجوة بينهما يقرؤها الزائر ضعفاً أو غياباً، مهما كان العمل الحقيقي كبيراً.</p>
+      <p class="close mid r" style="--i:2;font-size:clamp(1.15rem,1.7vw,1.6rem)">الموقع لا يصنع الحضور، لكنه يثبته أو يُضعفه.</p>
+    </div>
+    <div class="lanes r" style="--i:2" aria-label="رسم: صف كامل من الحضور على الأرض، وصف ناقص من الحضور الرقمي، والفرق بينهما فجوة الحضور">
+      <div class="lane">
+        <div class="lt">الحضور على الأرض <small>كامل</small></div>
+        <div class="people" data-row="12" data-have="12"></div>
+      </div>
+      <div class="lane">
+        <div class="lt">الحضور الرقمي <small>ما يراه الزائر</small></div>
+        <div class="people" data-row="12" data-have="4"></div>
+        <div class="gap" style="--have:calc(4/12*100%)"><div class="bar"></div><div class="gl">فجوة الحضور</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide ruler-s" data-chap="الفصل الأول · الركائز" aria-label="المسطرة">
+  <div class="inner">
+    <div>
+      <h2 class="r" style="--i:0">المسطرة: <span class="tl">ثماني ركائز</span> يُقاس بها موقع مؤسسة حاضرة.</h2>
+    </div>
+    <div class="ruler r" style="--i:1">
+      <div class="mark"><b>1</b><span>هوية واحدة ورسالة واضحة</span></div>
+      <div class="mark"><b>2</b><span>قصة متصلة تقود الزائر</span></div>
+      <div class="mark"><b>3</b><span>محتوى حيّ يثبت العمل</span></div>
+      <div class="mark"><b>4</b><span>المصداقية والتوثيق</span></div>
+      <div class="mark"><b>5</b><span>السرعة والوصول على الهاتف</span></div>
+      <div class="mark"><b>6</b><span>طريق واضح للمشاركة</span></div>
+      <div class="mark"><b>7</b><span>إدارة سهلة ومستدامة</span></div>
+      <div class="mark"><b>8</b><span>العربية أولاً</span></div>
+    </div>
+    <p class="lead r" style="--i:2">نمرّ عليها اثنتين اثنتين، ومع كل ركيزة سؤال اختبار بسيط، نعود إليه في الفصل الثاني.</p>
+  </div>
+</section>
+
+<section class="slide pair" data-chap="الفصل الأول · الركائز" data-on="1,2" aria-label="الركيزتان 1 و2">
+  <div class="inner">
+    <div class="mini r" style="--i:0"></div>
+    <div class="two">
+      <div class="pil r" style="--i:1">
+        <div class="pn">1</div>
+        <h3>هوية واحدة ورسالة واضحة</h3>
+        <p>صوت بصري واحد في كل الصفحات: ألوان، وخطوط، وأسلوب صور، ورسالة تُقال في جملة. التشتت البصري يوحي بتشتت المؤسسة نفسها.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يفهم الزائر من أنتم وماذا تفعلون خلال خمس ثوانٍ؟</span></div></div>
+      </div>
+      <div class="pil r" style="--i:2">
+        <div class="pn">2</div>
+        <h3>قصة متصلة تقود الزائر</h3>
+        <p>الموقع ليس أرشيف صفحات، بل رحلة: من أنتم، ثم ماذا تفعلون، ثم ماذا تقولون، ثم كيف يشارك الزائر. كل صفحة تسلّمه للتي بعدها.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يعرف الزائر في كل لحظة أين هو، وإلى أين يذهب بعدها؟</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide pair" data-chap="الفصل الأول · الركائز" data-on="3,4" aria-label="الركيزتان 3 و4">
+  <div class="inner">
+    <div class="mini r" style="--i:0"></div>
+    <div class="two">
+      <div class="pil r" style="--i:1">
+        <div class="pn">3</div>
+        <h3>محتوى حيّ يثبت العمل</h3>
+        <p>الأنشطة والصور والمشاريع هي الدليل الأقوى على الحضور. يجب أن تكون حديثة، وظاهرة من الواجهة، ومرتبة بالتاريخ والمكان.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>متى نُشر آخر نشاط؟ وهل يراه الزائر دون أن يبحث عنه؟</span></div></div>
+      </div>
+      <div class="pil r" style="--i:2">
+        <div class="pn">4</div>
+        <h3>المصداقية والتوثيق</h3>
+        <p>المواقف الرسمية واللقاءات تُعرض بتواريخها ونصوصها الكاملة، ومعها ما يثبتها. التوثيق هو ما يحوّل الحضور إلى ثقة.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يجد الصحفي موقف المنتدى من حدث ما، بتاريخه، في أقل من دقيقة؟</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide pair" data-chap="الفصل الأول · الركائز" data-on="5,6" aria-label="الركيزتان 5 و6">
+  <div class="inner">
+    <div class="mini r" style="--i:0"></div>
+    <div class="two">
+      <div class="pil r" style="--i:1">
+        <div class="pn">5</div>
+        <h3>السرعة والوصول على الهاتف</h3>
+        <p>أغلب جمهور المنتدى يزوره من الهاتف، وكثيراً على شبكات ضعيفة. موقع بطيء أو صعب على الشاشة الصغيرة يخسر زواره قبل أن يقرؤوا.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يفتح الموقع ويُتصفح بسهولة على هاتف متوسط وشبكة ضعيفة؟</span></div></div>
+      </div>
+      <div class="pil r" style="--i:2">
+        <div class="pn">6</div>
+        <h3>طريق واضح للمشاركة</h3>
+        <p>كل صفحة تنتهي بخطوة: انضم، أو اكتب، أو تواصل. والطريق يجب أن يعمل فعلاً حتى نهايته.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يستطيع شاب متحمّس أن ينضم أو يرسل مقاله في دقيقة واحدة؟</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide pair" data-chap="الفصل الأول · الركائز" data-on="7,8" aria-label="الركيزتان 7 و8">
+  <div class="inner">
+    <div class="mini r" style="--i:0"></div>
+    <div class="two">
+      <div class="pil r" style="--i:1">
+        <div class="pn">7</div>
+        <h3>إدارة سهلة ومستدامة</h3>
+        <p>الموقع الحيّ يحتاج من يحدّثه. لوحة إدارة بسيطة تجعل إضافة خبر أو نشاط عمل دقائق، لا مهمة تنتظر مبرمجاً.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يستطيع فريقكم إضافة خبر اليوم، دون مساعدة تقنية؟</span></div></div>
+      </div>
+      <div class="pil r" style="--i:2">
+        <div class="pn">8</div>
+        <h3>العربية أولاً</h3>
+        <p>لغة سليمة، وخط عربي يليق بالمؤسسة، واتجاه من اليمين إلى اليسار مبني من الأساس، لا مقلوب عن قالب أجنبي.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يبدو الموقع مصنوعاً بالعربية، لا مترجماً إليها؟</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide bridge dark" data-chap="الفصل الأول · الركائز" aria-label="إلى الفصل الثاني">
+  <div class="inner">
+    <h2 class="r" style="--i:0">هذه هي المسطرة. فأين يقف موقع المنتدى اليوم؟</h2>
+    <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>إلى الفصل الثاني: تقرير الموقع الحالي، صفحةً صفحة.</p>
+  </div>
+</section>
+
+</main>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="chk" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 12h8" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" opacity=".0"/></symbol>
+</svg>
+
+<footer class="chrome bottom">
+  <div class="prog" id="prog" aria-hidden="true"></div>
+  <nav class="nav" aria-label="التنقل بين الشرائح">
+    <span class="count" id="count">1 / 13</span>
+    <button id="prev" aria-label="الشريحة السابقة"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button id="next" aria-label="الشريحة التالية"><span>التالي</span><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </nav>
+</footer>
+
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var N=slides.length, cur=-1;
+  var prev=document.getElementById('prev'), next=document.getElementById('next');
+  var count=document.getElementById('count'), chapName=document.getElementById('chapName');
+  var NS='http://www.w3.org/2000/svg';
+  function fig(cls,ghost){var s=document.createElementNS(NS,'svg');
+    var u=document.createElementNS(NS,'use');u.setAttribute('href',ghost?'#fig-o':'#fig');u.setAttribute('class',cls);s.appendChild(u);return s}
+
+  // عدّادات الأشخاص في شريحة «على الأرض»
+  [].forEach.call(document.querySelectorAll('.tally'),function(t){
+    var n=+t.dataset.n;for(var i=0;i<n;i++)t.appendChild(fig(i%2?'fig-t':'fig-n'));});
+  // صفوف قاعدة التوازي
+  [].forEach.call(document.querySelectorAll('.people'),function(p){
+    var row=+p.dataset.row, have=+p.dataset.have;
+    for(var i=0;i<row;i++)p.appendChild(i<have?fig(i%2?'fig-t':'fig-n'):fig('fig-g',true));});
+  // المسطرة الصغيرة فوق كل زوج من الركائز
+  [].forEach.call(document.querySelectorAll('.pair'),function(s){
+    var on=s.dataset.on.split(',').map(Number), m=s.querySelector('.mini');
+    for(var i=1;i<=8;i++){var e=document.createElement('i');if(on.indexOf(i)>-1)e.className='act';else if(i<on[0])e.className='done';m.appendChild(e)}
+    m.setAttribute('aria-label','الركيزتان '+on.join(' و')+' من ثماني');m.setAttribute('role','img');});
+
+  // شريط التقدم مقسوم على الفصول
+  var chaps=[];slides.forEach(function(s,i){var c=s.dataset.chap.split(' · ')[0];
+    if(!chaps.length||chaps[chaps.length-1].name!==c)chaps.push({name:c,start:i,n:0});chaps[chaps.length-1].n++;});
+  var prog=document.getElementById('prog');
+  chaps.forEach(function(c){var sp=document.createElement('span');sp.style.setProperty('--n',c.n);sp.appendChild(document.createElement('i'));prog.appendChild(sp);c.el=sp;});
+
+  function go(i,fromHash){
+    i=Math.max(0,Math.min(N-1,i)); if(i===cur)return;
+    if(cur>-1)slides[cur].classList.remove('on');
+    cur=i; var s=slides[i]; s.classList.add('on'); s.scrollTop=0;
+    document.body.classList.toggle('dark',s.classList.contains('dark'));
+    prev.disabled=i===0; next.disabled=i===N-1;
+    count.textContent=(i+1)+' / '+N;
+    chapName.textContent=s.dataset.chap;
+    chaps.forEach(function(c){var p=Math.max(0,Math.min(1,(i-c.start+1)/c.n));c.el.firstChild.style.setProperty('--p',p)});
+    if(!fromHash)history.replaceState(null,'','#'+(i+1));
+  }
+  function fromHash(){var n=parseInt((location.hash||'').slice(1),10);go(isNaN(n)?0:n-1,true)}
+  next.addEventListener('click',function(){go(cur+1)});
+  prev.addEventListener('click',function(){go(cur-1)});
+  document.addEventListener('keydown',function(e){
+    if(e.altKey||e.ctrlKey||e.metaKey)return;
+    var k=e.key;
+    if(k==='ArrowLeft'||k==='PageDown'||k===' '||k==='Enter'&&e.target===document.body){e.preventDefault();go(cur+1)}
+    else if(k==='ArrowRight'||k==='PageUp'){e.preventDefault();go(cur-1)}
+    else if(k==='Home'){go(0)}else if(k==='End'){go(N-1)}
+  });
+  // السحب: في العربية تُقلب الصفحة من اليسار إلى اليمين
+  var x0=null,y0=null;
+  document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+  document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;
+    if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.4)go(cur+(dx>0?1:-1));x0=null},{passive:true});
+  window.addEventListener('hashchange',fromHash);
+  fromHash();
+})();
+</script>
+</body>
+</html>
