@@ -415,6 +415,12 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   .verdict .thumbs{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
+.visit{display:inline-flex;align-items:center;gap:14px;margin-top:8px;padding:16px 28px;border-radius:40px;background:#fff;color:var(--deep);
+  font:600 clamp(1rem,1.3vw,1.2rem)/1.5 "Alexandria",sans-serif;text-decoration:none;box-shadow:0 18px 40px -18px rgba(0,0,0,.6);
+  transition:background .3s,color .3s,transform .3s var(--ease)}
+.visit svg{width:22px;height:22px}
+.visit:hover{background:var(--teal-hi);transform:translateY(-2px)}
+.visit:active{transform:scale(.97)}
 @media (prefers-reduced-motion:reduce){
   .r{transition:none;opacity:1;transform:none;filter:none}
   .slide{transition:none}
@@ -974,6 +980,10 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   <div class="inner">
     <h2 class="r" style="--i:0">الخطوة التالية: الموقع الجديد، وكيف عالج هذه النقاط</h2>
     <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>الفصل الثالث: الموقع الجديد.</p>
+    <a class="visit r" style="--i:3" href="https://mubader-libya.github.io/ydf-homepage/" target="_blank" rel="noopener">
+      <span>افتح الموقع الجديد</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M10 7H6a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
   </div>
 </section>
 
