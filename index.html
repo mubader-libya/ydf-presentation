@@ -243,6 +243,106 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   .ask,.bridge,.chap{align-content:center}
   .lane .people{flex-wrap:wrap}
 }
+
+/* ══ الفصل الثاني: شرائح التقييم ══ */
+:root{--red:#C8303F;--red-soft:rgba(200,48,63,.14)}
+.audit .inner{display:grid;gap:clamp(16px,3vh,28px)}
+.a-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.a-head h2{font-size:clamp(1.5rem,2.5vw,2.4rem)}
+.a-head .where-page{font-size:.85rem;color:var(--muted);direction:ltr}
+.a-body{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:start}
+.a-body > *,.pairshots > *,.thumbs > *{min-width:0}
+.a-body.wide{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}
+
+/* إطار المتصفح */
+.shot{margin:0;display:flex;flex-direction:column;align-items:flex-start}
+.frame{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 24px 50px -30px rgba(6,45,68,.45);max-width:100%;width:min-content}
+.frame .bar{display:flex;align-items:center;gap:6px;height:30px;padding-inline:12px;background:var(--mist);border-bottom:1px solid var(--line)}
+.frame .bar i{width:9px;height:9px;border-radius:50%;background:#B9CDD2}
+.frame .bar span{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-inline-start:auto;font-size:.72rem;color:var(--muted);direction:ltr;background:#fff;border-radius:10px;padding:2px 12px;line-height:1.6}
+.pic{position:relative;display:block;width:fit-content;line-height:0}
+.pic img{display:block;max-width:none;height:auto;max-height:var(--mh,calc(100vh - 330px));width:auto}
+.cap{font-size:.82rem;color:var(--muted);margin-top:10px;line-height:1.7}
+
+/* الدائرة الحمراء */
+.ring{position:absolute;left:var(--x);top:var(--y);width:var(--w);height:var(--h);border:3px solid var(--red);border-radius:50%;
+  box-shadow:0 0 0 5px var(--red-soft);pointer-events:none}
+.ring.box{border-radius:14px}
+.ring::after{content:attr(data-n);position:absolute;top:-14px;right:-6px;width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;
+  font:700 .85rem/28px "Alexandria",sans-serif;text-align:center;box-shadow:0 4px 10px -4px rgba(0,0,0,.4)}
+
+/* قائمة الملاحظات */
+.finds{list-style:none;margin:0;padding:0;display:grid;gap:clamp(14px,2.4vh,24px)}
+.finds li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:14px;align-items:start}
+.finds .n{width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.9rem;margin-top:4px}
+.finds h3{font-size:clamp(1.05rem,1.35vw,1.3rem);font-weight:600;line-height:1.6;margin-bottom:4px}
+.finds p{font-size:clamp(.9rem,1vw,1rem);color:var(--muted);line-height:1.9}
+.finds .fix{margin-top:8px;color:var(--deep);background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.finds .fix small{display:block;font-size:.75rem;font-weight:600;color:var(--teal-ink);line-height:1.6}
+.finds .tag{display:inline-block;margin-top:8px;font-size:.75rem;font-weight:600;color:var(--navy);background:var(--mist);border-radius:20px;padding:4px 12px;line-height:1.6}
+
+/* الحكم العام */
+.verdict .inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.verdict h2{font-size:clamp(1.9rem,3.4vw,3.4rem);line-height:1.5}
+.verdict .lead{margin-top:20px}
+.thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.thumbs figure{margin:0}
+.thumbs .frame .bar{height:18px;padding-inline:8px;gap:4px}
+.thumbs .frame .bar i{width:6px;height:6px}
+.thumbs figcaption{font-size:.8rem;color:var(--muted);margin-top:6px;text-align:center;line-height:1.6}
+
+/* خريطة الصفحة الرئيسية */
+.strip{display:flex;gap:0;align-items:flex-start}
+.strip .pic img{--mh:calc(100vh - 300px)}
+.strip-wrap .frame{overflow:visible}
+.strip-wrap .pic img{border-radius:0 0 12px 12px}
+.slabel{position:absolute;right:calc(100% + 16px);top:var(--y);white-space:nowrap;font-size:.85rem;font-weight:600;color:var(--deep);line-height:1.5;display:flex;align-items:center;gap:8px}
+.slabel::before{content:"";width:12px;height:1.5px;background:var(--red)}
+.slabel em{font-style:normal;color:var(--red);font-weight:700}
+.strip .frame{margin-inline-end:auto}
+.strip-wrap{padding-left:230px}
+
+/* مقارنة صورتين */
+.pairshots{display:grid;gap:18px}
+.pairshots.cols{grid-template-columns:1fr 1fr}
+.pairshots h4{margin:0 0 8px;font-size:.85rem;font-weight:600;color:var(--navy);line-height:1.6}
+
+/* الخلاصة */
+.sum .inner{display:grid;gap:clamp(20px,4vh,40px)}
+.sum h2{font-size:clamp(1.7rem,3vw,3rem)}
+.sumrule{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 18px 40px -24px rgba(6,45,68,.35);overflow:hidden}
+.sumrule > div{padding:18px 14px 20px;border-inline-start:1px solid var(--line);display:grid;align-content:start;gap:10px}
+.sumrule > div:first-child{border-inline-start:0}
+.sumrule .st{height:6px;border-radius:3px;background:var(--line)}
+.sumrule .no .st{background:var(--red)}
+.sumrule .part .st{background:#E3A33B}
+.sumrule b{font-size:1.5rem;font-weight:300;color:var(--teal-ink);line-height:1}
+.sumrule span{font-size:.88rem;font-weight:600;line-height:1.7}
+.sumrule small{font-size:.78rem;color:var(--muted);line-height:1.6}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chips i{font-style:normal;min-width:24px;height:24px;padding-inline:6px;border-radius:12px;background:var(--red-soft);color:var(--red);font-size:.75rem;font-weight:700;display:grid;place-items:center}
+.finds.compact{gap:clamp(10px,1.8vh,18px)}
+.finds.compact h3{font-size:clamp(1rem,1.2vw,1.15rem);margin-bottom:2px}
+.finds.compact p{font-size:clamp(.86rem,.95vw,.95rem);line-height:1.8}
+.finds.compact .fix{background:none;border:0;padding:0;margin-top:4px}
+.finds.compact .fix small{display:inline;margin-inline-end:8px}
+.finds.compact .tag{margin-top:4px;padding:2px 10px}
+.legend{display:flex;gap:22px;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:8px}
+.legend span::before{content:"";width:18px;height:6px;border-radius:3px;background:var(--c)}
+
+@media (max-width:820px){
+  .a-body,.a-body.wide,.verdict .inner,.pairshots.cols{grid-template-columns:minmax(0,1fr)}
+  .pic img{max-height:none}
+  .strip .pic img{max-height:60vh;width:auto}
+  .strip-wrap{padding-left:150px}
+  .slabel{font-size:.75rem;right:calc(100% + 8px);white-space:normal;width:130px;align-items:flex-start}
+  .thumbs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sumrule{grid-template-columns:minmax(0,1fr)}
+  .sumrule > div{border-inline-start:0;border-top:1px solid var(--line)}
+  .sumrule > div:first-child{border-top:0}
+}
+
 @media (prefers-reduced-motion:reduce){
   .r{transition:none;opacity:1;transform:none;filter:none}
   .slide{transition:none}
@@ -525,6 +625,286 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
+<!-- ═══ الفصل الثاني ═══ -->
+
+<section class="slide chap dark" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="الفصل الثاني">
+  <svg class="wheel-bg" viewBox="-220 -220 440 440" aria-hidden="true"><use href="#wheel4"/></svg>
+  <div class="inner">
+    <div class="num r" style="--i:0" aria-hidden="true">2</div>
+    <div>
+      <p class="label r" style="--i:1">الفصل الثاني</p>
+      <h2 class="r" style="--i:2">تقييم الموقع الحالي، صفحة بصفحة</h2>
+    </div>
+  </div>
+</section>
+
+<section class="slide verdict" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="الانطباع العام">
+  <div class="inner">
+    <div>
+      <h2 class="r" style="--i:0">الانطباع العام: موقع جامد <span class="tl">بقالب جاهز</span></h2>
+      <p class="lead r" style="--i:1">يبدو الموقع تقريراً يعرض المشاريع، لا فضاءً رقمياً حياً يعزز حضور المنتدى. الشرائح التالية تفصّل هذا الانطباع، من الواجهة الأولى إلى الصفحات الداخلية.</p>
+    </div>
+    <div class="thumbs r" style="--i:2">
+      <figure><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/old/home-top.jpg" alt="الصفحة الرئيسية" loading="lazy"></div><figcaption>الرئيسية</figcaption></figure>
+      <figure><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/old/about.jpg" alt="مسيرة المنتدى" loading="lazy"></div><figcaption>مسيرة المنتدى</figcaption></figure>
+      <figure><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/old/pres.jpg" alt="كلمة الرئيس" loading="lazy"></div><figcaption>كلمة الرئيس</figcaption></figure>
+      <figure><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/old/acts.jpg" alt="المشاركات والأنشطة" loading="lazy"></div><figcaption>المشاركات والأنشطة</figcaption></figure>
+      <figure><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/old/news.jpg" alt="الأخبار" loading="lazy"></div><figcaption>الأخبار</figcaption></figure>
+      <figure><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="assets/old/blog.jpg" alt="المدونة" loading="lazy"></div><figcaption>المدونة</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="الرئيسية: الشاشة الأولى">
+  <div class="inner">
+    <div class="a-head r" style="--i:0"><h2>الصفحة الرئيسية: الشاشة الأولى</h2></div>
+    <div class="a-body">
+      <figure class="shot r" style="--i:1">
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly</span></div>
+          <div class="pic"><img src="assets/old/home-top.jpg" alt="الشاشة الأولى من الصفحة الرئيسية للموقع الحالي" loading="lazy" style="--mh:calc(100vh - 360px)">
+            <span class="ring box" data-n="1" style="--x:0.5%;--y:1%;--w:99%;--h:13%"></span>
+            <span class="ring" data-n="2" data-step="1" style="--x:21%;--y:19.5%;--w:53%;--h:12.5%"></span>
+            <span class="ring" data-n="2" data-step="1" style="--x:8%;--y:76%;--w:84%;--h:15%"></span>
+            <span class="ring box" data-n="3" data-step="2" style="--x:0.5%;--y:54%;--w:99%;--h:13.5%"></span>
+          </div>
+        </div>
+      </figure>
+      <ol class="finds compact">
+        <li class="r" style="--i:2"><span class="n">1</span><div>
+          <h3>ازدحام الواجهة الأولى</h3>
+          <p>شريط علوي مزدوج، وصور، ونصوص، تظهر كلها دفعة واحدة قبل أن يبدأ الزائر القراءة.</p>
+          <p class="fix"><small>الحل المقترح</small>عنصر رئيسي واحد ورسالة واحدة في الشاشة الأولى.</p>
+          <span class="tag">الركيزة 1</span></div></li>
+        <li class="r" style="--i:3" data-step="1"><span class="n">2</span><div>
+          <h3>نصوص فوق الصور</h3>
+          <p>العنوان ورسالة «بناء الدولة والسلام» فوق صور معتمة، فتضعف قراءتهما.</p>
+          <p class="fix"><small>الحل المقترح</small>نص على أرضية هادئة، وصورة كاملة بجانبه.</p>
+          <span class="tag">الركيزة 1</span></div></li>
+        <li class="r" style="--i:4" data-step="2"><span class="n">3</span><div>
+          <h3>تهميش الصور</h3>
+          <p>صور العمل الميداني خلفية معتمة للنص، والصور الثلاث أسفلها صغيرة لا تأخذ حقها.</p>
+          <p class="fix"><small>الحل المقترح</small>صور واضحة وكاملة، دليلاً على العمل لا خلفيةً للنص.</p>
+          <span class="tag">الركيزة 3</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="الرئيسية: الهيكل السردي">
+  <div class="inner">
+    <div class="a-head r" style="--i:0"><h2>الصفحة الرئيسية: تسلسل الأقسام</h2></div>
+    <div class="a-body">
+      <figure class="shot strip-wrap r" style="--i:1">
+        <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
+          <div class="pic"><img src="assets/old/home-long.jpg" alt="الصفحة الرئيسية كاملة" loading="lazy" style="--mh:calc(100vh - 300px)">
+            <span class="slabel" style="--y:5%"><em>1</em>شعار: الشباب في قلب القرار السياسي</span>
+            <span class="slabel" style="--y:22%"><em>2</em>رسالة: بناء الدولة والسلام</span>
+            <span class="slabel" style="--y:38%"><em>3</em>فيديو: شاهد أثرنا</span>
+            <span class="slabel" style="--y:55%"><em>4</em>أرقام: مسيرة حافلة</span>
+            <span class="slabel" style="--y:71%"><em>5</em>خريطة المناطق</span>
+            <span class="slabel" style="--y:90%"><em>6</em>منتديات المدن</span>
+          </div>
+        </div>
+      </figure>
+      <ol class="finds">
+        <li class="r" style="--i:2"><span class="n">4</span><div>
+          <h3>هيكل سردي ضعيف</h3>
+          <p>تتتابع أقسام الرئيسية دون رابط بينها: شعار، ثم رسالة، ثم فيديو، ثم أرقام، ثم خريطة، ثم منتديات المدن. لا يعرف الزائر لماذا ينتقل من قسم إلى الذي يليه.</p>
+          <p class="fix"><small>الحل المقترح</small>ترتيب الأقسام في قصة واحدة: من نحن، ثم ماذا نفعل، ثم ماذا نقول، ثم كيف يشارك الزائر، مع جملة تربط كل قسم بالذي يليه.</p>
+          <span class="tag">الركيزة 2</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="تكرار المحتوى">
+  <div class="inner">
+    <div class="a-head r" style="--i:0"><h2>الرئيسية و«مسيرة المنتدى»: القسم نفسه مرتين</h2></div>
+    <div class="a-body">
+      <div class="pairshots r" style="--i:1">
+        <figure class="shot"><h4>في الصفحة الرئيسية</h4>
+          <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly</span></div>
+            <div class="pic"><img src="assets/old/home-stats.jpg" alt="قسم مسيرة حافلة في الصفحة الرئيسية" loading="lazy" style="--mh:30vh">
+              <span class="ring" data-n="5" style="--x:18%;--y:8%;--w:64%;--h:30%"></span></div></div></figure>
+        <figure class="shot"><h4>في صفحة «مسيرة المنتدى»</h4>
+          <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly/مسيرة-منتدى-حوار-الشباب</span></div>
+            <div class="pic"><img src="assets/old/about-stats.jpg" alt="القسم نفسه في صفحة مسيرة المنتدى" loading="lazy" style="--mh:22vh">
+              <span class="ring" data-n="5" style="--x:18%;--y:4%;--w:64%;--h:38%"></span></div></div></figure>
+      </div>
+      <ol class="finds">
+        <li class="r" style="--i:2"><span class="n">5</span><div>
+          <h3>تكرار المحتوى</h3>
+          <p>قسم «مسيرة حافلة بالعمل والتأسيس» بأرقامه نفسها يظهر في الرئيسية وفي صفحة «مسيرة المنتدى»، فلا يبقى سبب لزيارة الصفحة الداخلية.</p>
+          <p class="fix"><small>الحل المقترح</small>الرئيسية تعرض الملخص وتحيل إلى الصفحة الداخلية، والصفحة الداخلية تضيف ما لا يوجد في الرئيسية.</p>
+          <span class="tag">الركيزة 2</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="تشتت حول المنتدى">
+  <div class="inner">
+    <div class="a-head r" style="--i:0"><h2>«حول المنتدى»: تعريف موزع على صفحتين</h2></div>
+    <div class="a-body">
+      <div class="pairshots cols r" style="--i:1">
+        <figure class="shot"><h4>مسيرة المنتدى</h4>
+          <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
+            <div class="pic"><img src="assets/old/about.jpg" alt="صفحة مسيرة المنتدى" loading="lazy"></div></div></figure>
+        <figure class="shot"><h4>كلمة رئيس المنتدى</h4>
+          <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
+            <div class="pic"><img src="assets/old/pres.jpg" alt="صفحة كلمة رئيس المنتدى" loading="lazy"></div></div></figure>
+      </div>
+      <ol class="finds">
+        <li class="r" style="--i:2"><span class="n">6</span><div>
+          <h3>تشتت «حول المنتدى»</h3>
+          <p>التعريف بالمنتدى موزع على صفحتين منفصلتين، «مسيرة المنتدى» و«كلمة الرئيس»، وفيهما عناصر مكررة من الرئيسية.</p>
+          <p class="fix"><small>الحل المقترح</small>صفحة تعريف واحدة متصلة: الرسالة، والمسيرة، وكلمة الرئيس.</p>
+          <span class="tag">الركيزة 2</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="صعوبة التنقل">
+  <div class="inner">
+    <div class="a-head r" style="--i:0"><h2>نهاية الصفحة: لا خطوة تالية</h2></div>
+    <div class="a-body">
+      <figure class="shot r" style="--i:1">
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly/مسيرة-منتدى-حوار-الشباب</span></div>
+          <div class="pic"><img src="assets/old/about-end.jpg" alt="نهاية صفحة مسيرة المنتدى" loading="lazy">
+            <span class="ring box" data-n="7" style="--x:1%;--y:54%;--w:98%;--h:44%"></span></div></div>
+      </figure>
+      <ol class="finds">
+        <li class="r" style="--i:2"><span class="n">7</span><div>
+          <h3>صعوبة التنقل</h3>
+          <p>تنتهي الصفحة بأيقونات التواصل الاجتماعي، دون إشارة إلى الصفحة التالية. ليختار الزائر وجهته، يعود إلى أعلى الصفحة.</p>
+          <p class="fix"><small>الحل المقترح</small>نهاية كل صفحة تقود إلى الصفحة التالية في القصة، مع قائمة ثابتة يسهل الوصول إليها في أي لحظة.</p>
+          <span class="tag">الركيزة 2</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="الأنشطة">
+  <div class="inner">
+    <div class="a-head r" style="--i:0"><h2>المشاركات والأنشطة</h2></div>
+    <div class="a-body">
+      <figure class="shot r" style="--i:1">
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly/category/المشاركات-و-الأنشطة</span></div>
+          <div class="pic"><img src="assets/old/acts-long.jpg" alt="صفحة المشاركات والأنشطة" loading="lazy">
+            <span class="ring" data-n="8" style="--x:6%;--y:6.2%;--w:29%;--h:3.8%"></span>
+            <span class="ring box" data-n="8" style="--x:7%;--y:9.8%;--w:86%;--h:87%"></span></div></div>
+      </figure>
+      <ol class="finds">
+        <li class="r" style="--i:2"><span class="n">8</span><div>
+          <h3>الأنشطة متكدسة بلا تنظيم</h3>
+          <p>عنوان الصفحة «التصنيف: المشاركات و الأنشطة» تسمية جاهزة من نظام النشر، والأنشطة بطاقات متطابقة متتالية، لا فرز فيها ولا إبراز لأحدثها أو أهمها.</p>
+          <p class="fix"><small>الحل المقترح</small>إبراز أحدث الأنشطة، وتصنيفها بالمشروع والمدينة ونوع النشاط.</p>
+          <span class="tag">الركيزة 3</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="الترتيب الزمني">
+  <div class="inner">
+    <div class="a-head r" style="--i:0"><h2>صفحات المدن: صور بلا زمن</h2></div>
+    <div class="a-body">
+      <figure class="shot r" style="--i:1">
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly/portfolio-item/طرابلس</span></div>
+          <div class="pic"><img src="assets/old/city.jpg" alt="صفحة منتدى طرابلس" loading="lazy">
+            <span class="ring box" data-n="9" style="--x:8%;--y:23%;--w:84%;--h:75%"></span></div></div>
+      </figure>
+      <ol class="finds">
+        <li class="r" style="--i:2"><span class="n">9</span><div>
+          <h3>لا ترتيب زمني</h3>
+          <p>صور المنتديات والمدن معروضة بلا تاريخ ولا عنوان في أعلى الصفحة، ولا أرشيف مرتب بالسنوات يبيّن تسلسل العمل.</p>
+          <p class="fix"><small>الحل المقترح</small>تاريخ ومكان على كل نشاط وكل مجموعة صور، وأرشيف مرتب زمنياً.</p>
+          <span class="tag">الركيزة 3</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="تكرار القالب">
+  <div class="inner">
+    <div class="a-head r" style="--i:0"><h2>الأنشطة والأخبار والمدونة: القالب نفسه</h2></div>
+    <div class="a-body wide">
+      <div class="pairshots r" style="--i:1">
+        <div class="thumbs">
+          <figure><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="pic"><img src="assets/old/acts.jpg" alt="المشاركات والأنشطة" loading="lazy">
+            <span class="ring" data-n="10" style="--x:6%;--y:21%;--w:30%;--h:11%"></span><span class="ring box" data-n="10" style="--x:8%;--y:33%;--w:84%;--h:62%"></span></div></div><figcaption>المشاركات والأنشطة</figcaption></figure>
+          <figure><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="pic"><img src="assets/old/news.jpg" alt="الأخبار" loading="lazy">
+            <span class="ring" data-n="10" style="--x:6%;--y:21%;--w:16%;--h:11%"></span><span class="ring box" data-n="10" style="--x:8%;--y:33%;--w:84%;--h:62%"></span></div></div><figcaption>الأخبار</figcaption></figure>
+          <figure><div class="frame"><div class="bar"><i></i><i></i><i></i></div><div class="pic"><img src="assets/old/blog.jpg" alt="المدونة" loading="lazy">
+            <span class="ring" data-n="10" style="--x:6%;--y:21%;--w:18%;--h:11%"></span><span class="ring box" data-n="10" style="--x:8%;--y:33%;--w:84%;--h:62%"></span></div></div><figcaption>المدونة</figcaption></figure>
+        </div>
+      </div>
+      <ol class="finds">
+        <li class="r" style="--i:2"><span class="n">10</span><div>
+          <h3>تكرار القالب بدل بناء الهوية</h3>
+          <p>الصفحات الثلاث بطريقة التوزيع نفسها: تسمية «التصنيف»، ثم صورة كبيرة، ثم عنوان. تكرار العناصر نفسها لا يصنع هوية.</p>
+          <p class="fix"><small>الحل المقترح</small>هوية واحدة (الألوان والخطوط وأسلوب الرسم) تُوظَّف بأشكال عرض مختلفة تناسب كل نوع من المحتوى.</p>
+          <span class="tag">الركيزة 1</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="صور مقصوصة">
+  <div class="inner">
+    <div class="a-head r" style="--i:0"><h2>صور مقصوصة</h2></div>
+    <div class="a-body wide">
+      <div class="pairshots cols r" style="--i:1">
+        <figure class="shot"><h4>صورة رئيس المنتدى واسمه</h4>
+          <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
+            <div class="pic"><img src="assets/old/crop-pres.jpg" alt="صورة رئيس المنتدى في صفحة الكلمة" loading="lazy" style="--mh:34vh">
+              <span class="ring" data-n="11" style="--x:9%;--y:46%;--w:58%;--h:28%"></span></div></div></figure>
+        <div class="pairshots">
+          <figure class="shot" data-step="1"><h4>بيان في قائمة الأخبار</h4>
+            <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
+              <div class="pic"><img src="assets/old/crop-statement.jpg" alt="صورة بيان مقصوصة" loading="lazy" style="--mh:16vh">
+                <span class="ring box" data-n="11" style="--x:3%;--y:2%;--w:94%;--h:24%"></span></div></div></figure>
+          <figure class="shot" data-step="2"><h4>خبر في قائمة الأخبار</h4>
+            <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
+              <div class="pic"><img src="assets/old/crop-exam.jpg" alt="صورة خبر مقصوصة" loading="lazy" style="--mh:16vh">
+                <span class="ring box" data-n="11" style="--x:8%;--y:66%;--w:84%;--h:32%"></span></div></div></figure>
+        </div>
+      </div>
+      <ol class="finds">
+        <li class="r" style="--i:2"><span class="n">11</span><div>
+          <h3>صور تظهر ناقصة</h3>
+          <p>صورة رئيس المنتدى مقصوصة واسمه مكتوب فوقها ومقطوع من الطرف، وصور البيانات والأخبار مقصوصة من أعلاها أو أسفلها في القوائم.</p>
+          <p class="fix"><small>الحل المقترح</small>عرض الصور كاملة بمقاساتها الصحيحة، وفصل النصوص عن الصور.</p>
+          <span class="tag">الركيزة 4</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="slide sum" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="خلاصة التقييم">
+  <div class="inner">
+    <h2 class="r" style="--i:0">الخلاصة: الموقع الحالي <span class="tl">على الركائز السبع</span></h2>
+    <div class="sumrule r" style="--i:1">
+      <div class="no"><div class="st"></div><b>1</b><span>هوية واحدة ورسالة واضحة</span><div class="chips"><i>1</i><i>2</i><i>10</i></div><small>ومعها الانطباع العام</small></div>
+      <div class="no"><div class="st"></div><b>2</b><span>قصة متصلة تقود الزائر</span><div class="chips"><i>4</i><i>5</i><i>6</i><i>7</i></div></div>
+      <div class="part"><div class="st"></div><b>3</b><span>محتوى حيّ يثبت العمل</span><div class="chips"><i>3</i><i>8</i><i>9</i></div></div>
+      <div class="part"><div class="st"></div><b>4</b><span>المصداقية والتوثيق</span><div class="chips"><i>11</i></div></div>
+      <div><div class="st"></div><b>5</b><span>السرعة والوصول على الهاتف</span><small>تُعرض في الجانب التقني</small></div>
+      <div class="part"><div class="st"></div><b>6</b><span>طريق واضح للمشاركة</span><div class="chips"><i>7</i></div></div>
+      <div><div class="st"></div><b>7</b><span>إدارة سهلة ومستدامة</span><small>تُعرض في الجانب التقني</small></div>
+    </div>
+    <div class="legend r" style="--i:2"><span style="--c:var(--red)">غير متحققة</span><span style="--c:#E3A33B">متحققة جزئياً</span><span style="--c:var(--line)">في الجانب التقني</span><span>الأرقام تشير إلى النقاط في الشرائح السابقة</span></div>
+  </div>
+</section>
+
+<section class="slide bridge dark" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="إلى الفصل الثالث">
+  <div class="inner">
+    <h2 class="r" style="--i:0">الخطوة التالية: الموقع الجديد، وكيف عالج هذه النقاط</h2>
+    <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>الفصل الثالث: الموقع الجديد.</p>
+  </div>
+</section>
+
 </main>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -571,14 +951,15 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 
   var step=0;
   function steps(s){return s.querySelectorAll('[data-step]')}
+  function nsteps(s){var m=0;[].forEach.call(steps(s),function(e){m=Math.max(m,+e.dataset.step)});return m}
   function setStep(n){var s=slides[cur];step=n;
     [].forEach.call(steps(s),function(e){e.classList.toggle('shown',+e.dataset.step<=n)});
     var m=s.querySelector('.mini');if(m){var on=s.dataset.on.split(',').map(Number),vis=on.slice(0,n+1);
       [].forEach.call(m.children,function(e,k){var i=k+1;e.className=vis.indexOf(i)>-1?'act':(i<on[0]?'done':'')});
       m.setAttribute('aria-label','الركيزة '+vis.join(' و')+' من سبع')}
-    next.disabled=cur===N-1&&step>=steps(s).length;}
-  function fwd(){if(step<steps(slides[cur]).length)setStep(step+1);else go(cur+1)}
-  function back(){if(step>0)setStep(step-1);else if(cur>0){go(cur-1);setStep(steps(slides[cur]).length)}}
+    next.disabled=cur===N-1&&step>=nsteps(s);}
+  function fwd(){if(step<nsteps(slides[cur]))setStep(step+1);else go(cur+1)}
+  function back(){if(step>0)setStep(step-1);else if(cur>0){go(cur-1);setStep(nsteps(slides[cur]))}}
   function go(i,fromHash){
     i=Math.max(0,Math.min(N-1,i)); if(i===cur)return;
     if(cur>-1)slides[cur].classList.remove('on');
@@ -590,6 +971,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     chaps.forEach(function(c){var p=Math.max(0,Math.min(1,(i-c.start+1)/c.n));c.el.firstChild.style.setProperty('--p',p)});
     if(!fromHash)history.replaceState(null,'','#'+(i+1));
     setStep(0);
+    if(typeof fit==='function')fit();
   }
   function fromHash(){var n=parseInt((location.hash||'').slice(1),10);go(isNaN(n)?0:n-1,true)}
   next.addEventListener('click',fwd);
@@ -606,6 +988,14 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
   document.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;
     if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.4)(dx>0?fwd:back)();x0=null},{passive:true});
+  // مقاس كل صورة: لا تتجاوز عرض عمودها ولا الارتفاع المحدد لها، فتنطبق الدوائر عليها تماماً
+  var pics=[].slice.call(document.querySelectorAll('.pic img'));
+  function fit(){pics.forEach(function(img){if(!img.naturalWidth)return;var cs=getComputedStyle(img),mh=parseFloat(cs.maxHeight);
+    var box=img.closest('figure');var cw=box?box.clientWidth:img.parentNode.clientWidth;
+    if(box&&box.classList.contains('strip-wrap'))cw=Math.max(80,cw-parseFloat(getComputedStyle(box).paddingLeft));
+    var w=cw;if(!isNaN(mh))w=Math.min(w,mh*img.naturalWidth/img.naturalHeight);img.style.width=Math.floor(w)+'px'})}
+  pics.forEach(function(img){img.loading='eager';if(img.complete)fit();else img.addEventListener('load',fit)});
+  window.addEventListener('resize',fit);
   window.addEventListener('hashchange',fromHash);
   fromHash();
 })();
