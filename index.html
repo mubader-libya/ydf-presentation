@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>عرض موقع منتدى حوار الشباب</title>
-<meta name="description" content="عرض تقديمي: من الحضور على الأرض إلى الحضور الرقمي.">
+<meta name="description" content="عرض تقديمي: فضاء رقمي يوازي حضور المنتدى.">
 <link rel="icon" href="assets/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -181,11 +181,11 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 /* ── 8. المسطرة ── */
 .ruler-s .inner{display:grid;gap:clamp(28px,6vh,64px)}
 .ruler-s h2{font-size:clamp(1.8rem,3.4vw,3.4rem)}
-.ruler{position:relative;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:6px;
+.ruler{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:#fff;border:1px solid var(--line);border-radius:6px;
   box-shadow:0 18px 40px -24px rgba(6,45,68,.35)}
 .ruler::before{content:"";position:absolute;inset:0 0 auto;height:22px;
-  background:repeating-linear-gradient(to left,var(--deep) 0 1px,transparent 1px 100%) 0 0/calc(100%/35) 10px no-repeat,
-             repeating-linear-gradient(to left,var(--deep) 0 1px,transparent 1px 100%) 0 0/calc(100%/70) 6px repeat-x;
+  background:repeating-linear-gradient(to left,var(--deep) 0 1px,transparent 1px 100%) 0 0/calc(100%/25) 10px no-repeat,
+             repeating-linear-gradient(to left,var(--deep) 0 1px,transparent 1px 100%) 0 0/calc(100%/50) 6px repeat-x;
   background-repeat:repeat-x;opacity:.55}
 .mark{position:relative;padding:44px 14px 22px;border-inline-start:1px solid var(--line)}
 .mark:first-child{border-inline-start:0}
@@ -195,7 +195,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 .mark span{font-size:clamp(.85rem,1vw,1rem);font-weight:600;line-height:1.8;display:block}
 
 /* ── 9–12. الركائز ── */
-.mini{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:clamp(24px,5vh,52px);max-width:520px}
+.mini{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:clamp(24px,5vh,52px);max-width:520px}
 .mini i{height:6px;border-radius:3px;background:var(--line)}
 .mini i.done{background:#9CC6CB}
 .mini i.act{background:var(--navy)}
@@ -387,7 +387,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 .cascade .bar span{font-family:"Alexandria",sans-serif;direction:rtl;font-weight:600;color:var(--navy)}
 
 /* الصور المقصوصة */
-.crops{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(14px,1.8vw,24px);align-items:center;width:100%}
+.crops{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(14px,1.8vw,24px);align-items:center;width:min(100%,calc((100vh - 300px) * 2.2));margin-inline:auto}
 .crops .side{display:grid;gap:clamp(12px,2vh,20px)}
 .crops figure{margin:0}
 .crops .frame{width:100%}
@@ -567,10 +567,10 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   <div class="inner">
     <div>
       <img class="logo-full r" style="--i:0" src="assets/logo-full.png" alt="منتدى حوار الشباب — Youth Dialogue Forum" width="500" height="270">
-      <h1 class="r" style="--i:1">من الحضور على الأرض <span>إلى الحضور الرقمي</span></h1>
-      <p class="sub r" style="--i:2">مراجعة الموقع الحالي، وعرض الموقع الجديد المبني على معايير الموقع المؤسسي.</p>
+      <h1 class="r" style="--i:1">فضاء رقمي <span>يوازي حضور المنتدى</span></h1>
+      <p class="sub r" style="--i:2">معايير الموقع المؤسسي، وعرض الموقع الحالي لمنتدى حوار الشباب.</p>
       <div class="meta r" style="--i:3">
-        <div><b>عرض الموقع الإلكتروني الجديد</b>منتدى حوار الشباب</div>
+        <div><b>الحضور الرقمي للمنتدى</b>منتدى حوار الشباب</div>
         <div><b>طرابلس، ليبيا</b>نوفمبر 2026</div>
       </div>
     </div>
@@ -614,14 +614,13 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   <div class="inner">
     <div>
       <h2 class="mid r" style="--i:0">خريطة العرض</h2>
-      <p class="lead r" style="--i:1" >يتكوّن العرض من خمسة أجزاء: المعايير، ثم تقييم الموقع الحالي وفقها، ثم الموقع الجديد.</p>
+      <p class="lead r" style="--i:1" >يتكوّن العرض من أربعة أجزاء: المعايير، ثم عرض الموقع الحالي وفقها، ثم الجانب التقني، ثم التوصيات.</p>
     </div>
     <ol>
-      <li class="r" style="--i:1"><span class="k">1</span><div><h3>معايير الموقع المؤسسي</h3><p>سبع ركائز لموقع مؤسسة ذات حضور ميداني.</p></div></li>
-      <li class="r" style="--i:2"><span class="k">2</span><div><h3>تقييم الموقع الحالي</h3><p>صفحة بصفحة: المشكلة، والحل المقترح.</p></div></li>
-      <li class="r" style="--i:3"><span class="k">3</span><div><h3>الموقع الجديد</h3><p>تطبيق الركائز في الموقع الجديد.</p></div></li>
-      <li class="r" style="--i:4"><span class="k">4</span><div><h3>الجانب التقني</h3><p>البنية التقنية للموقع وإدارة المحتوى.</p></div></li>
-      <li class="r" style="--i:5"><span class="k">5</span><div><h3>خطة الإطلاق</h3><p>الخطوات المرتبة حتى إطلاق الموقع على ydf.ly.</p></div></li>
+      <li class="r" style="--i:1"><span class="k">1</span><div><h3>معايير الموقع المؤسسي</h3><p>خمس ركائز لموقع مؤسسة ذات حضور ميداني.</p></div></li>
+      <li class="r" style="--i:2"><span class="k">2</span><div><h3>عرض الموقع الحالي</h3><p>صفحة بصفحة: المشكلة، والحل المقترح.</p></div></li>
+      <li class="r" style="--i:3"><span class="k">3</span><div><h3>الجانب التقني</h3><p>البنية التقنية للموقع وإدارة المحتوى.</p></div></li>
+      <li class="r" style="--i:4"><span class="k">4</span><div><h3>التوصيات</h3><p>الاستضافة، وما بعد الإطلاق، وخطة الإطلاق.</p></div></li>
     </ol>
   </div>
 </section>
@@ -704,18 +703,16 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 <section class="slide ruler-s" data-chap="الفصل الأول · الركائز" aria-label="المسطرة">
   <div class="inner">
     <div>
-      <h2 class="r" style="--i:0"><span class="tl">سبع ركائز</span> لتقييم موقع المؤسسة</h2>
+      <h2 class="r" style="--i:0"><span class="tl">خمس ركائز</span> لتقييم موقع المؤسسة</h2>
     </div>
     <div class="ruler r" style="--i:1">
       <div class="mark"><b>1</b><span>هوية واحدة ورسالة واضحة</span></div>
       <div class="mark"><b>2</b><span>قصة متصلة تقود الزائر</span></div>
       <div class="mark"><b>3</b><span>محتوى حيّ يثبت العمل</span></div>
-      <div class="mark"><b>4</b><span>المصداقية والتوثيق</span></div>
-      <div class="mark"><b>5</b><span>السرعة والوصول على الهاتف</span></div>
-      <div class="mark"><b>6</b><span>طريق واضح للمشاركة</span></div>
-      <div class="mark"><b>7</b><span>إدارة سهلة ومستدامة</span></div>
+      <div class="mark"><b>4</b><span>السرعة والوصول على الهاتف</span></div>
+      <div class="mark"><b>5</b><span>طريق واضح للمشاركة</span></div>
     </div>
-    <p class="lead r" style="--i:2">لكل ركيزة سؤال اختبار، يُستخدم في الفصل الثاني لتقييم الموقع الحالي.</p>
+    <p class="lead r" style="--i:2">لكل ركيزة سؤال اختبار، نعود إليه في الفصل الثاني عند عرض الموقع الحالي.</p>
   </div>
 </section>
 
@@ -751,26 +748,20 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
       </div>
       <div class="pil r" style="--i:2" data-step="1">
         <div class="pn">4</div>
-        <h3>المصداقية والتوثيق</h3>
-        <p>تُعرض المواقف الرسمية واللقاءات بتواريخها ونصوصها الكاملة، مع ما يوثّقها. التوثيق أساس الثقة بالمؤسسة.</p>
-        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يمكن الوصول إلى موقف المنتدى من حدث ما، بتاريخه، في أقل من دقيقة؟</span></div></div>
+        <h3>السرعة والوصول على الهاتف</h3>
+        <p>يصل أغلب جمهور المنتدى إلى الموقع من الهاتف، وغالباً عبر شبكات ضعيفة. الموقع البطيء أو غير الملائم للشاشات الصغيرة يفقد جزءاً كبيراً من زواره.</p>
+        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يعمل الموقع بسهولة على هاتف متوسط وشبكة ضعيفة؟</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="slide pair" data-chap="الفصل الأول · الركائز" data-on="5,6" aria-label="الركيزتان 5 و6">
+<section class="slide pair" data-chap="الفصل الأول · الركائز" data-on="5" aria-label="الركيزة 5">
   <div class="inner">
     <div class="mini r" style="--i:0"></div>
     <div class="two">
       <div class="pil r" style="--i:1">
         <div class="pn">5</div>
-        <h3>السرعة والوصول على الهاتف</h3>
-        <p>يصل أغلب جمهور المنتدى إلى الموقع من الهاتف، وغالباً عبر شبكات ضعيفة. الموقع البطيء أو غير الملائم للشاشات الصغيرة يفقد جزءاً كبيراً من زواره.</p>
-        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يعمل الموقع بسهولة على هاتف متوسط وشبكة ضعيفة؟</span></div></div>
-      </div>
-      <div class="pil r" style="--i:2" data-step="1">
-        <div class="pn">6</div>
         <h3>طريق واضح للمشاركة</h3>
         <p>تنتهي كل صفحة بخطوة واضحة: الانضمام، أو الكتابة، أو التواصل، ويعمل المسار حتى نهايته.</p>
         <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يمكن إتمام طلب الانضمام أو إرسال مقال في دقيقة واحدة؟</span></div></div>
@@ -779,41 +770,40 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide pair" data-chap="الفصل الأول · الركائز" data-on="7" aria-label="الركيزة 7">
-  <div class="inner">
-    <div class="mini r" style="--i:0"></div>
-    <div class="two">
-      <div class="pil r" style="--i:1">
-        <div class="pn">7</div>
-        <h3>إدارة سهلة ومستدامة</h3>
-        <p>استمرار الموقع يتطلب تحديثاً منتظماً. لوحة إدارة بسيطة تجعل إضافة خبر أو نشاط مهمة دقائق، دون الحاجة إلى مبرمج.</p>
-        <div class="test"><svg viewBox="0 0 24 24"><use href="#chk"/></svg><div><small>الاختبار</small><span>هل يستطيع فريق المنتدى إضافة خبر دون مساعدة تقنية؟</span></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="slide bridge dark" data-chap="الفصل الأول · الركائز" aria-label="إلى الفصل الثاني">
   <div class="inner">
-    <h2 class="r" style="--i:0">الخطوة التالية: تقييم الموقع الحالي وفق الركائز السبع</h2>
-    <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>الفصل الثاني: تقييم الموقع الحالي، صفحة بصفحة.</p>
+    <h2 class="r" style="--i:0">الخطوة التالية: عرض الموقع الحالي وفق الركائز الخمس</h2>
+    <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>الفصل الثاني: عرض الموقع الحالي، صفحة بصفحة.</p>
   </div>
 </section>
 
 <!-- ═══ الفصل الثاني ═══ -->
 
-<section class="slide chap dark" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="الفصل الثاني">
+<section class="slide chap dark" data-chap="الفصل الثاني · عرض الموقع الحالي" aria-label="الفصل الثاني">
   <svg class="wheel-bg" viewBox="-220 -220 440 440" aria-hidden="true"><use href="#wheel4"/></svg>
   <div class="inner">
     <div class="num r" style="--i:0" aria-hidden="true">2</div>
     <div>
       <p class="label r" style="--i:1">الفصل الثاني</p>
-      <h2 class="r" style="--i:2">تقييم الموقع الحالي، صفحة بصفحة</h2>
+      <h2 class="r" style="--i:2">عرض الموقع الحالي، صفحة بصفحة</h2>
     </div>
   </div>
 </section>
+<section class="slide tech" data-chap="الفصل الثاني · عرض الموقع الحالي" aria-label="ما يعمل في الموقع الحالي">
+  <div class="inner">
+    <h2 class="r" style="--i:0">ما يعمل في الموقع الحالي</h2>
+    <p class="lead r" style="--i:1">قبل الملاحظات: نقاط قوة حقيقية، يُبنى عليها ولا يُستغنى عنها.</p>
+    <ol class="recs">
+      <li class="r" style="--i:2"><div class="k"><i>1</i><h3>أرشيف حقيقي وغني</h3></div><p>أنشطة منذ 2021، وأخبار وبيانات رسمية، ومقالات بأقلام شباب المنتدى، منشورة بتواريخها.</p></li>
+      <li class="r" style="--i:3"><div class="k"><i>2</i><h3>توثيق مصوّر للعمل</h3></div><p>صور ميدانية كثيرة للجلسات والتدريبات واللقاءات في المدن الليبية.</p></li>
+      <li class="r" style="--i:4"><div class="k"><i>3</i><h3>هوية بصرية واضحة</h3></div><p>شعار مميز بثلاث لغات، وألوان ثابتة. وهي الهوية التي بُني عليها هذا العرض.</p></li>
+      <li class="r" style="--i:5"><div class="k"><i>4</i><h3>خريطة المنتديات</h3></div><p>فكرة موفّقة تُظهر انتشار المنتدى في المدن الليبية بنظرة واحدة.</p></li>
+      <li class="r" style="--i:6"><div class="k"><i>5</i><h3>قنوات للمشاركة والتواصل</h3></div><p>استمارة لإرسال المقالات، وصفحة للتواصل، وروابط لمنصات المنتدى.</p></li>
+    </ol>
+  </div>
+</section>
 
-<section class="slide verdict" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="الانطباع العام">
+<section class="slide verdict" data-chap="الفصل الثاني · عرض الموقع الحالي" aria-label="الانطباع العام">
   <div class="inner">
     <div class="vhead">
       <h2 class="r" style="--i:0">الانطباع العام: موقع جامد <span class="tl">بقالب جاهز</span></h2>
@@ -830,7 +820,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="الرئيسية: الشاشة الأولى">
+<section class="slide audit" data-chap="الفصل الثاني · عرض الموقع الحالي" aria-label="الرئيسية: الشاشة الأولى">
   <div class="inner">
     <div class="a-head r" style="--i:0"><h2>الصفحة الرئيسية: الشاشة الأولى</h2></div>
     <div class="a-body">
@@ -865,7 +855,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="الرئيسية: تسلسل الأقسام">
+<section class="slide audit" data-chap="الفصل الثاني · عرض الموقع الحالي" aria-label="الرئيسية: تسلسل الأقسام">
   <div class="inner">
     <div class="a-head r" style="--i:0"><h2>الصفحة الرئيسية: تسلسل الأقسام</h2></div>
     <div class="a-body">
@@ -890,18 +880,18 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="تكرار المحتوى">
+<section class="slide audit" data-chap="الفصل الثاني · عرض الموقع الحالي" aria-label="تكرار المحتوى">
   <div class="inner">
     <div class="a-head r" style="--i:0"><h2>الرئيسية و«مسيرة المنتدى»: القسم نفسه مرتين</h2></div>
     <div class="a-body">
       <div class="bands r" style="--i:1">
         <figure class="shot"><p class="ph">في الصفحة الرئيسية</p>
           <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly</span></div>
-            <div class="pic"><img src="assets/old/home-stats.jpg" alt="قسم مسيرة حافلة في الصفحة الرئيسية" style="--mh:calc(50vh - 190px)">
+            <div class="pic"><img src="assets/old/home-stats.jpg" alt="قسم مسيرة حافلة في الصفحة الرئيسية" style="--mh:calc(50vh - 208px)">
               <span class="ring" data-n="5" style="--x:18%;--y:8%;--w:64%;--h:30%"></span></div></div></figure>
         <figure class="shot"><p class="ph">في صفحة «مسيرة المنتدى»</p>
           <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly/مسيرة-منتدى-حوار-الشباب</span></div>
-            <div class="pic"><img src="assets/old/about-stats.jpg" alt="القسم نفسه في صفحة مسيرة المنتدى" style="--mh:calc(50vh - 220px)">
+            <div class="pic"><img src="assets/old/about-stats.jpg" alt="القسم نفسه في صفحة مسيرة المنتدى" style="--mh:calc(50vh - 236px)">
               <span class="ring" data-n="5" style="--x:18%;--y:4%;--w:64%;--h:38%"></span></div></div></figure>
       </div>
       <ol class="finds">
@@ -915,17 +905,17 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="تشتت حول المنتدى">
+<section class="slide audit" data-chap="الفصل الثاني · عرض الموقع الحالي" aria-label="تشتت حول المنتدى">
   <div class="inner">
     <div class="a-head r" style="--i:0"><h2>«حول المنتدى»: تعريف موزع على صفحتين</h2></div>
     <div class="a-body">
       <div class="bands r" style="--i:1">
         <figure class="shot"><p class="ph">صفحة «مسيرة المنتدى»</p>
           <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly/مسيرة-منتدى-حوار-الشباب</span></div>
-            <div class="pic"><img src="assets/old/about-band.jpg" alt="صفحة مسيرة المنتدى" style="--mh:calc(50vh - 215px)"></div></div></figure>
+            <div class="pic"><img src="assets/old/about-band.jpg" alt="صفحة مسيرة المنتدى" style="--mh:calc(50vh - 230px)"></div></div></figure>
         <figure class="shot"><p class="ph">صفحة «كلمة رئيس المنتدى»</p>
           <div class="frame"><div class="bar"><i></i><i></i><i></i><span>ydf.ly/الكلمة-الترحيبية</span></div>
-            <div class="pic"><img src="assets/old/pres-band.jpg" alt="صفحة كلمة رئيس المنتدى" style="--mh:calc(50vh - 215px)"></div></div></figure>
+            <div class="pic"><img src="assets/old/pres-band.jpg" alt="صفحة كلمة رئيس المنتدى" style="--mh:calc(50vh - 230px)"></div></div></figure>
       </div>
       <ol class="finds">
         <li class="r" style="--i:2"><span class="n">6</span><div>
@@ -938,7 +928,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="صعوبة التنقل">
+<section class="slide audit" data-chap="الفصل الثاني · عرض الموقع الحالي" aria-label="صعوبة التنقل">
   <div class="inner">
     <div class="a-head r" style="--i:0"><h2>نهاية الصفحة: لا خطوة تالية</h2></div>
     <div class="a-body">
@@ -958,7 +948,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="الأنشطة">
+<section class="slide audit" data-chap="الفصل الثاني · عرض الموقع الحالي" aria-label="الأنشطة">
   <div class="inner">
     <div class="a-head r" style="--i:0"><h2>المشاركات والأنشطة</h2></div>
     <div class="a-body">
@@ -979,7 +969,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="الترتيب الزمني">
+<section class="slide audit" data-chap="الفصل الثاني · عرض الموقع الحالي" aria-label="الترتيب الزمني">
   <div class="inner">
     <div class="a-head r" style="--i:0"><h2>صفحات المدن: صور بلا زمن</h2></div>
     <div class="a-body">
@@ -999,7 +989,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="تكرار القالب">
+<section class="slide audit" data-chap="الفصل الثاني · عرض الموقع الحالي" aria-label="تكرار القالب">
   <div class="inner">
     <div class="a-head r" style="--i:0"><h2>الأنشطة والأخبار والمدونة: القالب نفسه</h2></div>
     <div class="a-body">
@@ -1026,7 +1016,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide audit" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="صور مقصوصة">
+<section class="slide audit" data-chap="الفصل الثاني · عرض الموقع الحالي" aria-label="صور مقصوصة">
   <div class="inner">
     <div class="a-head r" style="--i:0"><h2>صور مقصوصة</h2></div>
     <div class="a-body">
@@ -1051,32 +1041,17 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
           <h3>صور تظهر ناقصة</h3>
           <p>في قائمة الأخبار، صورة رئيس المنتدى مقصوصة فلا يظهر منها إلا أسفل الوجه، وصور البيانات والأخبار مقصوصة من أعلاها أو أسفلها.</p>
           <p class="fix"><small>الحل المقترح</small>عرض الصور كاملة بمقاساتها الصحيحة، وضبط موضع القص على الوجوه والعناوين.</p>
-          <span class="tag">الركيزة 4</span></div></li>
+          <span class="tag">الركيزة 1</span></div></li>
       </ol>
     </div>
   </div>
 </section>
 
-<section class="slide sum" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="خلاصة التقييم">
-  <div class="inner">
-    <h2 class="r" style="--i:0">الخلاصة: الموقع الحالي <span class="tl">على الركائز السبع</span></h2>
-    <div class="sumrule r" style="--i:1">
-      <div class="no"><div class="st"></div><b>1</b><span>هوية واحدة ورسالة واضحة</span><div class="chips"><i>1</i><i>2</i><i>10</i></div><small>ومعها الانطباع العام</small></div>
-      <div class="no"><div class="st"></div><b>2</b><span>قصة متصلة تقود الزائر</span><div class="chips"><i>4</i><i>5</i><i>6</i><i>7</i></div></div>
-      <div class="part"><div class="st"></div><b>3</b><span>محتوى حيّ يثبت العمل</span><div class="chips"><i>3</i><i>8</i><i>9</i></div></div>
-      <div class="part"><div class="st"></div><b>4</b><span>المصداقية والتوثيق</span><div class="chips"><i>11</i></div></div>
-      <div><div class="st"></div><b>5</b><span>السرعة والوصول على الهاتف</span><small>تُعرض في الجانب التقني</small></div>
-      <div class="part"><div class="st"></div><b>6</b><span>طريق واضح للمشاركة</span><div class="chips"><i>7</i></div></div>
-      <div><div class="st"></div><b>7</b><span>إدارة سهلة ومستدامة</span><small>تُعرض في الجانب التقني</small></div>
-    </div>
-    <div class="legend r" style="--i:2"><span style="--c:var(--red)">غير متحققة</span><span style="--c:#E3A33B">متحققة جزئياً</span><span style="--c:var(--line)">في الجانب التقني</span><span>الأرقام تشير إلى النقاط في الشرائح السابقة</span></div>
-  </div>
-</section>
 
-<section class="slide bridge dark" data-chap="الفصل الثاني · تقييم الموقع الحالي" aria-label="إلى الفصل الثالث">
+<section class="slide bridge dark" data-chap="الفصل الثاني · عرض الموقع الحالي" aria-label="إلى الفصل الثالث">
   <div class="inner">
     <h2 class="r" style="--i:0">الخطوة التالية: الموقع الجديد، وكيف عالج هذه النقاط</h2>
-    <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>الفصل الثالث: الموقع الجديد.</p>
+    <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>الموقع الجديد.</p>
     <a class="visit r" style="--i:3" href="https://mubader-libya.github.io/ydf-homepage/" target="_blank" rel="noopener">
       <span>افتح الموقع الجديد</span>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M10 7H6a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1086,18 +1061,18 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 
 <!-- ═══ الفصل الرابع ═══ -->
 
-<section class="slide chap dark" data-chap="الفصل الرابع · الجانب التقني" aria-label="الفصل الرابع">
+<section class="slide chap dark" data-chap="الفصل الثالث · الجانب التقني" aria-label="الفصل الثالث">
   <svg class="wheel-bg" viewBox="-220 -220 440 440" aria-hidden="true"><use href="#wheel4"/></svg>
   <div class="inner">
-    <div class="num r" style="--i:0" aria-hidden="true">4</div>
+    <div class="num r" style="--i:0" aria-hidden="true">3</div>
     <div>
-      <p class="label r" style="--i:1">الفصل الرابع</p>
-      <h2 class="r" style="--i:2">الجانب التقني: كيف يعمل الموقع، وما يلزمه بعد الإطلاق</h2>
+      <p class="label r" style="--i:1">الفصل الثالث</p>
+      <h2 class="r" style="--i:2">الجانب التقني: كيف يعمل الموقع، وكيف يُدار محتواه</h2>
     </div>
   </div>
 </section>
 
-<section class="slide tech arch" data-chap="الفصل الرابع · الجانب التقني" aria-label="بنية الموقع">
+<section class="slide tech arch" data-chap="الفصل الثالث · الجانب التقني" aria-label="بنية الموقع">
   <div class="inner">
     <div>
       <h2 class="r" style="--i:0">مشروعان مترابطان: <span class="tl">واجهة ولوحة إدارة</span></h2>
@@ -1146,7 +1121,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide audit" data-chap="الفصل الرابع · الجانب التقني" aria-label="إضافة خبر من لوحة الإدارة">
+<section class="slide audit" data-chap="الفصل الثالث · الجانب التقني" aria-label="إضافة خبر من لوحة الإدارة">
   <div class="inner">
     <div class="a-head r" style="--i:0"><h2>إضافة خبر: من لوحة الإدارة، دون أي كود</h2></div>
     <div class="a-body">
@@ -1167,60 +1142,21 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide audit" data-chap="الفصل الرابع · الجانب التقني" aria-label="الربط جاهز ومجرب">
-  <div class="inner">
-    <div class="a-head r" style="--i:0"><h2>الربط بلوحة الإدارة: جاهز، ومُجرَّب</h2></div>
-    <div class="a-body">
-      <figure class="shot r" style="--i:1">
-        <div class="frame"><div class="bar"><i></i><i></i><i></i><span style="direction:rtl">تجربة: الموقع يعرض نشاطاً من Strapi</span></div>
-          <div class="pic"><img src="assets/tech/site-from-strapi.jpg" alt="صفحة الأنشطة تعرض نشاطاً قادماً من Strapi في تجربة على الجهاز"></div></div>
-      </figure>
-      <ul class="built">
-        <li class="r" style="--i:2"><b>7</b><span><strong>أنواع محتوى معرّفة:</strong> نشاط، وخبر، ومقال، ومدينة، ومشروع، وطلب عضوية، ومقال مُرسَل.</span></li>
-        <li class="r" style="--i:3"><b>31</b><span><strong>نشاطاً و39 خبراً ونحو 355 صورة</strong> ينقلها سكربت جاهز إلى لوحة الإدارة.</span></li>
-        <li class="r" style="--i:4"><b>1</b><span><strong>سطر واحد</strong> في ملف الإعدادات يربط الواجهة بلوحة الإدارة يوم الإطلاق.</span></li>
-        <li class="r" style="--i:5"><b>0</b><span><strong>صفحات فارغة:</strong> إن تعذّر الوصول إلى لوحة الإدارة، تعرض الصفحات نسخة محلية احتياطية.</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
 
-<section class="slide tech speed" data-chap="الفصل الرابع · الجانب التقني" aria-label="السرعة على الهاتف">
+
+
+<section class="slide chap dark" data-chap="الفصل الرابع · التوصيات" aria-label="الفصل الرابع">
+  <svg class="wheel-bg" viewBox="-220 -220 440 440" aria-hidden="true"><use href="#wheel4"/></svg>
   <div class="inner">
+    <div class="num r" style="--i:0" aria-hidden="true">4</div>
     <div>
-      <h2 class="r" style="--i:0">السرعة على الهاتف: <span class="tl">مقيسة، لا مقدّرة</span></h2>
-      <p class="lead r" style="--i:1">الوقت حتى يظهر أكبر عنصر في الصفحة، على الموقع المنشور. والرقم وسيط ثلاثة قياسات لكل صفحة.</p>
-      <div class="cond r" style="--i:2"><span>شبكة 4G بطيئة</span><span>معالج أبطأ 4 مرات</span><span>وضع الهاتف</span></div>
-    </div>
-    <div class="r" style="--i:2">
-      <table class="stbl">
-        <tr><th>الصفحة</th><th>قبل التحسين</th><th>بعده</th></tr>
-        <tr><td>الأخبار</td><td class="v">2.21 <small>ث</small></td><td class="v">1.14 <small>ث</small></td></tr>
-        <tr><td>المشاركات والأنشطة</td><td class="v">2.46 <small>ث</small></td><td class="v">1.28 <small>ث</small></td></tr>
-        <tr class="slow"><td>الخبر الواحد</td><td class="v">5.50 <small>ث</small></td><td class="v">5.01 <small>ث</small></td></tr>
-        <tr class="slow"><td>النشاط الواحد</td><td class="v">5.70 <small>ث</small></td><td class="v">5.21 <small>ث</small></td></tr>
-        <tr class="slow"><td>الرئيسية</td><td class="v">6.01 <small>ث</small></td><td class="v">5.87 <small>ث</small></td></tr>
-      </table>
-      <p class="note">صفحات الصور الكبيرة والرئيسية ما زالت الأبطأ، وتخفيفها من التوصيات التالية. ولم يُجرَ قياس على هاتف حقيقي بعد.</p>
+      <p class="label r" style="--i:1">الفصل الرابع</p>
+      <h2 class="r" style="--i:2">التوصيات: الاستضافة، وما بعد الإطلاق، وخطة الإطلاق</h2>
     </div>
   </div>
 </section>
 
-<section class="slide tech" data-chap="الفصل الرابع · الجانب التقني" aria-label="توصيات قبل الإطلاق">
-  <div class="inner">
-    <h2 class="r" style="--i:0">التوصيات التقنية: <span class="tl">قبل الإطلاق</span></h2>
-    <ol class="recs">
-      <li class="r" style="--i:1"><div class="k"><i>1</i><h3>نطاق فرعي للوحة الإدارة</h3></div><p>الواجهة على ydf.ly، ولوحة الإدارة على cms.ydf.ly، مع قاعدة بيانات PostgreSQL للموقع الحقيقي.</p></li>
-      <li class="r" data-step="1"><div class="k"><i>2</i><h3>تحويل روابط الموقع القديم</h3></div><p>كل رابط قديم من ووردبريس يحوّل تلقائياً إلى صفحته الجديدة، فلا تنكسر الروابط المنشورة على مواقع التواصل ومحركات البحث.</p></li>
-      <li class="r" data-step="2"><div class="k"><i>3</i><h3>اتصال آمن يتجدد وحده</h3></div><p>شهادة HTTPS لكلا النطاقين، مع ضبط تجديدها تلقائياً.</p></li>
-      <li class="r" data-step="3"><div class="k"><i>4</i><h3>إغلاق الأبواب غير اللازمة</h3></div><p>لوحة الإدارة تقبل الطلبات من ydf.ly وحده، وكلمات السر خارج الكود، ومفتاح نقل المحتوى يُحذف بعد النقل.</p></li>
-      <li class="r" data-step="4"><div class="k"><i>5</i><h3>حماية الاستمارات</h3></div><p>استمارتا العضوية والمقالات مفتوحتان لأي زائر، فتحتاجان حماية من الرسائل الآلية المزعجة، وحداً لعدد الإرسال.</p></li>
-      <li class="r" data-step="5"><div class="k"><i>6</i><h3>حساب لكل عضو في الفريق</h3></div><p>بصلاحية «محرر» فقط، لا حساب مدير مشترك. فيُعرف من نشر ماذا، ولا يُغيَّر بناء الموقع بالخطأ.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="slide tech" data-chap="الفصل الرابع · الجانب التقني" aria-label="الاستضافة">
+<section class="slide tech" data-chap="الفصل الرابع · التوصيات" aria-label="الاستضافة">
   <div class="inner">
     <h2 class="r" style="--i:0">الاستضافة: <span class="tl">خياران</span></h2>
     <div class="host r" style="--i:1">
@@ -1247,7 +1183,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide tech" data-chap="الفصل الرابع · الجانب التقني" aria-label="توصيات بعد الإطلاق">
+<section class="slide tech" data-chap="الفصل الرابع · التوصيات" aria-label="توصيات بعد الإطلاق">
   <div class="inner">
     <h2 class="r" style="--i:0">التوصيات التقنية: <span class="tl">بعد الإطلاق</span></h2>
     <ol class="recs">
@@ -1261,23 +1197,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide tech" data-chap="الفصل الرابع · الجانب التقني" aria-label="توصيات لاحقة">
-  <div class="inner">
-    <h2 class="r" style="--i:0">التوصيات: <span class="tl">لاحقاً</span></h2>
-    <ol class="recs">
-      <li class="r" style="--i:1"><div class="k"><i>1</i><h3>إحصاءات الزيارات</h3></div><p>بأداة تحترم خصوصية الزوار، لمعرفة ما يُقرأ فعلاً، وأي الصفحات تحتاج تطويراً.</p></li>
-      <li class="r" style="--i:2"><div class="k"><i>2</i><h3>نسخة إنجليزية</h3></div><p>لوحة الإدارة تدعم المحتوى بأكثر من لغة، فتُضاف الإنجليزية دون بناء موقع ثانٍ.</p></li>
-      <li class="r" style="--i:3"><div class="k"><i>3</i><h3>هوية خاصة لكل مشروع</h3></div><p>لكل مشروع، مثل جسر الكفاءات وشبكة المدربين المؤثرين، هوية بصرية خاصة تنبثق من هوية المنتدى: ألوانه وخطه ورمزه. فيُعرف المشروع وحده، ويُعرف في الوقت نفسه أنه من المنتدى.</p></li>
-    </ol>
-  </div>
-</section>
 
-<section class="slide bridge dark" data-chap="الفصل الرابع · الجانب التقني" aria-label="إلى الفصل الخامس">
-  <div class="inner">
-    <h2 class="r" style="--i:0">الخطوة التالية: خطة الإطلاق</h2>
-    <p class="to r" style="--i:2"><svg viewBox="0 0 40 24" aria-hidden="true"><path d="M38 12H4m8-8l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>الفصل الخامس، ثم الختام.</p>
-  </div>
-</section>
 
 <!-- ═══ الفصل الخامس ═══ -->
 
@@ -1285,20 +1205,21 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 
 
 
-<section class="slide tech" data-chap="الفصل الخامس · خطة الإطلاق" aria-label="خطة الإطلاق">
+<section class="slide tech" data-chap="الفصل الرابع · التوصيات" aria-label="خطة الإطلاق">
   <div class="inner">
     <h2 class="r" style="--i:0">خطة الإطلاق: <span class="tl">ثلاث مراحل</span></h2>
     <div class="phases">
       <div class="ph r" style="--i:1">
         <p class="ph-h"><b>1</b>التحضير</p>
         <ol>
+          <li>تجهيز إحصاءات الزيارات، لمعرفة ما يُقرأ فعلاً وأي الصفحات تحتاج تطويراً.</li>
           <li>اعتماد المحتوى والتصميم النهائي للموقع.</li>
           <li>اختيار الاستضافة وتجهيزها: الخادم، والنطاق الفرعي للوحة الإدارة، والاتصال الآمن.</li>
         </ol>
       </div>
       <div class="ph r" data-step="1">
         <p class="ph-h"><b>2</b>النقل والتجربة</p>
-        <ol start="3">
+        <ol start="4">
           <li>تشغيل لوحة الإدارة، ونقل المحتوى الحالي إليها.</li>
           <li>ربط الموقع بلوحة الإدارة، وتجربته كاملاً على نسخة تجريبية.</li>
           <li>التدريب على إضافة المحتوى من لوحة الإدارة.</li>
@@ -1306,13 +1227,13 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
       </div>
       <div class="ph r" data-step="2">
         <p class="ph-h"><b>3</b>الإطلاق</p>
-        <ol start="6">
+        <ol start="7">
           <li>نقل الموقع إلى ydf.ly، وتحويل روابط الموقع القديم إلى صفحاتها الجديدة.</li>
           <li>متابعة الأسابيع الأولى: الأخطاء، والسرعة، وما يصل من الزوار.</li>
         </ol>
       </div>
     </div>
-    <p class="after r" data-step="3"><b>بعد الإطلاق:</b> مراجعة دورية للموقع على الركائز السبع، فتبقى المسطرة التي بدأ بها العرض مرجعاً دائماً.</p>
+    <p class="after r" data-step="3"><b>بعد الإطلاق:</b> مراجعة دورية للموقع على الركائز الخمس، فتبقى المسطرة التي بدأ بها العرض مرجعاً دائماً.</p>
   </div>
 </section>
 
@@ -1368,8 +1289,8 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   // المسطرة الصغيرة فوق كل زوج من الركائز
   [].forEach.call(document.querySelectorAll('.pair'),function(s){
     var on=s.dataset.on.split(',').map(Number), m=s.querySelector('.mini');
-    for(var i=1;i<=7;i++){var e=document.createElement('i');if(on.indexOf(i)>-1)e.className='act';else if(i<on[0])e.className='done';m.appendChild(e)}
-    m.setAttribute('aria-label','الركيزتان '+on.join(' و')+' من سبع');m.setAttribute('role','img');});
+    for(var i=1;i<=5;i++){var e=document.createElement('i');if(on.indexOf(i)>-1)e.className='act';else if(i<on[0])e.className='done';m.appendChild(e)}
+    m.setAttribute('aria-label','الركيزتان '+on.join(' و')+' من خمس');m.setAttribute('role','img');});
 
   // شريط التقدم مقسوم على الفصول
   var chaps=[];slides.forEach(function(s,i){var c=s.dataset.chap.split(' · ')[0];
@@ -1384,7 +1305,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     [].forEach.call(steps(s),function(e){e.classList.toggle('shown',+e.dataset.step<=n)});
     var m=s.querySelector('.mini');if(m){var on=s.dataset.on.split(',').map(Number),vis=on.slice(0,n+1);
       [].forEach.call(m.children,function(e,k){var i=k+1;e.className=vis.indexOf(i)>-1?'act':(i<on[0]?'done':'')});
-      m.setAttribute('aria-label','الركيزة '+vis.join(' و')+' من سبع')}
+      m.setAttribute('aria-label','الركيزة '+vis.join(' و')+' من خمس')}
     next.disabled=cur===N-1&&step>=nsteps(s);}
   function fwd(){if(step<nsteps(slides[cur]))setStep(step+1);else go(cur+1)}
   function back(){if(step>0)setStep(step-1);else if(cur>0){go(cur-1);setStep(nsteps(slides[cur]))}}
