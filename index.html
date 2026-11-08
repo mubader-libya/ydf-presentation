@@ -521,14 +521,6 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
 
 /* ══ ملحق: موقع م. عماد شنب ══ */
 .appx .num{font-size:clamp(5rem,13vw,12rem);line-height:1.1;-webkit-text-stroke:0;color:rgba(143,208,213,.16)}
-.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
-.nums div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(16px,2.6vh,26px) 22px;display:grid;gap:8px;align-content:start;box-shadow:0 14px 34px -26px rgba(6,45,68,.4)}
-.nums b{font-size:clamp(2rem,3.6vw,3.4rem);font-weight:700;color:var(--red);line-height:1.1}
-.nums b small{font-size:.38em;font-weight:600;color:var(--muted);margin-inline-start:8px}
-.nums span{font-size:clamp(.88rem,1vw,.98rem);color:var(--muted);line-height:1.7}
-.cause{font-size:clamp(.95rem,1.1vw,1.05rem);line-height:1.95;color:var(--deep);max-width:90ch}
-.cause b{color:var(--navy);font-weight:600}
-@media (max-width:820px){.nums{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 @media (prefers-reduced-motion:reduce){
   .r{transition:none;opacity:1;transform:none;filter:none}
@@ -1273,7 +1265,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     <div class="num r" style="--i:0" aria-hidden="true">ملحق</div>
     <div>
       <p class="label r" style="--i:1">ملحق · الطريقة نفسها على موقع شخصي</p>
-      <h2 class="r" style="--i:2">موقع م. عماد شنب، على الركائز الخمس</h2>
+      <h2 class="r" style="--i:2">موقع م. عماد شنب: الهوية، والقصة، والمحتوى</h2>
     </div>
   </div>
 </section>
@@ -1285,7 +1277,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
     <ol class="recs">
       <li class="r" style="--i:2"><div class="k"><i>1</i><h3>صور حقيقية قوية</h3></div><p>لقاءات مع رؤساء دول وسفراء، وأروقة الأمم المتحدة، وجلسات ميدانية في المدن الليبية.</p></li>
       <li class="r" style="--i:3"><div class="k"><i>2</i><h3>أدوار موثّقة بالأرقام</h3></div><p>14 دوراً وإنجازاً: 2,500 شاب في المؤتمر الوطني، وأكثر من 35 جلسة حوارية، و8,750 متدرباً.</p></li>
-      <li class="r" style="--i:4"><div class="k"><i>3</i><h3>أساس تقني سليم</h3></div><p>صفحات عربية من اليمين إلى اليسار، ونسخة إنجليزية، وقائمة تعمل على الهاتف، ولا تمرير أفقي.</p></li>
+      <li class="r" style="--i:4"><div class="k"><i>3</i><h3>أساس تقني سليم</h3></div><p>صفحات عربية من اليمين إلى اليسار، ونسخة إنجليزية كاملة، وتصنيف للمنشورات.</p></li>
     </ol>
   </div>
 </section>
@@ -1324,7 +1316,7 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
         <li class="r" style="--i:2"><span class="n">1</span><div>
           <h3>الاسم دون الصفة</h3>
           <p>اسم وحكمة فوق صورة الوجه، ولا شيء يقول من هو، ولا ماذا يفعل اليوم.</p>
-          <p class="fix"><small>الحل المقترح</small>سطر تعريف بالصفة الحالية، وزر واحد للتواصل أو الدعوة.</p>
+          <p class="fix"><small>الحل المقترح</small>سطر تعريف بالصفة الحالية تحت الاسم.</p>
           <span class="tag">الركيزة 1</span></div></li>
         <li class="r" style="--i:3" data-step="1"><span class="n">2</span><div>
           <h3>أخطاء في السطر الأول</h3>
@@ -1397,59 +1389,16 @@ body.dark .nav button#next:hover{background:var(--teal-hi);border-color:var(--te
   </div>
 </section>
 
-<section class="slide tech" data-chap="ملحق · موقع م. عماد شنب" aria-label="موقع م. عماد شنب: السرعة">
-  <div class="inner">
-    <h2 class="r" style="--i:0">السرعة على الهاتف: <span class="tl">الرئيسية</span></h2>
-    <p class="lead r" style="--i:1">Lighthouse، ثلاث قياسات، هاتف على شبكة 4G بطيئة.</p>
-    <div class="nums r" style="--i:2">
-      <div><b><bdi dir="ltr">7–14</bdi></b><span>نتيجة الأداء من 100</span></div>
-      <div><b>28<small>ميغابايت</small></b><span>حجم الصفحة الرئيسية</span></div>
-      <div><b>232</b><span>طلباً لتحميل الصفحة</span></div>
-      <div><b><bdi dir="ltr">31–53</bdi><small>ثانية</small></b><span>حتى يظهر أكبر عنصر في الصفحة</span></div>
-    </div>
-    <p class="cause r" data-step="1"><b>السبب الأول:</b> صور بأحجامها الأصلية تُرسل إلى الهاتف. صورة في المدونة أبعادها 20199 × 9000 بكسل وحجمها 2.5 ميغابايت، تُعرض بعرض 305 بكسل. وفي الرئيسية 196 صورة ومقاطع فيديو مضمّنة.</p>
-    <p class="verdict-bar r" data-step="2"><b>للمقارنة:</b> رئيسية موقع المنتدى الجديد يظهر أكبر عنصر فيها خلال نحو 6 ثوانٍ، وصفحاته النصية خلال <bdi dir="ltr">1.1–1.3</bdi> ثانية، بالشروط نفسها.</p>
-  </div>
-</section>
 
-<section class="slide audit" data-chap="ملحق · موقع م. عماد شنب" aria-label="موقع م. عماد شنب: التواصل">
-  <div class="inner">
-    <div class="a-head r" style="--i:0"><h2>طريق التواصل: نموذج واحد في آخر الصفحة</h2></div>
-    <div class="a-body">
-      <figure class="shot r" style="--i:1">
-        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>emadshanab.com/#contact</span></div>
-          <div class="pic"><img src="assets/emad/contact.jpg" alt="نموذج التواصل في آخر الصفحة الرئيسية">
-            <span class="ring box" data-n="8" style="--x:61.5%;--y:1%;--w:38%;--h:14%"></span>
-            <span class="ring" data-n="8" data-step="1" style="--x:89%;--y:81%;--w:10%;--h:8%"></span>
-          </div>
-        </div>
-      </figure>
-      <ol class="finds compact">
-        <li class="r" style="--i:2"><span class="n">8</span><div>
-          <h3>قناة واحدة لا تتسع لدعوة</h3>
-          <p>نموذج عام بعد أكثر من 24 ألف بكسل من التمرير، بعنوان «تواصل مع فريقنا»، والرسالة فيه محدودة بـ180 حرفاً.</p>
-          <p class="fix"><small>الحل المقترح</small>بريد إلكتروني ظاهر، ونموذج يتسع لرسالة كاملة.</p>
-          <span class="tag">الركيزة 5</span></div></li>
-        <li class="r" data-step="2"><span class="n">9</span><div>
-          <h3>لا مسار للصحفي ولا للمنظّم</h3>
-          <p>لا نبذة رسمية، ولا صورة للتحميل، ولا مسار لدعوته متحدثاً. والسيرة الذاتية المتاحة من 2022.</p>
-          <p class="fix"><small>الحل المقترح</small>قسم «للدعوات والإعلام»: نبذة، وصور، وسيرة محدّثة، وجهة تواصل.</p>
-          <span class="tag">الركيزة 5</span></div></li>
-      </ol>
-    </div>
-  </div>
-</section>
 
 <section class="slide tech" data-chap="ملحق · موقع م. عماد شنب" aria-label="موقع م. عماد شنب: الأولويات">
   <div class="inner">
     <h2 class="r" style="--i:0">الأولويات: <span class="tl">بالترتيب</span></h2>
-    <ol class="recs">
+    <ol class="recs two">
       <li class="r" style="--i:1"><div class="k"><i>1</i><h3>إصلاح الروابط</h3></div><p>خبر الأمم المتحدة أولاً، ثم فحص كل الروابط، وتاريخ ورابط لكل بطاقة.</p></li>
-      <li class="r" data-step="1"><div class="k"><i>2</i><h3>تعريف في الشاشة الأولى</h3></div><p>الصفة الحالية في سطر واحد، وزر واحد للتواصل، وتصحيح السطر الأول.</p></li>
+      <li class="r" data-step="1"><div class="k"><i>2</i><h3>تعريف في الشاشة الأولى</h3></div><p>الصفة الحالية في سطر واحد تحت الاسم، وتصحيح السطر الأول.</p></li>
       <li class="r" data-step="2"><div class="k"><i>3</i><h3>رئيسية أقصر</h3></div><p>الأدوار الحالية أولاً، وآخر النشاطات المؤرّخة، وصورة واحدة لكل دور.</p></li>
-      <li class="r" data-step="3"><div class="k"><i>4</i><h3>ضغط الصور</h3></div><p>حجم مناسب لكل شاشة. وحده يغيّر سرعة الرئيسية جذرياً.</p></li>
-      <li class="r" data-step="4"><div class="k"><i>5</i><h3>تنظيف بقايا القالب</h3></div><p>تعريب النصوص، وخط عربي، وحذف Portfolio أو دمجها، وتصحيح المحاذاة والإملاء.</p></li>
-      <li class="r" data-step="5"><div class="k"><i>6</i><h3>قسم للدعوات والإعلام</h3></div><p>بريد ظاهر، ونبذة رسمية وصور، وسيرة ذاتية محدّثة.</p></li>
+      <li class="r" data-step="3"><div class="k"><i>4</i><h3>تنظيف بقايا القالب</h3></div><p>تعريب النصوص، وخط عربي، وحذف Portfolio أو دمجها، وتصحيح المحاذاة والإملاء.</p></li>
     </ol>
   </div>
 </section>
